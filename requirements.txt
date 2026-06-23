@@ -1,0 +1,10 @@
+# Minimal dependencies used by the G1 generated action tracking portfolio evidence.
+# These versions reflect the local environment used to validate the submitted bundle.
+numpy==2.4.6
+mujoco==3.9.0
+gymnasium==1.2.3
+stable-baselines3==2.8.0
+torch==2.12.0
+matplotlib==3.11.0
+imageio==2.37.3
+pillow==12.2.0

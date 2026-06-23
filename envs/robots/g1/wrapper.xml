@@ -1,0 +1,3 @@
+<mujoco model="g1_wrapper">
+  <include file="scene.xml"/>
+</mujoco>

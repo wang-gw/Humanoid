@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environments
+.venv/
+venv/
+env/
+.env
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Generated artifacts
+outputs/**
+!outputs/.gitkeep
+!outputs/**/.gitkeep
+
+# Reference motion data
+reference_motions/raw/**
+reference_motions/processed/**
+reference_motions/metadata/**
+!reference_motions/.gitkeep
+!reference_motions/**/.gitkeep
+!reference_motions/metadata/*.md
+!reference_motions/metadata/*.json
+!reference_motions/metadata/*.yaml
+!reference_motions/metadata/*.yml
+
+# Model checkpoints / logs
+*.zip
+*.pkl
+*.pt
+*.pth
+*.ckpt
+events.out.tfevents*
+runs/
+wandb/
+
+# Media generated outside curated reports
+*.mp4
+*.mov
+*.avi
