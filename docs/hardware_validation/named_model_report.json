@@ -1,0 +1,43 @@
+{
+  "source": "/home/king0519/projects/Humanoid/envs/robots/urdf_f/URDF_F_contact.xml",
+  "mapping": "/home/king0519/projects/Humanoid/configs/joint_mapping_provisional.json",
+  "out": "/home/king0519/projects/Humanoid/envs/robots/urdf_f/URDF_F_named.xml",
+  "pose_out": "/home/king0519/projects/Humanoid/configs/standing_pose_candidate_named.json",
+  "stats": {
+    "renamed_joints": 10,
+    "renamed_actuators": 10,
+    "renamed_references": 10
+  },
+  "compiled": {
+    "nq": 17,
+    "nv": 16,
+    "nu": 10,
+    "njnt": 11,
+    "ngeom": 26
+  },
+  "joint_names": [
+    "floating_base",
+    "left_hip_roll",
+    "left_hip_pitch",
+    "left_knee_pitch",
+    "left_ankle_pitch",
+    "left_ankle_roll",
+    "right_hip_roll",
+    "right_hip_pitch",
+    "right_knee_pitch",
+    "right_ankle_pitch",
+    "right_ankle_roll"
+  ],
+  "actuator_names": [
+    "motor_left_hip_roll",
+    "motor_left_hip_pitch",
+    "motor_left_knee_pitch",
+    "motor_left_ankle_pitch",
+    "motor_left_ankle_roll",
+    "motor_right_hip_roll",
+    "motor_right_hip_pitch",
+    "motor_right_knee_pitch",
+    "motor_right_ankle_pitch",
+    "motor_right_ankle_roll"
+  ]
+}

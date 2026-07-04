@@ -1,0 +1,25 @@
+{
+  "description": "left_clearance ep step 21: cl=1.524mm contacts=4 roll=0.0793. For left_return.",
+  "base_z": -0.00023263812206889527,
+  "joint_targets": {
+    "left_hip_roll": 0.07514110207964506,
+    "left_hip_pitch": -0.1470835213190729,
+    "left_knee_pitch": -0.2036951246818271,
+    "left_ankle_pitch": 0.21219770221065642,
+    "left_ankle_roll": -0.09148508866092923,
+    "right_hip_roll": 0.3324102216210669,
+    "right_hip_pitch": 0.3158205840910071,
+    "right_knee_pitch": 0.03921187659202679,
+    "right_ankle_pitch": -0.19123027225966335,
+    "right_ankle_roll": -0.12732229470229756
+  },
+  "capture_stats": {
+    "left_clearance": 0.0015239397907418593,
+    "left_contacts": 4.0,
+    "left_force_ratio": 0.46910439131431586,
+    "right_force_ratio": 0.5308956086856842,
+    "roll": 0.0792502067034436,
+    "pitch": -0.012408742154974253,
+    "base_z": -0.00023263812206889527
+  }
+}

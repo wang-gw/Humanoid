@@ -1,0 +1,205 @@
+{
+  "source": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/URDF_F_link_user_size_contact.xml",
+  "mass_csv": "/home/king0519/projects/Humanoid/configs/cad_body_mass_aggregate_user.csv",
+  "out": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/URDF_F_link_user_size_mass_contact.xml",
+  "old_total_kg": 8.62398,
+  "new_total_kg": 9.211400000000001,
+  "compiled_total_kg": 9.211400000000001,
+  "method": "Mass is replaced from aggregated CAD component masses. Diagonal inertia is scaled by mass ratio; inertial position and orientation are preserved because supplied CG values are component-local and need frame transforms before safe aggregation.",
+  "records": [
+    {
+      "body": "base_link",
+      "old_mass_kg": 2.8,
+      "new_mass_kg": 2.9214,
+      "mass_ratio": 1.043357142857143,
+      "old_diaginertia": [
+        1.06696,
+        0.916162,
+        0.157827
+      ],
+      "new_diaginertia": [
+        1.1132203371428573,
+        0.955884166714286,
+        0.16466992778571432
+      ],
+      "components": "base_link + thighJR_L + AK45-36_trL + thighJR_R + AK45-36_trR"
+    },
+    {
+      "body": "thighJ_L_1",
+      "old_mass_kg": 0.4,
+      "new_mass_kg": 0.4697,
+      "mass_ratio": 1.17425,
+      "old_diaginertia": [
+        0.000841738,
+        0.000809858,
+        0.000166084
+      ],
+      "new_diaginertia": [
+        0.0009884108465,
+        0.0009509757565,
+        0.000195024137
+      ],
+      "components": "thighJ_L + AK45-36_tpL"
+    },
+    {
+      "body": "thigh_L_1",
+      "old_mass_kg": 0.9,
+      "new_mass_kg": 0.9113,
+      "mass_ratio": 1.0125555555555554,
+      "old_diaginertia": [
+        0.0527885,
+        0.0523542,
+        0.000777714
+      ],
+      "new_diaginertia": [
+        0.05345128894444444,
+        0.053011536066666656,
+        0.0007874786313333333
+      ],
+      "components": "thigh_L + AK45-36_kpL"
+    },
+    {
+      "body": "calf_L_1",
+      "old_mass_kg": 0.9,
+      "new_mass_kg": 1.0945,
+      "mass_ratio": 1.2161111111111111,
+      "old_diaginertia": [
+        0.0217701,
+        0.0212734,
+        0.000733047
+      ],
+      "new_diaginertia": [
+        0.026474860500000003,
+        0.025870818111111114,
+        0.0008914666016666667
+      ],
+      "components": "calf_L + AK45-36_fpL"
+    },
+    {
+      "body": "footJ_L_1",
+      "old_mass_kg": 0.3,
+      "new_mass_kg": 0.3482,
+      "mass_ratio": 1.1606666666666667,
+      "old_diaginertia": [
+        0.00011625,
+        0.00010825,
+        0.000108
+      ],
+      "new_diaginertia": [
+        0.00013492750000000003,
+        0.0001256421666666667,
+        0.00012535200000000002
+      ],
+      "components": "footJ_L + AK45-10_frL"
+    },
+    {
+      "body": "foot_L_1",
+      "old_mass_kg": 0.3,
+      "new_mass_kg": 0.3213,
+      "mass_ratio": 1.071,
+      "old_diaginertia": [
+        0.00040043,
+        0.00035,
+        0.00016757
+      ],
+      "new_diaginertia": [
+        0.00042886053,
+        0.00037485,
+        0.00017946747
+      ],
+      "components": "foot_L"
+    },
+    {
+      "body": "thighJ_R_1",
+      "old_mass_kg": 0.4,
+      "new_mass_kg": 0.4697,
+      "mass_ratio": 1.17425,
+      "old_diaginertia": [
+        0.000864583,
+        0.000819132,
+        0.000179965
+      ],
+      "new_diaginertia": [
+        0.00101523658775,
+        0.0009618657509999999,
+        0.00021132390125
+      ],
+      "components": "thighJ_R + AK45-36_tpR"
+    },
+    {
+      "body": "thigh_R_1",
+      "old_mass_kg": 0.92036,
+      "new_mass_kg": 0.9113,
+      "mass_ratio": 0.9901560259029076,
+      "old_diaginertia": [
+        0.088708,
+        0.0882831,
+        0.000762492
+      ],
+      "new_diaginertia": [
+        0.08783476074579513,
+        0.08741404345038899,
+        0.0007549860485027599
+      ],
+      "components": "thigh_R + AK45-36_kpR"
+    },
+    {
+      "body": "calf_R_1",
+      "old_mass_kg": 1.10362,
+      "new_mass_kg": 1.0945,
+      "mass_ratio": 0.9917362860404849,
+      "old_diaginertia": [
+        0.0367718,
+        0.0359639,
+        0.00104413
+      ],
+      "new_diaginertia": [
+        0.036467928363023504,
+        0.035666704617531395,
+        0.0010355016083434517
+      ],
+      "components": "calf_R + AK45-36_fpR"
+    },
+    {
+      "body": "footJ_R_1",
+      "old_mass_kg": 0.3,
+      "new_mass_kg": 0.3482,
+      "mass_ratio": 1.1606666666666667,
+      "old_diaginertia": [
+        0.00011625,
+        0.00010825,
+        0.000108
+      ],
+      "new_diaginertia": [
+        0.00013492750000000003,
+        0.0001256421666666667,
+        0.00012535200000000002
+      ],
+      "components": "footJ_R + AK45-10_frR"
+    },
+    {
+      "body": "foot_R_v1_1",
+      "old_mass_kg": 0.3,
+      "new_mass_kg": 0.3213,
+      "mass_ratio": 1.071,
+      "old_diaginertia": [
+        0.00040043,
+        0.00035,
+        0.00016757
+      ],
+      "new_diaginertia": [
+        0.00042886053,
+        0.00037485,
+        0.00017946747
+      ],
+      "components": "foot_R"
+    }
+  ],
+  "compiled": {
+    "nq": 17,
+    "nv": 16,
+    "nu": 10,
+    "njnt": 11,
+    "ngeom": 26
+  }
+}

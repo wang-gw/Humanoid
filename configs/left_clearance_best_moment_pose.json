@@ -1,0 +1,24 @@
+{
+  "description": "Best clearance moment from left_clearance_unload_gated_50k ep (step 242): clearance=5.75mm, contacts=4.0, roll=0.112",
+  "base_z": -0.02222967266932512,
+  "joint_targets": {
+    "left_hip_roll": 0.023348805127339074,
+    "left_hip_pitch": -0.2569252668763278,
+    "left_knee_pitch": -0.18917816134766777,
+    "left_ankle_pitch": 0.34455838499821423,
+    "left_ankle_roll": -0.026293809038513253,
+    "right_hip_roll": 0.2760409089664103,
+    "right_hip_pitch": 0.40747839757140986,
+    "right_knee_pitch": 0.03839419087554621,
+    "right_ankle_pitch": -0.2172275824930429,
+    "right_ankle_roll": -0.1685946564852458
+  },
+  "capture_stats": {
+    "left_clearance": 0.005749291286185957,
+    "left_contacts": 4.0,
+    "left_force_ratio": 0.7138164117255275,
+    "right_force_ratio": 0.28618358827447243,
+    "roll": -0.11152425112664868,
+    "pitch": -0.0005589586325308992
+  }
+}

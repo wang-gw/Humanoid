@@ -1,0 +1,103 @@
+<mujoco model="URDF_F_step_visual_assembly">
+  <compiler angle="radian" />
+  <asset>
+    <texture name="grid" type="2d" builtin="checker" width="512" height="512" rgb1=".18 .18 .18" rgb2=".24 .24 .24" />
+    <material name="grid" texture="grid" texrepeat="4 4" reflectance="0.05" />
+    <mesh name="base_link" file="base_link.stl" scale="0.001 0.001 0.001" />
+    <mesh name="thighJR_L" file="thighJR_L.stl" scale="0.001 0.001 0.001" />
+    <mesh name="AK45-36_trL" file="AK45-36_trL.stl" scale="0.001 0.001 0.001" />
+    <mesh name="thighJ_L" file="thighJ_L.stl" scale="0.001 0.001 0.001" />
+    <mesh name="AK45-36_tpL" file="AK45-36_tpL.stl" scale="0.001 0.001 0.001" />
+    <mesh name="thigh_L" file="thigh_L.stl" scale="0.001 0.001 0.001" />
+    <mesh name="AK45-36_kpL" file="AK45-36_kpL.stl" scale="0.001 0.001 0.001" />
+    <mesh name="calf_L" file="calf_L.stl" scale="0.001 0.001 0.001" />
+    <mesh name="AK45-36_fpL" file="AK45-36_fpL.stl" scale="0.001 0.001 0.001" />
+    <mesh name="footJ_L" file="footJ_L.stl" scale="0.001 0.001 0.001" />
+    <mesh name="AK45-10_frL" file="AK45-10_frL.stl" scale="0.001 0.001 0.001" />
+    <mesh name="foot_L" file="foot_L.stl" scale="0.001 0.001 0.001" />
+    <mesh name="thighJR_R" file="thighJR_R.stl" scale="0.001 0.001 0.001" />
+    <mesh name="AK45-36_trL_1" file="AK45-36_trL_R.stl" scale="0.001 0.001 0.001" />
+    <mesh name="thighJ_R" file="thighJ_R.stl" scale="0.001 0.001 0.001" />
+    <mesh name="AK45-36_tpR" file="AK45-36_tpR.stl" scale="0.001 0.001 0.001" />
+    <mesh name="thigh_R" file="thigh_R.stl" scale="0.001 0.001 0.001" />
+    <mesh name="AK45-36_kpR" file="AK45-36_kpR.stl" scale="0.001 0.001 0.001" />
+    <mesh name="calf_R" file="calf_R.stl" scale="0.001 0.001 0.001" />
+    <mesh name="AK45-36_fpR" file="AK45-36_fpR.stl" scale="0.001 0.001 0.001" />
+    <mesh name="footJ_R" file="footJ_R.stl" scale="0.001 0.001 0.001" />
+    <mesh name="AK45-10_frR" file="AK45-10_frR.stl" scale="0.001 0.001 0.001" />
+    <mesh name="foot_R" file="foot_R.stl" scale="0.001 0.001 0.001" />
+  </asset>
+  <worldbody>
+    <light pos="0 -1 1.2" dir="0 1 -1" diffuse="0.8 0.8 0.8" />
+    <geom name="floor" type="plane" size="1 1 0.02" material="grid" />
+    <body name="step_base_link" pos="-0.00025 -0.037 0.492" quat="1 1.61412621e-16 1.66533454e-16 -6.123234e-17">
+      <geom name="vis_base_link" type="mesh" mesh="base_link" rgba="0.75 0.75 0.78 1" contype="0" conaffinity="0" />
+    </body>
+    <body name="step_thighJR_L" pos="0.04975 -0.059 0.465" quat="1 1.61412621e-16 1.66533454e-16 -6.123234e-17">
+      <geom name="vis_thighJR_L" type="mesh" mesh="thighJR_L" rgba="0.30 0.55 0.85 1" contype="0" conaffinity="0" />
+    </body>
+    <body name="step_AK45-36_trL" pos="0.04975 -0.015 0.465" quat="0.707106781 0.707106781 7.44591316e-17 -1.61054737e-16">
+      <geom name="vis_AK45-36_trL" type="mesh" mesh="AK45-36_trL" rgba="0.85 0.45 0.25 1" contype="0" conaffinity="0" />
+    </body>
+    <body name="step_thighJ_L" pos="0.04975 -0.04 0.395" quat="1 1.61412621e-16 1.66533454e-16 -6.123234e-17">
+      <geom name="vis_thighJ_L" type="mesh" mesh="thighJ_L" rgba="0.35 0.70 0.45 1" contype="0" conaffinity="0" />
+    </body>
+    <body name="step_AK45-36_tpL" pos="0.02275 -0.04 0.395" quat="0.707106781 1.14135959e-16 0.707106781 2.7540353e-17">
+      <geom name="vis_AK45-36_tpL" type="mesh" mesh="AK45-36_tpL" rgba="0.80 0.65 0.30 1" contype="0" conaffinity="0" />
+    </body>
+    <body name="step_thigh_L" pos="0.07675 -0.04 0.265" quat="1 -1.08420217e-17 1.66533454e-16 -6.123234e-17">
+      <geom name="vis_thigh_L" type="mesh" mesh="thigh_L" rgba="0.75 0.75 0.78 1" contype="0" conaffinity="0" />
+    </body>
+    <body name="step_AK45-36_kpL" pos="0.0515 -0.04 0.325" quat="0.707106781 -7.66646708e-18 0.707106781 -9.42620727e-17">
+      <geom name="vis_AK45-36_kpL" type="mesh" mesh="AK45-36_kpL" rgba="0.30 0.55 0.85 1" contype="0" conaffinity="0" />
+    </body>
+    <body name="step_calf_L" pos="0.0498261355 -0.051076135 0.065" quat="1 -1.08420217e-17 1.83186799e-16 -6.123234e-17">
+      <geom name="vis_calf_L" type="mesh" mesh="calf_L" rgba="0.85 0.45 0.25 1" contype="0" conaffinity="0" />
+    </body>
+    <body name="step_AK45-36_fpL" pos="0.04975 -0.04 0.205" quat="0.707106781 7.89291385e-17 0.707106781 -7.66646708e-18">
+      <geom name="vis_AK45-36_fpL" type="mesh" mesh="AK45-36_fpL" rgba="0.35 0.70 0.45 1" contype="0" conaffinity="0" />
+    </body>
+    <body name="step_footJ_L" pos="0.07675 -0.04 0.065" quat="1 1.97741483e-17 1.83186799e-16 -6.123234e-17">
+      <geom name="vis_footJ_L" type="mesh" mesh="footJ_L" rgba="0.80 0.65 0.30 1" contype="0" conaffinity="0" />
+    </body>
+    <body name="step_AK45-10_frL" pos="0.07675 -0.0185 0.065" quat="0.707106781 0.707106781 8.6234825e-17 -1.72830431e-16">
+      <geom name="vis_AK45-10_frL" type="mesh" mesh="AK45-10_frL" rgba="0.75 0.75 0.78 1" contype="0" conaffinity="0" />
+    </body>
+    <body name="step_foot_L" pos="0.07675 -0.06 0.025" quat="1 1.97741483e-17 -1.77635684e-16 -6.123234e-17">
+      <geom name="vis_foot_L" type="mesh" mesh="foot_L" rgba="0.30 0.55 0.85 1" contype="0" conaffinity="0" />
+    </body>
+    <body name="step_thighJR_R" pos="-0.05025 -0.059 0.465" quat="1.66533454e-16 -3.50977844e-31 1 1.61412621e-16">
+      <geom name="vis_thighJR_R" type="mesh" mesh="thighJR_R" rgba="0.85 0.45 0.25 1" contype="0" conaffinity="0" />
+    </body>
+    <body name="step_AK45-36_trL_1" pos="-0.05025 -0.015 0.465" quat="1.17756934e-16 -1.17756934e-16 0.707106781 0.707106781">
+      <geom name="vis_AK45-36_trL_1" type="mesh" mesh="AK45-36_trL_1" rgba="0.35 0.70 0.45 1" contype="0" conaffinity="0" />
+    </body>
+    <body name="step_thighJ_R" pos="-0.05025 -0.04 0.395" quat="1.66533454e-16 -3.32488916e-31 1 1.61412621e-16">
+      <geom name="vis_thighJ_R" type="mesh" mesh="thighJ_R" rgba="0.80 0.65 0.30 1" contype="0" conaffinity="0" />
+    </body>
+    <body name="step_AK45-36_tpR" pos="-0.02325 -0.04 0.395" quat="0.707106781 1.14135959e-16 0.707106781 1.14135959e-16">
+      <geom name="vis_AK45-36_tpR" type="mesh" mesh="AK45-36_tpR" rgba="0.75 0.75 0.78 1" contype="0" conaffinity="0" />
+    </body>
+    <body name="step_thigh_R" pos="-0.07725 -0.04 0.265" quat="1.66533454e-16 -3.01674037e-31 1 1.05901469e-16">
+      <geom name="vis_thigh_R" type="mesh" mesh="thigh_R" rgba="0.30 0.55 0.85 1" contype="0" conaffinity="0" />
+    </body>
+    <body name="step_AK45-36_kpR" pos="-0.052 -0.04 0.325" quat="0.707106781 7.48836472e-17 0.707106781 7.48836472e-17">
+      <geom name="vis_AK45-36_kpR" type="mesh" mesh="AK45-36_kpR" rgba="0.85 0.45 0.25 1" contype="0" conaffinity="0" />
+    </body>
+    <body name="step_calf_R" pos="-0.0503261355 -0.051076135 0.065" quat="1.83186799e-16 -3.0013102e-31 1 1.60194916e-16">
+      <geom name="vis_calf_R" type="mesh" mesh="calf_R" rgba="0.35 0.70 0.45 1" contype="0" conaffinity="0" />
+    </body>
+    <body name="step_AK45-36_fpR" pos="-0.05025 -0.04 0.205" quat="0.707106781 1.13274911e-16 0.707106781 1.13274911e-16">
+      <geom name="vis_AK45-36_fpR" type="mesh" mesh="AK45-36_fpR" rgba="0.80 0.65 0.30 1" contype="0" conaffinity="0" />
+    </body>
+    <body name="step_footJ_R" pos="-0.07725 -0.04 0.065" quat="1.83186799e-16 4.67522447e-32 1 1.29578746e-16">
+      <geom name="vis_footJ_R" type="mesh" mesh="footJ_R" rgba="0.75 0.75 0.78 1" contype="0" conaffinity="0" />
+    </body>
+    <body name="step_AK45-10_frR" pos="-0.07725 -0.0185 0.065" quat="1.29532628e-16 -1.29532628e-16 0.707106781 0.707106781">
+      <geom name="vis_AK45-10_frR" type="mesh" mesh="AK45-10_frR" rgba="0.30 0.55 0.85 1" contype="0" conaffinity="0" />
+    </body>
+    <body name="step_foot_R" pos="-0.07725 -0.06 0.025" quat="1.78416203e-16 -5.20417043e-18 1 7.40771966e-17">
+      <geom name="vis_foot_R" type="mesh" mesh="foot_R" rgba="0.85 0.45 0.25 1" contype="0" conaffinity="0" />
+    </body>
+  </worldbody>
+</mujoco>

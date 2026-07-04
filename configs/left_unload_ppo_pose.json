@@ -1,0 +1,25 @@
+{
+  "description": "left_unload_30k PPO final state (left_ratio~0.46, left_contacts=11, stable 5s)",
+  "base_z": 0.00012418785922245842,
+  "joint_targets": {
+    "left_hip_roll": 0.07551025354698102,
+    "left_hip_pitch": -0.10452701423512495,
+    "left_knee_pitch": -0.09382890274896462,
+    "left_ankle_pitch": 0.21342327421710255,
+    "left_ankle_roll": -0.07733988277167224,
+    "right_hip_roll": 0.32676780215202633,
+    "right_hip_pitch": 0.2184064274189525,
+    "right_knee_pitch": 0.08204871901734033,
+    "right_ankle_pitch": -0.14808220728803845,
+    "right_ankle_roll": -0.1259010494727004
+  },
+  "capture_stats": {
+    "left_force_ratio": 0.4624701004430187,
+    "right_force_ratio": 0.5375298995569814,
+    "roll": -0.015568609670640112,
+    "pitch": 0.0021148226208940924,
+    "left_contacts": 11.0,
+    "right_contacts": 3.0,
+    "left_clearance": -0.00011247953561392687
+  }
+}

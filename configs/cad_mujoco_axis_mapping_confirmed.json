@@ -1,0 +1,43 @@
+{
+  "status": "user_confirmed",
+  "cad_to_mujoco": {
+    "mujoco_x": "cad_y",
+    "mujoco_y": "cad_x",
+    "mujoco_z": "cad_z"
+  },
+  "matrix_cad_to_mujoco": [
+    [0, 1, 0],
+    [1, 0, 0],
+    [0, 0, 1]
+  ],
+  "physical_axes": {
+    "forward": {
+      "cad": "+Y",
+      "mujoco": "+X"
+    },
+    "backward": {
+      "cad": "-Y",
+      "mujoco": "-X"
+    },
+    "up": {
+      "cad": "+Z",
+      "mujoco": "+Z"
+    },
+    "gravity": {
+      "cad": "-Z",
+      "mujoco": "-Z"
+    },
+    "left": {
+      "cad": "+X",
+      "mujoco": "+Y"
+    },
+    "right": {
+      "cad": "-X",
+      "mujoco": "-Y"
+    }
+  },
+  "notes": [
+    "CAD Y=-60 mm is the fore-aft location of the contact edge after axis conversion, not the MuJoCo ground height.",
+    "Ground height remains CAD Z=0 -> MuJoCo Z=0."
+  ]
+}

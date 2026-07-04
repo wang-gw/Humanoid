@@ -1,0 +1,25 @@
+{
+  "description": "Captured step 6 from gated episode: cl=0.05mm contacts=4.0 roll=0.0178",
+  "base_z": 0.00025418995838486674,
+  "joint_targets": {
+    "left_hip_roll": 0.07332103502289378,
+    "left_hip_pitch": -0.1176839706838349,
+    "left_knee_pitch": -0.12284923893447024,
+    "left_ankle_pitch": 0.21167397051711165,
+    "left_ankle_roll": -0.07770109108423486,
+    "right_hip_roll": 0.3263028349114489,
+    "right_hip_pitch": 0.24431219976054172,
+    "right_knee_pitch": 0.0734319867702194,
+    "right_ankle_pitch": -0.14158789795369636,
+    "right_ankle_roll": -0.13153048119629931
+  },
+  "capture_stats": {
+    "left_clearance": 5.100114629725053e-05,
+    "left_contacts": 4.0,
+    "left_force_ratio": 0.4505822179731828,
+    "right_force_ratio": 0.5494177820268171,
+    "roll": 0.017755889091170162,
+    "pitch": 0.00023276767237288343,
+    "base_z": 0.00025418995838486674
+  }
+}

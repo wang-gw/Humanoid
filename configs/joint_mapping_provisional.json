@@ -1,0 +1,92 @@
+{
+  "status": "provisional",
+  "notes": [
+    "CAD 확인 전 임시 매핑이다.",
+    "RL action order와 torque plot을 사람이 읽을 수 있게 만들기 위한 중간 단계다.",
+    "positive direction은 아직 확정값이 아니다."
+  ],
+  "action_order": [
+    "left_hip_roll",
+    "left_hip_pitch",
+    "left_knee_pitch",
+    "left_ankle_pitch",
+    "left_ankle_roll",
+    "right_hip_roll",
+    "right_hip_pitch",
+    "right_knee_pitch",
+    "right_ankle_pitch",
+    "right_ankle_roll"
+  ],
+  "joints": {
+    "Revolute 26": {
+      "new_name": "left_hip_roll",
+      "side": "left",
+      "role": "hip_roll_candidate",
+      "axis": "0 -1 0",
+      "positive_direction_status": "unconfirmed"
+    },
+    "Revolute 19": {
+      "new_name": "left_hip_pitch",
+      "side": "left",
+      "role": "hip_pitch_candidate",
+      "axis": "1 0 0",
+      "positive_direction_status": "unconfirmed"
+    },
+    "Revolute 21": {
+      "new_name": "left_knee_pitch",
+      "side": "left",
+      "role": "knee_pitch_candidate",
+      "axis": "1 0 0",
+      "positive_direction_status": "unconfirmed"
+    },
+    "Revolute 23": {
+      "new_name": "left_ankle_pitch",
+      "side": "left",
+      "role": "ankle_pitch_candidate",
+      "axis": "1 0 0",
+      "positive_direction_status": "unconfirmed"
+    },
+    "Revolute 25": {
+      "new_name": "left_ankle_roll",
+      "side": "left",
+      "role": "ankle_roll_candidate",
+      "axis": "0 -1 0",
+      "positive_direction_status": "unconfirmed"
+    },
+    "Revolute 51": {
+      "new_name": "right_hip_roll",
+      "side": "right",
+      "role": "hip_roll_candidate",
+      "axis": "0 -1 0",
+      "positive_direction_status": "unconfirmed"
+    },
+    "Revolute 44": {
+      "new_name": "right_hip_pitch",
+      "side": "right",
+      "role": "hip_pitch_candidate",
+      "axis": "-1 0 0",
+      "positive_direction_status": "unconfirmed"
+    },
+    "Revolute 46": {
+      "new_name": "right_knee_pitch",
+      "side": "right",
+      "role": "knee_pitch_candidate",
+      "axis": "1 0 0",
+      "positive_direction_status": "unconfirmed"
+    },
+    "Revolute 48": {
+      "new_name": "right_ankle_pitch",
+      "side": "right",
+      "role": "ankle_pitch_candidate",
+      "axis": "-1 0 0",
+      "positive_direction_status": "unconfirmed"
+    },
+    "Revolute 53": {
+      "new_name": "right_ankle_roll",
+      "side": "right",
+      "role": "ankle_roll_candidate",
+      "axis": "0 -1 0",
+      "positive_direction_status": "unconfirmed"
+    }
+  }
+}

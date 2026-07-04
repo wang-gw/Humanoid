@@ -1,0 +1,87 @@
+{
+  "status": "user_provided_foot_contact_box",
+  "description": "사용자가 제공한 Fusion/local frame 기준 foot contact box 치수다. mm를 m로 변환해 기록했다.",
+  "friction": {
+    "sliding": 1.0,
+    "torsional": 0.02,
+    "rolling": 0.001,
+    "material_notes": "실제 sole material 값은 미정. 기존 진단값 유지."
+  },
+  "left_sole": {
+    "body": "foot_L_1",
+    "center_xyz_in_body": [
+      -0.07675,
+      0.06,
+      -0.005
+    ],
+    "halfsize_xyz_m": [
+      0.035,
+      0.06,
+      0.02
+    ],
+    "contact_type": "box",
+    "source_mm": {
+      "min_xyz": [
+        -111.75,
+        0.0,
+        -25.0
+      ],
+      "max_xyz": [
+        -41.75,
+        120.0,
+        15.0
+      ],
+      "center_xyz": [
+        -76.75,
+        60.0,
+        -5.0
+      ],
+      "halfsize_xyz": [
+        35.0,
+        60.0,
+        20.0
+      ]
+    }
+  },
+  "right_sole": {
+    "body": "foot_R_v1_1",
+    "center_xyz_in_body": [
+      -0.07725,
+      0.06,
+      0.045
+    ],
+    "halfsize_xyz_m": [
+      0.035,
+      0.06,
+      0.02
+    ],
+    "contact_type": "box",
+    "source_mm": {
+      "min_xyz": [
+        -112.25,
+        0.0,
+        25.0
+      ],
+      "max_xyz": [
+        -42.25,
+        120.0,
+        65.0
+      ],
+      "center_xyz": [
+        -77.25,
+        60.0,
+        45.0
+      ],
+      "halfsize_xyz": [
+        35.0,
+        60.0,
+        20.0
+      ]
+    }
+  },
+  "notes": [
+    "좌우 발 footprint 크기는 70 x 120 x 40 mm로 동일하다.",
+    "오른쪽 Z offset은 제공 자료상 local frame 원점 차이로 설명되었다.",
+    "현재 MJCF body frame과 Fusion local frame이 완전히 같은지 검증하기 위해 별도 variant에서 geometry probe를 실행한다."
+  ]
+}

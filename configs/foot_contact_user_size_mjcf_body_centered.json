@@ -1,0 +1,56 @@
+{
+  "status": "frame_normalized_candidate",
+  "description": "사용자 제공 foot contact 크기 70 x 120 x 40 mm는 유지하되, 현재 MJCF foot body frame 기준 좌우 동일 center로 정규화한 후보값이다.",
+  "friction": {
+    "sliding": 1.0,
+    "torsional": 0.02,
+    "rolling": 0.001,
+    "material_notes": "실제 sole material 값은 미정. 기존 진단값 유지."
+  },
+  "left_sole": {
+    "body": "foot_L_1",
+    "center_xyz_in_body": [
+      0.0,
+      0.0,
+      -0.02
+    ],
+    "halfsize_xyz_m": [
+      0.035,
+      0.06,
+      0.02
+    ],
+    "contact_type": "box",
+    "basis": "MJCF body-centered frame normalization, preserving user-provided size"
+  },
+  "right_sole": {
+    "body": "foot_R_v1_1",
+    "center_xyz_in_body": [
+      0.0,
+      0.0,
+      -0.02
+    ],
+    "halfsize_xyz_m": [
+      0.035,
+      0.06,
+      0.02
+    ],
+    "contact_type": "box",
+    "basis": "MJCF body-centered frame normalization, preserving user-provided size"
+  },
+  "source_user_size_mm": {
+    "size_xyz": [
+      70.0,
+      120.0,
+      40.0
+    ],
+    "halfsize_xyz": [
+      35.0,
+      60.0,
+      20.0
+    ]
+  },
+  "notes": [
+    "user_direct center는 현재 MJCF frame에서 좌우 z 차이 50 mm가 발생해 제외했다.",
+    "이 값은 최종 CAD frame 변환 확정값이 아니라, 사용자가 제공한 발 크기를 보존한 검증용 후보이다."
+  ]
+}

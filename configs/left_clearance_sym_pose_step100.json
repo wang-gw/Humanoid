@@ -1,0 +1,15 @@
+{
+  "base_z": 0.0002552874962316822,
+  "joint_targets": {
+    "left_hip_roll": -0.048062569191080366,
+    "left_hip_pitch": -0.19670282123783583,
+    "left_knee_pitch": -0.11631249769879047,
+    "left_ankle_pitch": 0.28607434957852057,
+    "left_ankle_roll": -0.014942211550137,
+    "right_hip_roll": 0.05460253482517848,
+    "right_hip_pitch": 0.2742021716393701,
+    "right_knee_pitch": 0.06421718713288015,
+    "right_ankle_pitch": -0.22223623846902577,
+    "right_ankle_roll": -0.18678123958410353
+  }
+}

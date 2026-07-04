@@ -1,0 +1,11 @@
+exported_joint,provisional_name,cad_confirmed_name,side,role_candidate,axis_in_model,positive_direction_description,joint_zero_pose_description,lower_limit_rad,upper_limit_rad,cad_confirmed,notes
+Revolute 26,left_hip_roll,,left,hip_roll_candidate,0 -1 0,"모델 축 기준 +회전, CAD 실제 방향 확인 필요","MJCF qpos0 기준 0 rad, CAD 조립 기준 자세 확인 필요",-1.570800,1.570800,false,모델에서 자동 prefill한 값. CAD 확인 전까지 확정값 아님.
+Revolute 19,left_hip_pitch,,left,hip_pitch_candidate,1 0 0,"모델 축 기준 +회전, CAD 실제 방향 확인 필요","MJCF qpos0 기준 0 rad, CAD 조립 기준 자세 확인 필요",-1.570800,1.570800,false,모델에서 자동 prefill한 값. CAD 확인 전까지 확정값 아님.
+Revolute 21,left_knee_pitch,,left,knee_pitch_candidate,1 0 0,"모델 축 기준 +회전, CAD 실제 방향 확인 필요","MJCF qpos0 기준 0 rad, CAD 조립 기준 자세 확인 필요",-1.570800,1.570800,false,모델에서 자동 prefill한 값. CAD 확인 전까지 확정값 아님.
+Revolute 23,left_ankle_pitch,,left,ankle_pitch_candidate,1 0 0,"모델 축 기준 +회전, CAD 실제 방향 확인 필요","MJCF qpos0 기준 0 rad, CAD 조립 기준 자세 확인 필요",-1.570800,1.570800,false,모델에서 자동 prefill한 값. CAD 확인 전까지 확정값 아님.
+Revolute 25,left_ankle_roll,,left,ankle_roll_candidate,0 -1 0,"모델 축 기준 +회전, CAD 실제 방향 확인 필요","MJCF qpos0 기준 0 rad, CAD 조립 기준 자세 확인 필요",-1.570800,1.570800,false,모델에서 자동 prefill한 값. CAD 확인 전까지 확정값 아님.
+Revolute 51,right_hip_roll,,right,hip_roll_candidate,0 -1 0,"모델 축 기준 +회전, CAD 실제 방향 확인 필요","MJCF qpos0 기준 0 rad, CAD 조립 기준 자세 확인 필요",-1.570800,1.570800,false,모델에서 자동 prefill한 값. CAD 확인 전까지 확정값 아님.
+Revolute 44,right_hip_pitch,,right,hip_pitch_candidate,-1 0 0,"모델 축 기준 +회전, CAD 실제 방향 확인 필요","MJCF qpos0 기준 0 rad, CAD 조립 기준 자세 확인 필요",-1.570800,1.570800,false,모델에서 자동 prefill한 값. CAD 확인 전까지 확정값 아님.
+Revolute 46,right_knee_pitch,,right,knee_pitch_candidate,1 0 0,"모델 축 기준 +회전, CAD 실제 방향 확인 필요","MJCF qpos0 기준 0 rad, CAD 조립 기준 자세 확인 필요",-1.570800,1.570800,false,모델에서 자동 prefill한 값. CAD 확인 전까지 확정값 아님.
+Revolute 48,right_ankle_pitch,,right,ankle_pitch_candidate,-1 0 0,"모델 축 기준 +회전, CAD 실제 방향 확인 필요","MJCF qpos0 기준 0 rad, CAD 조립 기준 자세 확인 필요",-1.570800,1.570800,false,모델에서 자동 prefill한 값. CAD 확인 전까지 확정값 아님.
+Revolute 53,right_ankle_roll,,right,ankle_roll_candidate,0 -1 0,"모델 축 기준 +회전, CAD 실제 방향 확인 필요","MJCF qpos0 기준 0 rad, CAD 조립 기준 자세 확인 필요",-1.570800,1.570800,false,모델에서 자동 prefill한 값. CAD 확인 전까지 확정값 아님.

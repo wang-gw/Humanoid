@@ -1,0 +1,25 @@
+{
+  "description": "left_clearance ep step 61: cl=0.559mm contacts=1.0 roll=0.0523. For left_return starting pose.",
+  "base_z": -0.012171189432536493,
+  "joint_targets": {
+    "left_hip_roll": 0.14356263146841244,
+    "left_hip_pitch": -0.16467738759154124,
+    "left_knee_pitch": -0.2509055956717628,
+    "left_ankle_pitch": 0.3474733292127704,
+    "left_ankle_roll": -0.09663115283482399,
+    "right_hip_roll": 0.40891991248064924,
+    "right_hip_pitch": 0.33293559208292217,
+    "right_knee_pitch": 0.023874562016566295,
+    "right_ankle_pitch": -0.23786228110255428,
+    "right_ankle_roll": -0.17780390063583434
+  },
+  "capture_stats": {
+    "left_clearance": 0.000559094811846881,
+    "left_contacts": 1.0,
+    "left_force_ratio": 0.7295126790466459,
+    "right_force_ratio": 0.27048732095335415,
+    "roll": 0.05233473700436617,
+    "pitch": 0.0001180934863494688,
+    "base_z": -0.012171189432536493
+  }
+}

@@ -1,0 +1,736 @@
+{
+  "component_csv": "/home/king0519/projects/Humanoid/configs/cad_component_inertia_user.csv",
+  "model": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/URDF_F_link_user_size_mass_contact.xml",
+  "method": "component body-frame CG/inertia -> mesh geom pos/quat -> target MJCF body frame -> parallel-axis aggregation",
+  "records": [
+    {
+      "body_name": "base_link",
+      "component_count": 5,
+      "aggregated_mass_kg": 2.9214,
+      "aggregated_com": [
+        -0.015598685561716986,
+        -0.09523837885945094,
+        -0.3193145437119189
+      ],
+      "aggregated_fullinertia": [
+        0.31979709070106904,
+        0.17893550539455935,
+        0.15771261627941485,
+        -0.013295234225374822,
+        0.014861548606952147,
+        0.12359780905624101
+      ],
+      "inertia_eigenvalues": [
+        0.042836113684730975,
+        0.2923743279468715,
+        0.3212347707434407
+      ],
+      "positive_definite": true,
+      "current_mjcf_mass_kg": 2.9214,
+      "current_mjcf_inertial_pos": [
+        0.0308857,
+        -0.215714,
+        0.213569
+      ],
+      "com_delta_from_current": [
+        -0.04648438556171698,
+        0.12047562114054905,
+        -0.5328835437119189
+      ],
+      "component_details": [
+        {
+          "component": "base_link",
+          "mesh": "base_link",
+          "geom_pos": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cg_body": [
+            0.00025,
+            0.037,
+            -0.467
+          ]
+        },
+        {
+          "component": "thighJR_L",
+          "mesh": "thighJR_L_1",
+          "geom_pos": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cg_body": [
+            -0.04975,
+            0.081,
+            -0.45673
+          ]
+        },
+        {
+          "component": "AK45-36_trL",
+          "mesh": "AK45-36_trL_1",
+          "geom_pos": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cg_body": [
+            -0.04975,
+            -0.438,
+            -0.015
+          ]
+        },
+        {
+          "component": "thighJR_R",
+          "mesh": "thighJR_R_1",
+          "geom_pos": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cg_body": [
+            -0.05025,
+            0.081,
+            0.47327
+          ]
+        },
+        {
+          "component": "AK45-36_trR",
+          "mesh": "AK45-36_trR_1",
+          "geom_pos": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cg_body": [
+            -0.05025,
+            -0.492,
+            0.015
+          ]
+        }
+      ]
+    },
+    {
+      "body_name": "thighJ_L_1",
+      "component_count": 2,
+      "aggregated_mass_kg": 0.4697,
+      "aggregated_com": [
+        0.2579154779646583,
+        0.06762095805833511,
+        -0.5229279007877369
+      ],
+      "aggregated_fullinertia": [
+        0.00866232544141905,
+        0.02041058987608537,
+        0.011940126704284069,
+        -0.00022519544603491603,
+        -0.009826959427338727,
+        -0.0001673635104553546
+      ],
+      "inertia_eigenvalues": [
+        0.0003346339163537151,
+        0.02026182755995849,
+        0.02041658054547629
+      ],
+      "positive_definite": true,
+      "current_mjcf_mass_kg": 0.4697,
+      "current_mjcf_inertial_pos": [
+        -0.0595,
+        0.00311642,
+        0.0161818
+      ],
+      "com_delta_from_current": [
+        0.3174154779646583,
+        0.06450453805833511,
+        -0.5391097007877369
+      ],
+      "component_details": [
+        {
+          "component": "thighJ_L",
+          "mesh": "thighJ_L_1",
+          "geom_pos": [
+            -0.04,
+            0.029,
+            -0.44
+          ],
+          "cg_body": [
+            -0.08975,
+            0.06078,
+            -0.82145
+          ]
+        },
+        {
+          "component": "AK45-36_tpL",
+          "mesh": "AK45-36_tpL_1",
+          "geom_pos": [
+            -0.04,
+            0.029,
+            -0.44
+          ],
+          "cg_body": [
+            0.328,
+            0.069,
+            -0.46275
+          ]
+        }
+      ]
+    },
+    {
+      "body_name": "thigh_L_1",
+      "component_count": 2,
+      "aggregated_mass_kg": 0.9113,
+      "aggregated_com": [
+        0.013914451881926913,
+        0.040216999890266655,
+        -0.5034403006693734
+      ],
+      "aggregated_fullinertia": [
+        0.008156083445755318,
+        0.04095310151182633,
+        0.03311308253326642,
+        3.724632148855468e-05,
+        -0.012046380711559817,
+        -8.82842385796998e-06
+      ],
+      "inertia_eigenvalues": [
+        0.0032901562956231143,
+        0.03797881904876959,
+        0.04095329214645539
+      ],
+      "positive_definite": true,
+      "current_mjcf_mass_kg": 0.9113,
+      "current_mjcf_inertial_pos": [
+        0.119497,
+        0.0427676,
+        -0.228712
+      ],
+      "com_delta_from_current": [
+        -0.10558254811807309,
+        -0.0025506001097333475,
+        -0.27472830066937337
+      ],
+      "component_details": [
+        {
+          "component": "thigh_L",
+          "mesh": "thigh_L_1",
+          "geom_pos": [
+            -0.067,
+            0.0,
+            -0.37
+          ],
+          "cg_body": [
+            -0.14915,
+            0.04038,
+            -0.56499
+          ]
+        },
+        {
+          "component": "AK45-36_kpL",
+          "mesh": "AK45-36_kpL_1",
+          "geom_pos": [
+            -0.067,
+            0.0,
+            -0.37
+          ],
+          "cg_body": [
+            0.23099999999999998,
+            0.04,
+            -0.4215
+          ]
+        }
+      ]
+    },
+    {
+      "body_name": "calf_L_1",
+      "component_count": 2,
+      "aggregated_mass_kg": 1.0945,
+      "aggregated_com": [
+        -0.01933796253997259,
+        0.05423914116034719,
+        -0.22273925171311104
+      ],
+      "aggregated_fullinertia": [
+        0.014775803515109844,
+        0.025795446799573615,
+        0.011713220640849151,
+        0.0009335227766847873,
+        0.0033019351802086793,
+        -0.0015112082083433894
+      ],
+      "inertia_eigenvalues": [
+        0.009412236243428032,
+        0.016884166175696012,
+        0.025988068536408587
+      ],
+      "positive_definite": true,
+      "current_mjcf_mass_kg": 1.0945,
+      "current_mjcf_inertial_pos": [
+        0.0891623,
+        0.0164782,
+        -0.178061
+      ],
+      "com_delta_from_current": [
+        -0.1085002625399726,
+        0.03776094116034719,
+        -0.044678251713111045
+      ],
+      "component_details": [
+        {
+          "component": "calf_L",
+          "mesh": "calf_L_1",
+          "geom_pos": [
+            -0.067,
+            0.0,
+            -0.24
+          ],
+          "cg_body": [
+            -0.09175,
+            0.06215,
+            -0.18551
+          ]
+        },
+        {
+          "component": "AK45-36_fpL",
+          "mesh": "AK45-36_fpL_1",
+          "geom_pos": [
+            -0.067,
+            0.0,
+            -0.24
+          ],
+          "cg_body": [
+            0.11099999999999999,
+            0.04,
+            -0.28975
+          ]
+        }
+      ]
+    },
+    {
+      "body_name": "footJ_L_1",
+      "component_count": 2,
+      "aggregated_mass_kg": 0.3482,
+      "aggregated_com": [
+        -0.14375,
+        -0.0330924755887421,
+        -0.06457998851234922
+      ],
+      "aggregated_fullinertia": [
+        0.0006082779670059966,
+        0.00020739814471995411,
+        0.0005178798222860425,
+        0.0,
+        0.0,
+        0.0001547405716300977
+      ],
+      "inertia_eigenvalues": [
+        0.0001434487407126941,
+        0.0005818292262933025,
+        0.0006082779670059966
+      ],
+      "positive_definite": true,
+      "current_mjcf_mass_kg": 0.3482,
+      "current_mjcf_inertial_pos": [
+        0.0,
+        0.0,
+        -0.000456168
+      ],
+      "com_delta_from_current": [
+        -0.14375,
+        -0.0330924755887421,
+        -0.06412382051234922
+      ],
+      "component_details": [
+        {
+          "component": "footJ_L",
+          "mesh": "footJ_L_1",
+          "geom_pos": [
+            -0.067,
+            0.0,
+            -0.04
+          ],
+          "cg_body": [
+            -0.14375,
+            0.04,
+            -0.10728000000000001
+          ]
+        },
+        {
+          "component": "AK45-10_frL",
+          "mesh": "AK45-10_frL_1",
+          "geom_pos": [
+            -0.067,
+            0.0,
+            -0.04
+          ],
+          "cg_body": [
+            -0.14375,
+            -0.0435,
+            -0.058499999999999996
+          ]
+        }
+      ]
+    },
+    {
+      "body_name": "foot_L_1",
+      "component_count": 1,
+      "aggregated_mass_kg": 0.3213,
+      "aggregated_com": [
+        -0.14375,
+        0.0801,
+        -0.05361000000000001
+      ],
+      "aggregated_fullinertia": [
+        0.000412,
+        0.000221,
+        0.000421,
+        0.0,
+        0.0,
+        1.6e-05
+      ],
+      "inertia_eigenvalues": [
+        0.0002197280887906227,
+        0.000412,
+        0.00042227191120937726
+      ],
+      "positive_definite": true,
+      "current_mjcf_mass_kg": 0.3213,
+      "current_mjcf_inertial_pos": [
+        0.0,
+        9.75503e-05,
+        -0.0286101
+      ],
+      "com_delta_from_current": [
+        -0.14375,
+        0.0800024497,
+        -0.024999900000000012
+      ],
+      "component_details": [
+        {
+          "component": "foot_L",
+          "mesh": "foot_L_1",
+          "geom_pos": [
+            -0.067,
+            0.0215,
+            -0.04
+          ],
+          "cg_body": [
+            -0.14375,
+            0.0801,
+            -0.053610000000000005
+          ]
+        }
+      ]
+    },
+    {
+      "body_name": "thighJ_R_1",
+      "component_count": 2,
+      "aggregated_mass_kg": 0.4697,
+      "aggregated_com": [
+        0.40277219501809663,
+        0.06762095805833511,
+        -0.35210950606770286
+      ],
+      "aggregated_fullinertia": [
+        0.009960179620614283,
+        0.024889401335672343,
+        0.015121083984675812,
+        -0.000254574624512242,
+        0.011932798397149244,
+        0.00023370270582226968
+      ],
+      "inertia_eigenvalues": [
+        0.0003271690355025011,
+        0.024745982124314683,
+        0.02489751378114524
+      ],
+      "positive_definite": true,
+      "current_mjcf_mass_kg": 0.4697,
+      "current_mjcf_inertial_pos": [
+        -0.0595,
+        0.00311642,
+        0.0161818
+      ],
+      "com_delta_from_current": [
+        0.46227219501809663,
+        0.06450453805833511,
+        -0.3682913060677029
+      ],
+      "component_details": [
+        {
+          "component": "thighJ_R",
+          "mesh": "thighJ_R_1",
+          "geom_pos": [
+            0.06,
+            0.029,
+            -0.44
+          ],
+          "cg_body": [
+            0.009749999999999995,
+            0.06078,
+            -0.03144999999999998
+          ]
+        },
+        {
+          "component": "AK45-36_tpR",
+          "mesh": "AK45-36_tpR_1",
+          "geom_pos": [
+            0.06,
+            0.029,
+            -0.44
+          ],
+          "cg_body": [
+            0.482,
+            0.069,
+            -0.41675
+          ]
+        }
+      ]
+    },
+    {
+      "body_name": "thigh_R_1",
+      "component_count": 2,
+      "aggregated_mass_kg": 0.9113,
+      "aggregated_com": [
+        0.19695946450126192,
+        0.040216999890266655,
+        -0.15638647646219686
+      ],
+      "aggregated_fullinertia": [
+        0.02143911153817362,
+        0.06207907287619459,
+        0.04095602580521637,
+        3.0953185224053394e-05,
+        0.026646607763840507,
+        -4.5006396013352254e-05
+      ],
+      "inertia_eigenvalues": [
+        0.0028202591303887682,
+        0.05957468742009161,
+        0.062079263669104164
+      ],
+      "positive_definite": true,
+      "current_mjcf_mass_kg": 0.9113,
+      "current_mjcf_inertial_pos": [
+        0.213404,
+        -0.0500906,
+        -0.225147
+      ],
+      "com_delta_from_current": [
+        -0.01644453549873809,
+        0.09030759989026665,
+        0.06876052353780315
+      ],
+      "component_details": [
+        {
+          "component": "thigh_R",
+          "mesh": "thigh_R_1",
+          "geom_pos": [
+            0.087,
+            0.0,
+            -0.37
+          ],
+          "cg_body": [
+            0.015149999999999997,
+            0.04038,
+            -0.03499000000000002
+          ]
+        },
+        {
+          "component": "AK45-36_kpR",
+          "mesh": "AK45-36_kpR_1",
+          "geom_pos": [
+            0.087,
+            0.0,
+            -0.37
+          ],
+          "cg_body": [
+            0.43899999999999995,
+            0.04,
+            -0.318
+          ]
+        }
+      ]
+    },
+    {
+      "body_name": "calf_R_1",
+      "component_count": 2,
+      "aggregated_mass_kg": 1.0945,
+      "aggregated_com": [
+        0.12138772042028323,
+        0.05423914116034719,
+        -0.10345373321151209
+      ],
+      "aggregated_fullinertia": [
+        0.016573634880898785,
+        0.041008963365668546,
+        0.025128905841155142,
+        0.0019060130779428048,
+        0.012378588965374363,
+        -0.0016781906167307808
+      ],
+      "inertia_eigenvalues": [
+        0.007563605542632338,
+        0.03393882545513989,
+        0.04120907308995024
+      ],
+      "positive_definite": true,
+      "current_mjcf_mass_kg": 1.0945,
+      "current_mjcf_inertial_pos": [
+        0.108823,
+        -0.0206592,
+        -0.160062
+      ],
+      "com_delta_from_current": [
+        0.012564720420283226,
+        0.07489834116034719,
+        0.05660826678848792
+      ],
+      "component_details": [
+        {
+          "component": "calf_R",
+          "mesh": "calf_R_1",
+          "geom_pos": [
+            0.087,
+            0.0,
+            -0.24
+          ],
+          "cg_body": [
+            0.0116,
+            0.06215,
+            -0.055510000000000004
+          ]
+        },
+        {
+          "component": "AK45-36_fpR",
+          "mesh": "AK45-36_fpR_1",
+          "geom_pos": [
+            0.087,
+            0.0,
+            -0.24
+          ],
+          "cg_body": [
+            0.319,
+            0.04,
+            -0.18974999999999997
+          ]
+        }
+      ]
+    },
+    {
+      "body_name": "footJ_R_1",
+      "component_count": 2,
+      "aggregated_mass_kg": 0.3482,
+      "aggregated_com": [
+        0.009749999999999995,
+        -0.07073291211947155,
+        -0.015988374497415282
+      ],
+      "aggregated_fullinertia": [
+        0.0009352218603270764,
+        0.00019128709949996556,
+        0.0008609347608271108,
+        0.0,
+        0.0,
+        -0.00021251284682825963
+      ],
+      "inertia_eigenvalues": [
+        0.00012953974153874653,
+        0.0009226821187883298,
+        0.0009352218603270764
+      ],
+      "positive_definite": true,
+      "current_mjcf_mass_kg": 0.3482,
+      "current_mjcf_inertial_pos": [
+        0.0,
+        0.0,
+        -0.000456168
+      ],
+      "com_delta_from_current": [
+        0.009749999999999995,
+        -0.07073291211947155,
+        -0.015532206497415282
+      ],
+      "component_details": [
+        {
+          "component": "footJ_R",
+          "mesh": "footJ_R_1",
+          "geom_pos": [
+            0.087,
+            0.0,
+            -0.04
+          ],
+          "cg_body": [
+            0.009749999999999995,
+            0.04,
+            0.022719999999999997
+          ]
+        },
+        {
+          "component": "AK45-10_frR",
+          "mesh": "AK45-10_R_1",
+          "geom_pos": [
+            0.087,
+            0.0,
+            -0.04
+          ],
+          "cg_body": [
+            0.009749999999999995,
+            -0.0865,
+            -0.021500000000000002
+          ]
+        }
+      ]
+    },
+    {
+      "body_name": "foot_R_v1_1",
+      "component_count": 1,
+      "aggregated_mass_kg": 0.3213,
+      "aggregated_com": [
+        0.009749999999999995,
+        0.0801,
+        -0.003610000000000002
+      ],
+      "aggregated_fullinertia": [
+        0.000412,
+        0.000221,
+        0.000421,
+        0.0,
+        0.0,
+        1.6e-05
+      ],
+      "inertia_eigenvalues": [
+        0.0002197280887906227,
+        0.000412,
+        0.00042227191120937726
+      ],
+      "positive_definite": true,
+      "current_mjcf_mass_kg": 0.3213,
+      "current_mjcf_inertial_pos": [
+        0.0,
+        9.75503e-05,
+        -0.0286101
+      ],
+      "com_delta_from_current": [
+        0.009749999999999995,
+        0.0800024497,
+        0.025000099999999997
+      ],
+      "component_details": [
+        {
+          "component": "foot_R",
+          "mesh": "foot_R_v1_1",
+          "geom_pos": [
+            0.087,
+            0.0215,
+            -0.04
+          ],
+          "cg_body": [
+            0.009749999999999995,
+            0.0801,
+            -0.003610000000000002
+          ]
+        }
+      ]
+    }
+  ]
+}

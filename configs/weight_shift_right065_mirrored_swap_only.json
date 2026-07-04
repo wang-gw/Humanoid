@@ -1,0 +1,19 @@
+{
+  "base_z": 0.018305933744120026,
+  "joint_targets": {
+    "left_hip_roll": 0.17065821205831405,
+    "left_hip_pitch": 0.18707158069236207,
+    "left_knee_pitch": 0.20146085187267967,
+    "left_ankle_pitch": -0.1644085966069451,
+    "left_ankle_roll": -0.14010704465874557,
+    "right_hip_roll": -0.05116498556424531,
+    "right_hip_pitch": 0.0975037672364392,
+    "right_knee_pitch": 0.04937235078429958,
+    "right_ankle_pitch": 0.17276514659921885,
+    "right_ankle_roll": -0.13229193420315669
+  },
+  "source": {
+    "mirrored_from": "configs/weight_shift_left065_contact_constrained_multipoint.json",
+    "mirror_rule": "swap left/right only; keep *_roll signs"
+  }
+}

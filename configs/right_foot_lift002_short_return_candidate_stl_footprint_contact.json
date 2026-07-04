@@ -1,0 +1,51 @@
+{
+  "base_z": 0.018305933744120026,
+  "joint_targets": {
+    "left_hip_roll": -0.13375623806735182,
+    "left_hip_pitch": 0.1293288500458375,
+    "left_knee_pitch": 0.09484620246808272,
+    "left_ankle_pitch": 0.24373057296602352,
+    "left_ankle_roll": -0.07187554150342851,
+    "right_hip_roll": 0.09648192406663035,
+    "right_hip_pitch": 0.060100619632106084,
+    "right_knee_pitch": 0.11515084334101996,
+    "right_ankle_pitch": 0.07503593261559496,
+    "right_ankle_roll": -0.21136709381395913
+  },
+  "source": {
+    "seed_pose": "configs/weight_shift_left065_contact_constrained_multipoint.json",
+    "selected_from": "outputs/analysis/right_foot_lift002_fullbody_duration_search_stl_footprint_contact/right_foot_lift_fullbody_trajectory_candidates.csv",
+    "selection": "stable_clearance_time>=0.5 then lowest max_abs_roll",
+    "selected_row": {
+      "score": "467.8941255922455",
+      "left_hip_roll": "-0.0825912525031065",
+      "left_hip_pitch": "0.03182508280939829",
+      "left_knee_pitch": "0.04547385168378314",
+      "left_ankle_pitch": "0.07096542636680465",
+      "left_ankle_roll": "0.06041639269972818",
+      "right_hip_roll": "-0.0741762879916837",
+      "right_hip_pitch": "-0.126970961060256",
+      "right_knee_pitch": "-0.08631000853165971",
+      "right_ankle_pitch": "0.23944452922254006",
+      "right_ankle_roll": "-0.07126004915521357",
+      "clearance_time_s": "1.1220000000000008",
+      "stable_clearance_time_s": "0.6900000000000005",
+      "low_force_time_s": "2.3599999999999617",
+      "low_contact_time_s": "6.979999999999453",
+      "max_clearance_m": "0.08015870715093024",
+      "final_clearance_m": "-0.0004071524753541146",
+      "final_left_ratio": "0.7061659627404727",
+      "final_right_force": "25.225054213647958",
+      "final_right_contacts": "1.0",
+      "final_left_contacts": "2.0",
+      "final_roll": "2.366959349132818",
+      "final_pitch": "0.08656127415943637",
+      "final_yaw": "1.7323253179151292",
+      "max_abs_roll": "3.141143359561104",
+      "max_qvel_norm": "7.576197773964133",
+      "max_abs_tau": "22.395145297471743",
+      "max_contact_force": "486.99390908987067",
+      "saturation_fraction": "0.0"
+    }
+  }
+}

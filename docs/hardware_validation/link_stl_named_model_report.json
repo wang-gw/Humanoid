@@ -1,0 +1,129 @@
+{
+  "source_model": "/home/king0519/projects/Humanoid/envs/robots/urdf_f/URDF_F_named.xml",
+  "link_dir": "/home/king0519/projects/Humanoid/link",
+  "out_model": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/URDF_F_link_named.xml",
+  "mesh_records": [
+    {
+      "mesh_name": "base_link",
+      "source_file": "/home/king0519/projects/Humanoid/link/base_link.stl",
+      "dest_file": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/base_link.stl"
+    },
+    {
+      "mesh_name": "thighJR_L_1",
+      "source_file": "/home/king0519/projects/Humanoid/link/thighJR_L.stl",
+      "dest_file": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/thighJR_L.stl"
+    },
+    {
+      "mesh_name": "AK45-36_trL_1",
+      "source_file": "/home/king0519/projects/Humanoid/link/AK45-36_trL.stl",
+      "dest_file": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/AK45-36_trL.stl"
+    },
+    {
+      "mesh_name": "thigh_L_1",
+      "source_file": "/home/king0519/projects/Humanoid/link/thigh_L.stl",
+      "dest_file": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/thigh_L.stl"
+    },
+    {
+      "mesh_name": "AK45-36_kpL_1",
+      "source_file": "/home/king0519/projects/Humanoid/link/AK45-36_kpL.stl",
+      "dest_file": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/AK45-36_kpL.stl"
+    },
+    {
+      "mesh_name": "calf_L_1",
+      "source_file": "/home/king0519/projects/Humanoid/link/calf_L.stl",
+      "dest_file": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/calf_L.stl"
+    },
+    {
+      "mesh_name": "footJ_L_1",
+      "source_file": "/home/king0519/projects/Humanoid/link/footJ_L.stl",
+      "dest_file": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/footJ_L.stl"
+    },
+    {
+      "mesh_name": "AK45-10_frL_1",
+      "source_file": "/home/king0519/projects/Humanoid/link/AK45-10_frL.stl",
+      "dest_file": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/AK45-10_frL.stl"
+    },
+    {
+      "mesh_name": "foot_L_1",
+      "source_file": "/home/king0519/projects/Humanoid/link/foot_L.stl",
+      "dest_file": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/foot_L.stl"
+    },
+    {
+      "mesh_name": "thighJ_L_1",
+      "source_file": "/home/king0519/projects/Humanoid/link/thighJ_L.stl",
+      "dest_file": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/thighJ_L.stl"
+    },
+    {
+      "mesh_name": "AK45-36_tpL_1",
+      "source_file": "/home/king0519/projects/Humanoid/link/AK45-36_tpL.stl",
+      "dest_file": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/AK45-36_tpL.stl"
+    },
+    {
+      "mesh_name": "AK45-36_fpL_1",
+      "source_file": "/home/king0519/projects/Humanoid/link/AK45-36_fpL.stl",
+      "dest_file": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/AK45-36_fpL.stl"
+    },
+    {
+      "mesh_name": "thighJR_R_1",
+      "source_file": "/home/king0519/projects/Humanoid/link/thighJR_R.stl",
+      "dest_file": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/thighJR_R.stl"
+    },
+    {
+      "mesh_name": "AK45-36_trR_1",
+      "source_file": "/home/king0519/projects/Humanoid/link/AK45-36_trL (1).stl",
+      "dest_file": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/AK45-36_trR.stl"
+    },
+    {
+      "mesh_name": "thigh_R_1",
+      "source_file": "/home/king0519/projects/Humanoid/link/thigh_R.stl",
+      "dest_file": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/thigh_R.stl"
+    },
+    {
+      "mesh_name": "AK45-36_kpR_1",
+      "source_file": "/home/king0519/projects/Humanoid/link/AK45-36_kpR.stl",
+      "dest_file": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/AK45-36_kpR.stl"
+    },
+    {
+      "mesh_name": "calf_R_1",
+      "source_file": "/home/king0519/projects/Humanoid/link/calf_R.stl",
+      "dest_file": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/calf_R.stl"
+    },
+    {
+      "mesh_name": "AK45-36_fpR_1",
+      "source_file": "/home/king0519/projects/Humanoid/link/AK45-36_fpR.stl",
+      "dest_file": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/AK45-36_fpR.stl"
+    },
+    {
+      "mesh_name": "footJ_R_1",
+      "source_file": "/home/king0519/projects/Humanoid/link/footJ_R.stl",
+      "dest_file": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/footJ_R.stl"
+    },
+    {
+      "mesh_name": "AK45-10_R_1",
+      "source_file": "/home/king0519/projects/Humanoid/link/AK45-10_frR.stl",
+      "dest_file": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/AK45-10_frR.stl"
+    },
+    {
+      "mesh_name": "thighJ_R_1",
+      "source_file": "/home/king0519/projects/Humanoid/link/thighJ_R.stl",
+      "dest_file": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/thighJ_R.stl"
+    },
+    {
+      "mesh_name": "AK45-36_tpR_1",
+      "source_file": "/home/king0519/projects/Humanoid/link/AK45-36_tpR.stl",
+      "dest_file": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/AK45-36_tpR.stl"
+    },
+    {
+      "mesh_name": "foot_R_v1_1",
+      "source_file": "/home/king0519/projects/Humanoid/link/foot_R.stl",
+      "dest_file": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/foot_R.stl"
+    }
+  ],
+  "compiled": {
+    "nq": 17,
+    "nv": 16,
+    "nu": 10,
+    "njnt": 11,
+    "ngeom": 26
+  }
+}

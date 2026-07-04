@@ -1,0 +1,25 @@
+{
+  "description": "Final state of left_clearance_unload_gated_150k ep: cl=10.95mm, contacts=6, for left_return.",
+  "base_z": -0.03706583477276178,
+  "joint_targets": {
+    "left_hip_roll": 0.128233676528171,
+    "left_hip_pitch": -0.23345662168240264,
+    "left_knee_pitch": -0.25799987512584355,
+    "left_ankle_pitch": 0.2666201940753974,
+    "left_ankle_roll": -0.09815082417097079,
+    "right_hip_roll": 0.4314385175578108,
+    "right_hip_pitch": 0.37577607790303325,
+    "right_knee_pitch": 0.029998641311915677,
+    "right_ankle_pitch": -0.28906419893832475,
+    "right_ankle_roll": -0.17817973708367302
+  },
+  "capture_stats": {
+    "left_clearance": 0.010950653442824199,
+    "left_contacts": 6.0,
+    "left_force_ratio": 0.37775747306956314,
+    "right_force_ratio": 0.6222425269304369,
+    "roll": -0.18356049529447185,
+    "pitch": -0.01635888008614185,
+    "base_z": -0.03706583477276178
+  }
+}

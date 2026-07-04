@@ -1,0 +1,65 @@
+{
+  "status": "diagnostic_prefill_from_step_and_body_centered_contact",
+  "description": "STEP assembly transform 감사와 body-centered contact 진단 결과를 바탕으로 만든 foot contact 초안이다. 실제 발바닥 패드 설계값으로 확정하면 안 된다.",
+  "source_documents": [
+    "docs/hardware_validation/28_kinematic_alignment_audit.md",
+    "docs/hardware_validation/29_body_centered_foot_contact_variant.md",
+    "docs/hardware_validation/33_step_assembly_transform_audit.md"
+  ],
+  "step_facts": {
+    "foot_L_target_origin_mm": [
+      76.7499999999994,
+      -60.0000000000002,
+      24.9999999999935
+    ],
+    "foot_R_target_origin_mm": [
+      -77.2500000000004,
+      -60.0,
+      24.9999999999996
+    ],
+    "left_right_foot_origin_distance_mm": 153.9999999999998
+  },
+  "friction": {
+    "sliding": 1.0,
+    "torsional": 0.02,
+    "rolling": 0.001,
+    "material_notes": "진단용 값. 실제 sole material과 바닥 재질 기준으로 교체 필요."
+  },
+  "left_sole": {
+    "body": "foot_L_1",
+    "center_xyz_in_body": [
+      0.0,
+      0.0,
+      -0.035
+    ],
+    "halfsize_xyz_m": [
+      0.035,
+      0.06,
+      0.005
+    ],
+    "contact_type": "box",
+    "basis": "body-centered diagnostic contact, not final CAD contact"
+  },
+  "right_sole": {
+    "body": "foot_R_v1_1",
+    "center_xyz_in_body": [
+      0.0,
+      0.0,
+      -0.035
+    ],
+    "halfsize_xyz_m": [
+      0.035,
+      0.06,
+      0.005
+    ],
+    "contact_type": "box",
+    "basis": "body-centered diagnostic contact, not final CAD contact"
+  },
+  "must_confirm_in_fusion": [
+    "foot_L/foot_R link origin이 실제 ankle roll joint 기준 local frame인지 확인",
+    "foot STL vertex 좌표가 part-local인지 assembly-absolute인지 확인",
+    "발바닥 고무 패드 또는 실제 지면 접촉면의 center_xyz_in_body 확인",
+    "발바닥 고무 패드 또는 실제 지면 접촉면의 halfsize_xyz_m 확인",
+    "좌우 발바닥 중심 사이 거리가 STEP target origin 기준 약 154 mm와 일치하는지 확인"
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "model_path": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/URDF_F_link_user_size_mass_inertia_user_pad_toeheel_z_grounded_step_visual.xml",
+  "search": {
+    "samples": 80000,
+    "per_iteration": 8000,
+    "elite": 384,
+    "iterations": 10,
+    "seed": 11,
+    "joint_abs_limit": 0.8,
+    "clearance": 0.005,
+    "history": [
+      {
+        "iteration": 0,
+        "best_cost": 1.3762223630316046,
+        "global_best_cost": 1.3762223630316046
+      },
+      {
+        "iteration": 1,
+        "best_cost": 1.0577995176773936,
+        "global_best_cost": 1.0577995176773936
+      },
+      {
+        "iteration": 2,
+        "best_cost": 0.7589784615605043,
+        "global_best_cost": 0.7589784615605043
+      },
+      {
+        "iteration": 3,
+        "best_cost": 0.4780622563802056,
+        "global_best_cost": 0.4780622563802056
+      },
+      {
+        "iteration": 4,
+        "best_cost": 0.12917564002266618,
+        "global_best_cost": 0.12917564002266618
+      },
+      {
+        "iteration": 5,
+        "best_cost": 0.1389153972258532,
+        "global_best_cost": 0.12917564002266618
+      },
+      {
+        "iteration": 6,
+        "best_cost": 0.06693808352721368,
+        "global_best_cost": 0.06693808352721368
+      },
+      {
+        "iteration": 7,
+        "best_cost": 0.06633738273896167,
+        "global_best_cost": 0.06633738273896167
+      },
+      {
+        "iteration": 8,
+        "best_cost": 0.06174005999367256,
+        "global_best_cost": 0.06174005999367256
+      },
+      {
+        "iteration": 9,
+        "best_cost": 0.06104446849711104,
+        "global_best_cost": 0.06104446849711104
+      }
+    ]
+  },
+  "base_z": 0.007021732309650179,
+  "cost": 0.06104446849711104,
+  "joint_targets": {
+    "left_hip_roll": 0.1272929881277417,
+    "left_hip_pitch": -0.07901928092154598,
+    "left_knee_pitch": -0.013438025462311138,
+    "left_ankle_pitch": 0.009603612610663594,
+    "left_ankle_roll": -0.057962907989485085,
+    "right_hip_roll": 0.25692378348803485,
+    "right_hip_pitch": 0.05512570814899637,
+    "right_knee_pitch": -0.047216813219168645,
+    "right_ankle_pitch": -0.027527064097318643,
+    "right_ankle_roll": -0.25398451158571617
+  },
+  "com_world": [
+    0.06640024715784057,
+    -0.05208608527345414,
+    0.2922103142262856
+  ],
+  "support_aabb": {
+    "x_min": -0.025853058811951594,
+    "x_max": 0.16078486743713372,
+    "y_min": -0.08923196694405477,
+    "y_max": -0.013382037519892559
+  },
+  "support_margins": [
+    0.09225330596979217,
+    0.09438462027929315,
+    0.037145881670600636,
+    0.03870404775356158
+  ],
+  "foot_low_z": [
+    0.005608441326277861,
+    0.005000000000000015
+  ],
+  "foot_height_diff": 0.0006084413262778463,
+  "normal_penalty": 4.051242581878744e-05,
+  "center_penalty": 0.0005524098354099522,
+  "joint_norm": 0.4032667023751254
+}

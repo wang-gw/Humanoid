@@ -1,0 +1,25 @@
+{
+  "description": "Captured from weight_shift_right_40k PPO at step 250 (stable, right_ratio~0.61)",
+  "base_z": -0.001754226246693739,
+  "joint_targets": {
+    "left_hip_roll": 0.09861484926636513,
+    "left_hip_pitch": -0.121225374541179,
+    "left_knee_pitch": -0.07836296611548935,
+    "left_ankle_pitch": 0.2127950820047437,
+    "left_ankle_roll": -0.10431138330100181,
+    "right_hip_roll": 0.35033480462991484,
+    "right_hip_pitch": 0.21172434518339786,
+    "right_knee_pitch": 0.07731637538284221,
+    "right_ankle_pitch": -0.14150808926894262,
+    "right_ankle_roll": -0.143922060378362
+  },
+  "capture_stats": {
+    "right_force_ratio": 0.6095916486846209,
+    "left_force_ratio": 0.3904083513153792,
+    "roll": -0.012974951823957881,
+    "pitch": -0.0011215030302589041,
+    "left_contacts": 9.0,
+    "right_contacts": 3.0,
+    "left_clearance": -9.184999806109359e-05
+  }
+}

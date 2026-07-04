@@ -1,0 +1,52 @@
+{
+  "model_path": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/URDF_F_link_user_size_mass_inertia_user_pad_axis_grounded.xml",
+  "base_z": 0.005000000000000021,
+  "total_mass_kg": 9.211400000000001,
+  "com_world": [
+    0.05307600824175476,
+    -0.04792230365714224,
+    0.28089664471442993
+  ],
+  "support_aabb": {
+    "x_min": -0.147,
+    "x_max": 0.05550000000000001,
+    "y_min": -0.0565,
+    "y_max": 0.013500000000000005
+  },
+  "support_margin": {
+    "inside_x": true,
+    "inside_y": true,
+    "x_margin_min": 0.20007600824175475,
+    "x_margin_max": 0.0024239917582452447,
+    "y_margin_min": 0.008577696342857759,
+    "y_margin_max": 0.06142230365714225
+  },
+  "foot_collision_geoms": [
+    {
+      "name": "foot_L_1_sole_collision",
+      "world_pos": [
+        0.03125000000000001,
+        -0.0215,
+        0.024999999999999984
+      ],
+      "halfsize": [
+        0.02425,
+        0.035,
+        0.02
+      ]
+    },
+    {
+      "name": "foot_R_v1_1_sole_collision",
+      "world_pos": [
+        -0.12275,
+        -0.0215,
+        0.024999999999999984
+      ],
+      "halfsize": [
+        0.02425,
+        0.035,
+        0.02
+      ]
+    }
+  ]
+}

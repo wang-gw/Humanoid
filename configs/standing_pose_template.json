@@ -1,0 +1,33 @@
+{
+  "status": "template",
+  "description": "CAD 또는 IK 기준으로 확정할 실제 standing pose 입력 템플릿",
+  "base": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": null,
+    "quat_wxyz": [1.0, 0.0, 0.0, 0.0]
+  },
+  "joint_targets_rad": {
+    "left_hip_roll": null,
+    "left_hip_pitch": null,
+    "left_knee_pitch": null,
+    "left_ankle_pitch": null,
+    "left_ankle_roll": null,
+    "right_hip_roll": null,
+    "right_hip_pitch": null,
+    "right_knee_pitch": null,
+    "right_ankle_pitch": null,
+    "right_ankle_roll": null
+  },
+  "expected_feet": {
+    "left_foot_center_xyz": null,
+    "right_foot_center_xyz": null,
+    "stance_width_m": null,
+    "toe_direction_description": null
+  },
+  "source": {
+    "method": "cad_or_ik_required",
+    "cad_file": null,
+    "notes": null
+  }
+}

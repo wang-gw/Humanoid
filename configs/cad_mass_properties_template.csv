@@ -1,0 +1,12 @@
+body_name,cad_mass_kg,mjcf_mass_kg,cad_com_x,cad_com_y,cad_com_z,mjcf_inertial_pos,cad_ixx,cad_iyy,cad_izz,cad_ixy,cad_ixz,cad_iyz,mjcf_diagonal_inertia,cad_confirmed,notes
+base_link,,2.8,,,,,,,,,,,,false,
+thighJ_L_1,,0.4,,,,,,,,,,,,false,
+thigh_L_1,,0.9,,,,,,,,,,,,false,
+calf_L_1,,0.9,,,,,,,,,,,,false,
+footJ_L_1,,0.3,,,,,,,,,,,,false,
+foot_L_1,,0.3,,,,,,,,,,,,false,
+thighJ_R_1,,0.4,,,,,,,,,,,,false,
+thigh_R_1,,0.92036,,,,,,,,,,,,false,
+calf_R_1,,1.10362,,,,,,,,,,,,false,
+footJ_R_1,,0.3,,,,,,,,,,,,false,
+foot_R_v1_1,,0.3,,,,,,,,,,,,false,

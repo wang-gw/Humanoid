@@ -1,0 +1,41 @@
+{
+  "source": "/home/king0519/projects/Humanoid/envs/robots/urdf_f/URDF_F_mujoco.xml",
+  "out": "/home/king0519/projects/Humanoid/envs/robots/urdf_f/URDF_F_contact.xml",
+  "disabled_mesh_collision_geoms": 23,
+  "foot_boxes": [
+    {
+      "body": "foot_L_1",
+      "mesh": "foot_L_1",
+      "box_pos": [
+        -0.04769117590785027,
+        0.0215,
+        -0.04153567083179951
+      ],
+      "box_halfsize": [
+        0.03302927315235138,
+        0.03500000014901161,
+        0.060153983533382416
+      ]
+    },
+    {
+      "body": "foot_R_v1_1",
+      "mesh": "foot_R_v1_1",
+      "box_pos": [
+        0.10630882409214973,
+        0.0215,
+        -0.04153567083179951
+      ],
+      "box_halfsize": [
+        0.03302927315235138,
+        0.03500000014901161,
+        0.060153983533382416
+      ]
+    }
+  ],
+  "compiled": {
+    "nq": 17,
+    "nv": 16,
+    "nu": 10,
+    "ngeom": 26
+  }
+}

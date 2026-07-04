@@ -1,0 +1,60 @@
+{
+  "model_path": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/URDF_F_link_user_size_mass_inertia_user_pad_toeheel_z_grounded_step_visual_actuator_dynamics_multipoint_fullheight_contact.xml",
+  "seed_pose": "/home/king0519/projects/Humanoid/configs/dynamic_standing_pose_actuator_dynamics_contact_5s.json",
+  "target_left_ratio": 0.62,
+  "search": {
+    "samples": 240,
+    "iterations": 3,
+    "per_iteration": 80,
+    "elite": 24,
+    "seed": 151,
+    "sigma": 0.05,
+    "min_sigma": 0.008,
+    "duration": 6.0,
+    "controller": {
+      "joint_kp": 20.0,
+      "joint_kd": 12.0,
+      "torque_limit": 30.0,
+      "kp_att": 0.0,
+      "kd_att": 1.0,
+      "kcom": 1.0,
+      "roll_sign": -1.0,
+      "pitch_sign": 1.0
+    }
+  },
+  "base_z": 0.018305933744120026,
+  "best": {
+    "score": 2.0794891547540595,
+    "ratio_error": 0.029122526319150466,
+    "target_left_ratio": 0.62,
+    "final_left_force_ratio": 0.6491225263191505,
+    "final_right_force_ratio": 0.35087747368084954,
+    "final_roll_rad": 0.014294017892260093,
+    "final_pitch_rad": -0.03490175445855421,
+    "final_yaw_rad": 0.020557777399198687,
+    "final_base_z": 0.00019581510033140508,
+    "final_qvel_norm": 0.013975069918149906,
+    "final_contact_force": 90.36347279922809,
+    "final_left_contacts": 5.0,
+    "final_right_contacts": 4.0,
+    "max_qvel_norm": 0.4998219888303908,
+    "max_contact_force": 97.15474955772837,
+    "max_abs_tau": 3.6202510667997765,
+    "contact_fraction": 1.0,
+    "saturation_fraction": 0.0
+  },
+  "joint_targets": {
+    "left_hip_roll": 0.05625196754685804,
+    "left_hip_pitch": 0.06565921373194551,
+    "left_knee_pitch": 0.00037867569998421835,
+    "left_ankle_pitch": 0.14580323971279732,
+    "left_ankle_roll": -0.08449866784296656,
+    "right_hip_roll": 0.2699180355166028,
+    "right_hip_pitch": 0.09236639954843039,
+    "right_knee_pitch": 0.14280401171925014,
+    "right_ankle_pitch": -0.20403735423735553,
+    "right_ankle_roll": -0.11126727087157712
+  },
+  "candidates_csv": "/home/king0519/projects/Humanoid/outputs/analysis/weight_shift_pose_search_left062_6s_multipoint/weight_shift_pose_candidates.csv",
+  "best_timeline_csv": "/home/king0519/projects/Humanoid/outputs/analysis/weight_shift_pose_search_left062_6s_multipoint/best_weight_shift_pose_timeline.csv"
+}

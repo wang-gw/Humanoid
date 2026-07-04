@@ -1,0 +1,43 @@
+{
+  "status": "user_confirmed_cad_zero_standing_pose",
+  "description": "사용자가 CAD/Fusion 기준 모든 revolute joint 0 rad가 직립 standing pose라고 제공한 값이다.",
+  "base": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": null,
+    "quat_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "joint_targets": {
+    "left_hip_roll": 0.0,
+    "left_hip_pitch": 0.0,
+    "left_knee_pitch": 0.0,
+    "left_ankle_pitch": 0.0,
+    "left_ankle_roll": 0.0,
+    "right_hip_roll": 0.0,
+    "right_hip_pitch": 0.0,
+    "right_knee_pitch": 0.0,
+    "right_ankle_pitch": 0.0,
+    "right_ankle_roll": 0.0
+  },
+  "cad_joint_names": {
+    "회전 3": "left_hip_roll",
+    "회전 5": "left_hip_pitch",
+    "회전 7": "left_knee_pitch",
+    "회전 24": "left_ankle_pitch",
+    "회전 27": "left_ankle_roll",
+    "회전 25": "right_hip_roll",
+    "회전 16": "right_hip_pitch",
+    "회전 18": "right_knee_pitch",
+    "회전 23": "right_ankle_pitch",
+    "회전 26": "right_ankle_roll"
+  },
+  "source": {
+    "method": "user_provided_cad_joint_table",
+    "notes": "요약에는 revolute joint 8개라고 되어 있었지만 표와 MJCF 기준으로는 10개다."
+  }
+}

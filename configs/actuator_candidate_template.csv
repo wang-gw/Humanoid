@@ -1,0 +1,11 @@
+joint_name,actuator_name,motor_model,reduction_ratio,gear_efficiency,continuous_output_torque_nm,peak_output_torque_nm,max_output_speed_rad_s,rotor_inertia_kgm2,estimated_reflected_inertia_kgm2,thermal_time_limit_s,cad_confirmed,notes
+left_hip_roll,motor_left_hip_roll,,,,,,,,,,false,
+left_hip_pitch,motor_left_hip_pitch,,,,,,,,,,false,
+left_knee_pitch,motor_left_knee_pitch,,,,,,,,,,false,
+left_ankle_pitch,motor_left_ankle_pitch,,,,,,,,,,false,
+left_ankle_roll,motor_left_ankle_roll,,,,,,,,,,false,
+right_hip_roll,motor_right_hip_roll,,,,,,,,,,false,
+right_hip_pitch,motor_right_hip_pitch,,,,,,,,,,false,
+right_knee_pitch,motor_right_knee_pitch,,,,,,,,,,false,
+right_ankle_pitch,motor_right_ankle_pitch,,,,,,,,,,false,
+right_ankle_roll,motor_right_ankle_roll,,,,,,,,,,false,

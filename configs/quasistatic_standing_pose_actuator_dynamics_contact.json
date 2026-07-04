@@ -1,0 +1,33 @@
+{
+  "model_path": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/URDF_F_link_user_size_mass_inertia_user_pad_toeheel_z_grounded_step_visual_actuator_dynamics.xml",
+  "source_pose": "/home/king0519/projects/Humanoid/configs/quasistatic_standing_pose_actuator_dynamics.json",
+  "contact_adjustment": {
+    "base_z_delta": -0.006,
+    "reason": "Search pose has approximately 5 mm foot clearance. Lower base_z to start with contact preload."
+  },
+  "base_z": 0.0006912716962307927,
+  "cost": 0.05543370749169195,
+  "joint_targets": {
+    "left_hip_roll": 0.11013697088184461,
+    "left_hip_pitch": -0.057182881937135395,
+    "left_knee_pitch": -0.07182912353963979,
+    "left_ankle_pitch": 0.1031835731735505,
+    "left_ankle_roll": -0.029198307753469474,
+    "right_hip_roll": 0.26031369778286223,
+    "right_hip_pitch": 0.08804570982658527,
+    "right_knee_pitch": 0.006662614954806092,
+    "right_ankle_pitch": -0.00673303327107342,
+    "right_ankle_roll": -0.27088861284715826
+  },
+  "com_world_from_search_pose": [
+    0.06523818645156855,
+    -0.05181400073010011,
+    0.2911013433714675
+  ],
+  "support_margins_from_search_pose": [
+    0.09029607302463175,
+    0.08918474664117325,
+    0.03910992696072752,
+    0.0383848612691686
+  ]
+}

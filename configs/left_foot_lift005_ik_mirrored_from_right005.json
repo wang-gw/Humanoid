@@ -1,0 +1,19 @@
+{
+  "base_z": 0.018305933744120026,
+  "joint_targets": {
+    "left_hip_roll": -0.23525333662683887,
+    "left_hip_pitch": 0.24414233712223093,
+    "left_knee_pitch": 0.23540767867091983,
+    "left_ankle_pitch": -0.1899523898376783,
+    "left_ankle_roll": 0.2057622151390478,
+    "right_hip_roll": 0.05116498556424531,
+    "right_hip_pitch": 0.0975037672364392,
+    "right_knee_pitch": 0.04937235078429958,
+    "right_ankle_pitch": 0.17276514659921885,
+    "right_ankle_roll": 0.13229193420315669
+  },
+  "source": {
+    "mirrored_from": "configs/right_foot_lift005_ik_stl_footprint_contact.json",
+    "mirror_rule": "swap left/right; negate *_roll joints"
+  }
+}

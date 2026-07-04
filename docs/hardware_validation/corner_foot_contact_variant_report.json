@@ -1,0 +1,76 @@
+{
+  "source": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/URDF_F_link_user_size_mass_inertia_direct_nobase_contact.xml",
+  "out": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/URDF_F_link_user_size_mass_inertia_corner_contact.xml",
+  "removed_sole_geoms": 2,
+  "pad_halfsize": [
+    0.015,
+    0.02,
+    0.006
+  ],
+  "friction": "1.0 0.02 0.001",
+  "records": [
+    {
+      "side": "left",
+      "body": "foot_L_1",
+      "geom": "foot_L_1_sole_pad_front_outer",
+      "pos": "0.02 0.035 -0.034",
+      "size": "0.015 0.02 0.006"
+    },
+    {
+      "side": "left",
+      "body": "foot_L_1",
+      "geom": "foot_L_1_sole_pad_front_inner",
+      "pos": "0.02 -0.035 -0.034",
+      "size": "0.015 0.02 0.006"
+    },
+    {
+      "side": "left",
+      "body": "foot_L_1",
+      "geom": "foot_L_1_sole_pad_rear_outer",
+      "pos": "-0.02 0.035 -0.034",
+      "size": "0.015 0.02 0.006"
+    },
+    {
+      "side": "left",
+      "body": "foot_L_1",
+      "geom": "foot_L_1_sole_pad_rear_inner",
+      "pos": "-0.02 -0.035 -0.034",
+      "size": "0.015 0.02 0.006"
+    },
+    {
+      "side": "right",
+      "body": "foot_R_v1_1",
+      "geom": "foot_R_v1_1_sole_pad_front_outer",
+      "pos": "0.02 0.035 -0.034",
+      "size": "0.015 0.02 0.006"
+    },
+    {
+      "side": "right",
+      "body": "foot_R_v1_1",
+      "geom": "foot_R_v1_1_sole_pad_front_inner",
+      "pos": "0.02 -0.035 -0.034",
+      "size": "0.015 0.02 0.006"
+    },
+    {
+      "side": "right",
+      "body": "foot_R_v1_1",
+      "geom": "foot_R_v1_1_sole_pad_rear_outer",
+      "pos": "-0.02 0.035 -0.034",
+      "size": "0.015 0.02 0.006"
+    },
+    {
+      "side": "right",
+      "body": "foot_R_v1_1",
+      "geom": "foot_R_v1_1_sole_pad_rear_inner",
+      "pos": "-0.02 -0.035 -0.034",
+      "size": "0.015 0.02 0.006"
+    }
+  ],
+  "compiled": {
+    "nq": 17,
+    "nv": 16,
+    "nu": 10,
+    "njnt": 11,
+    "ngeom": 32
+  }
+}

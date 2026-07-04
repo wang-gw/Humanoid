@@ -1,0 +1,54 @@
+{
+  "model_path": "/home/king0519/projects/Humanoid/envs/robots/urdf_f/URDF_F_mujoco.xml",
+  "summary": {
+    "nq": 17,
+    "nv": 16,
+    "nu": 10,
+    "nbody": 12,
+    "njnt": 11,
+    "ngeom": 24,
+    "timestep": 0.002
+  },
+  "findings": [
+    "Geometry count suggests visual/collision meshes may still be duplicated."
+  ],
+  "joint_names": [
+    "floating_base",
+    "Revolute 26",
+    "Revolute 19",
+    "Revolute 21",
+    "Revolute 23",
+    "Revolute 25",
+    "Revolute 51",
+    "Revolute 44",
+    "Revolute 46",
+    "Revolute 48",
+    "Revolute 53"
+  ],
+  "body_names": [
+    "world",
+    "base_link",
+    "thighJ_L_1",
+    "thigh_L_1",
+    "calf_L_1",
+    "footJ_L_1",
+    "foot_L_1",
+    "thighJ_R_1",
+    "thigh_R_1",
+    "calf_R_1",
+    "footJ_R_1",
+    "foot_R_v1_1"
+  ],
+  "actuator_names": [
+    "motor_Revolute_26",
+    "motor_Revolute_19",
+    "motor_Revolute_21",
+    "motor_Revolute_23",
+    "motor_Revolute_25",
+    "motor_Revolute_51",
+    "motor_Revolute_44",
+    "motor_Revolute_46",
+    "motor_Revolute_48",
+    "motor_Revolute_53"
+  ]
+}

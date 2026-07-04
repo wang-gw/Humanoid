@@ -1,0 +1,35 @@
+{
+  "model_path": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/URDF_F_link_user_size_mass_inertia_user_pad_toeheel_z_grounded_step_visual.xml",
+  "source_pose": "configs/quasistatic_standing_pose_toeheel_z_step_visual.json",
+  "note": "Same joint targets as the searched toeheel_z_step_visual pose, but base_z lowered by 0.006 m so the feet start in contact instead of 5 mm above the floor.",
+  "base_z": 0.001021732309650179,
+  "joint_targets": {
+    "left_hip_roll": 0.1272929881277417,
+    "left_hip_pitch": -0.07901928092154598,
+    "left_knee_pitch": -0.013438025462311138,
+    "left_ankle_pitch": 0.009603612610663594,
+    "left_ankle_roll": -0.057962907989485085,
+    "right_hip_roll": 0.25692378348803485,
+    "right_hip_pitch": 0.05512570814899637,
+    "right_knee_pitch": -0.047216813219168645,
+    "right_ankle_pitch": -0.027527064097318643,
+    "right_ankle_roll": -0.25398451158571617
+  },
+  "com_world_from_search": [
+    0.06640024715784057,
+    -0.05208608527345414,
+    0.2922103142262856
+  ],
+  "support_aabb_from_search": {
+    "x_min": -0.025853058811951594,
+    "x_max": 0.16078486743713372,
+    "y_min": -0.08923196694405477,
+    "y_max": -0.013382037519892559
+  },
+  "support_margins_from_search": [
+    0.09225330596979217,
+    0.09438462027929315,
+    0.037145881670600636,
+    0.03870404775356158
+  ]
+}

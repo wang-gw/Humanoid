@@ -1,0 +1,39 @@
+# MJCF 질량/관성 감사
+
+## 목적
+
+standing 실패 원인 중 하나가 잘못된 질량/관성 또는 좌우 비대칭일 수 있으므로, 현재 named MJCF의 body mass와 inertia를 정리한다.
+
+이 리포트는 CAD mass property와 비교하기 위한 기준 자료다.
+
+## 실행 명령
+
+```bash
+python3 scripts/audit_mjcf_mass_properties.py
+```
+
+## 요약
+
+- 모델: `/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/URDF_F_link_user_mass_contact.xml`
+- 총 질량: `9.211400 kg`
+- body 수: `12`
+
+## 산출물
+
+- body mass CSV: `/home/king0519/projects/Humanoid/outputs/analysis/mass_properties_user_mass_contact/mjcf_body_mass_properties.csv`
+- 좌우 mass pair CSV: `/home/king0519/projects/Humanoid/outputs/analysis/mass_properties_user_mass_contact/mjcf_left_right_mass_pairs.csv`
+- JSON: `/home/king0519/projects/Humanoid/outputs/analysis/mass_properties_user_mass_contact/mjcf_mass_properties_summary.json`
+
+## 좌우 Mass Pair
+
+| 왼쪽 body | 오른쪽 body | 왼쪽 kg | 오른쪽 kg | 차이 kg | 상대 차이 | CAD 확인 필요 |
+| --- | --- | ---: | ---: | ---: | ---: | --- |
+| `thighJ_L_1` | `thighJ_R_1` | 0.469700 | 0.469700 | 0.000000 | 0.0000 | `False` |
+| `thigh_L_1` | `thigh_R_1` | 0.911300 | 0.911300 | 0.000000 | 0.0000 | `False` |
+| `calf_L_1` | `calf_R_1` | 1.094500 | 1.094500 | 0.000000 | 0.0000 | `False` |
+| `footJ_L_1` | `footJ_R_1` | 0.348200 | 0.348200 | 0.000000 | 0.0000 | `False` |
+| `foot_L_1` | `foot_R_v1_1` | 0.321300 | 0.321300 | 0.000000 | 0.0000 | `False` |
+
+## 해석
+
+좌우 mass pair 차이가 큰 body는 CAD에서 의도된 차이인지 확인해야 한다. 특히 thigh/calf 질량 차이는 보행 안정성과 torque 요구량에 직접 영향을 줄 수 있다.

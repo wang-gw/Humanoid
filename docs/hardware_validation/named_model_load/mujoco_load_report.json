@@ -1,0 +1,52 @@
+{
+  "model_path": "/home/king0519/projects/Humanoid/envs/robots/urdf_f/URDF_F_named.xml",
+  "summary": {
+    "nq": 17,
+    "nv": 16,
+    "nu": 10,
+    "nbody": 12,
+    "njnt": 11,
+    "ngeom": 26,
+    "timestep": 0.002
+  },
+  "findings": [],
+  "joint_names": [
+    "floating_base",
+    "left_hip_roll",
+    "left_hip_pitch",
+    "left_knee_pitch",
+    "left_ankle_pitch",
+    "left_ankle_roll",
+    "right_hip_roll",
+    "right_hip_pitch",
+    "right_knee_pitch",
+    "right_ankle_pitch",
+    "right_ankle_roll"
+  ],
+  "body_names": [
+    "world",
+    "base_link",
+    "thighJ_L_1",
+    "thigh_L_1",
+    "calf_L_1",
+    "footJ_L_1",
+    "foot_L_1",
+    "thighJ_R_1",
+    "thigh_R_1",
+    "calf_R_1",
+    "footJ_R_1",
+    "foot_R_v1_1"
+  ],
+  "actuator_names": [
+    "motor_left_hip_roll",
+    "motor_left_hip_pitch",
+    "motor_left_knee_pitch",
+    "motor_left_ankle_pitch",
+    "motor_left_ankle_roll",
+    "motor_right_hip_roll",
+    "motor_right_hip_pitch",
+    "motor_right_knee_pitch",
+    "motor_right_ankle_pitch",
+    "motor_right_ankle_roll"
+  ]
+}

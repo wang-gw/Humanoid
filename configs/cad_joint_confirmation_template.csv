@@ -1,0 +1,11 @@
+exported_joint,provisional_name,cad_confirmed_name,side,role_candidate,axis_in_model,positive_direction_description,joint_zero_pose_description,lower_limit_rad,upper_limit_rad,cad_confirmed,notes
+Revolute 26,left_hip_roll,,left,hip_roll_candidate,0 -1 0,,,,,false,
+Revolute 19,left_hip_pitch,,left,hip_pitch_candidate,1 0 0,,,,,false,
+Revolute 21,left_knee_pitch,,left,knee_pitch_candidate,1 0 0,,,,,false,
+Revolute 23,left_ankle_pitch,,left,ankle_pitch_candidate,1 0 0,,,,,false,
+Revolute 25,left_ankle_roll,,left,ankle_roll_candidate,0 -1 0,,,,,false,
+Revolute 51,right_hip_roll,,right,hip_roll_candidate,0 -1 0,,,,,false,
+Revolute 44,right_hip_pitch,,right,hip_pitch_candidate,-1 0 0,,,,,false,
+Revolute 46,right_knee_pitch,,right,knee_pitch_candidate,1 0 0,,,,,false,
+Revolute 48,right_ankle_pitch,,right,ankle_pitch_candidate,-1 0 0,,,,,false,
+Revolute 53,right_ankle_roll,,right,ankle_roll_candidate,0 -1 0,,,,,false,

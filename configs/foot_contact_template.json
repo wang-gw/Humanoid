@@ -1,0 +1,26 @@
+{
+  "status": "template",
+  "description": "실제 발바닥 접촉면 치수 입력 템플릿",
+  "friction": {
+    "sliding": null,
+    "torsional": null,
+    "rolling": null,
+    "material_notes": null
+  },
+  "left_sole": {
+    "body": "foot_L_1",
+    "center_xyz_in_body": null,
+    "halfsize_xyz_m": null,
+    "contact_type": "box"
+  },
+  "right_sole": {
+    "body": "foot_R_v1_1",
+    "center_xyz_in_body": null,
+    "halfsize_xyz_m": null,
+    "contact_type": "box"
+  },
+  "notes": [
+    "현재 URDF_F_contact.xml의 foot box는 임시값이다.",
+    "실제 고무 패드 또는 발바닥 접촉면 기준으로 center/halfsize를 채워야 한다."
+  ]
+}

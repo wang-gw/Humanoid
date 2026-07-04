@@ -1,0 +1,60 @@
+{
+  "model_path": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/URDF_F_link_user_size_mass_inertia_user_pad_toeheel_z_grounded_step_visual_actuator_dynamics_multipoint_fullheight_contact.xml",
+  "seed_pose": "/home/king0519/projects/Humanoid/configs/dynamic_standing_pose_actuator_dynamics_contact_5s.json",
+  "target_left_ratio": 0.6,
+  "search": {
+    "samples": 180,
+    "iterations": 3,
+    "per_iteration": 60,
+    "elite": 18,
+    "seed": 123,
+    "sigma": 0.045,
+    "min_sigma": 0.008,
+    "duration": 3.0,
+    "controller": {
+      "joint_kp": 20.0,
+      "joint_kd": 12.0,
+      "torque_limit": 30.0,
+      "kp_att": 0.0,
+      "kd_att": 1.0,
+      "kcom": 1.0,
+      "roll_sign": -1.0,
+      "pitch_sign": 1.0
+    }
+  },
+  "base_z": 0.01947118101548419,
+  "best": {
+    "score": 1.6974580883457715,
+    "ratio_error": 0.026940662474279287,
+    "target_left_ratio": 0.6,
+    "final_left_force_ratio": 0.5730593375257207,
+    "final_right_force_ratio": 0.4269406624742794,
+    "final_roll_rad": 0.021203761208689064,
+    "final_pitch_rad": -0.016451889511946795,
+    "final_yaw_rad": 0.04585303292957195,
+    "final_base_z": -0.0004802802307526015,
+    "final_qvel_norm": 0.01236981437649821,
+    "final_contact_force": 90.36496105376646,
+    "final_left_contacts": 7.0,
+    "final_right_contacts": 4.0,
+    "max_qvel_norm": 0.5843728126775216,
+    "max_contact_force": 102.58684605451603,
+    "max_abs_tau": 3.7949022661876253,
+    "contact_fraction": 1.0,
+    "saturation_fraction": 0.0
+  },
+  "joint_targets": {
+    "left_hip_roll": 0.05425089329234695,
+    "left_hip_pitch": 0.003926554860783901,
+    "left_knee_pitch": 0.02537941943111905,
+    "left_ankle_pitch": 0.199447264751143,
+    "left_ankle_roll": -0.1093032227479149,
+    "right_hip_roll": 0.28340504289090346,
+    "right_hip_pitch": 0.09455628617446879,
+    "right_knee_pitch": 0.13782150205528287,
+    "right_ankle_pitch": -0.14459988751338906,
+    "right_ankle_roll": -0.07259418891706931
+  },
+  "candidates_csv": "/home/king0519/projects/Humanoid/outputs/analysis/weight_shift_pose_search_left060_multipoint/weight_shift_pose_candidates.csv",
+  "best_timeline_csv": "/home/king0519/projects/Humanoid/outputs/analysis/weight_shift_pose_search_left060_multipoint/best_weight_shift_pose_timeline.csv"
+}

@@ -1,0 +1,66 @@
+{
+  "source": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/URDF_F_link_user_size_mass_inertia_direct_nobase_contact.xml",
+  "out": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/URDF_F_link_user_size_mass_inertia_user_pad_mjcf_grounded.xml",
+  "mode": "as_mjcf_local_grounded",
+  "removed_contact_geoms": 2,
+  "friction": "1.0 0.02 0.001",
+  "records": [
+    {
+      "side": "left",
+      "body": "foot_L_1",
+      "geom": "foot_L_1_sole_collision",
+      "input_center_mm": [
+        0.0,
+        -35.75,
+        20.0
+      ],
+      "input_halfsize_mm": [
+        35.0,
+        24.25,
+        20.0
+      ],
+      "center_xyz_in_body": [
+        0.0,
+        -0.03575,
+        -0.02
+      ],
+      "halfsize_xyz_m": [
+        0.035,
+        0.02425,
+        0.02
+      ]
+    },
+    {
+      "side": "right",
+      "body": "foot_R_v1_1",
+      "geom": "foot_R_v1_1_sole_collision",
+      "input_center_mm": [
+        0.0,
+        -35.75,
+        -20.0
+      ],
+      "input_halfsize_mm": [
+        35.0,
+        24.25,
+        20.0
+      ],
+      "center_xyz_in_body": [
+        0.0,
+        -0.03575,
+        -0.02
+      ],
+      "halfsize_xyz_m": [
+        0.035,
+        0.02425,
+        0.02
+      ]
+    }
+  ],
+  "compiled": {
+    "nq": 17,
+    "nv": 16,
+    "nu": 10,
+    "njnt": 11,
+    "ngeom": 26
+  }
+}

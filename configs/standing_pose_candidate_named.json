@@ -1,0 +1,44 @@
+{
+  "model_path": "/home/king0519/projects/Humanoid/envs/robots/urdf_f/URDF_F_contact.xml",
+  "search": {
+    "samples": 30000,
+    "accepted": 9172,
+    "seed": 1,
+    "joint_abs_limit": 0.8,
+    "min_base_z": 0.03,
+    "max_base_z": 0.5
+  },
+  "base_z": 0.04275807863394514,
+  "score": 0.21126556312247902,
+  "joint_targets": {
+    "left_hip_roll": 0.7870781828963145,
+    "left_hip_pitch": -0.5534532773622461,
+    "left_knee_pitch": -0.49455371043564345,
+    "left_ankle_pitch": -0.4663911365379237,
+    "left_ankle_roll": 0.3279467524974269,
+    "right_hip_roll": -0.47265624904576725,
+    "right_hip_pitch": 0.030452098708682818,
+    "right_knee_pitch": 0.34983206542539946,
+    "right_ankle_pitch": -0.3064468465025989,
+    "right_ankle_roll": -0.08137589150320734
+  },
+  "com_world": [
+    0.05104186820625519,
+    -0.11994849311914402,
+    0.26845340782292987
+  ],
+  "support_aabb": {
+    "x_min": -0.22166763386413885,
+    "x_max": 0.27048753432126804,
+    "y_min": -0.33121405624162303,
+    "y_max": 0.12314903367536877
+  },
+  "support_margins": [
+    0.272709502070394,
+    0.21944566611501284,
+    0.21126556312247902,
+    0.2430975267945128
+  ],
+  "source_pose_config": "/home/king0519/projects/Humanoid/configs/standing_pose_candidate.json",
+  "mapping_applied": true
+}

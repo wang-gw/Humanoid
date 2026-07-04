@@ -1,0 +1,24 @@
+body_name,component,mass_kg,cg_x_m,cg_y_m,cg_z_m,Ixx,Iyy,Izz,Ixy,Ixz,Iyz,notes
+base_link,base_link,2.000000,0.000250,0.037000,-0.467000,0.00333333,0.00833333,0.00833333,0,0,0,user supplied base_link local frame
+base_link,thighJR_L,0.0698,-0.04975,0.08100,-0.45673,0.000072,0.000053,0.000072,0,0,-0.000013,user supplied child link local frame
+base_link,AK45-36_trL,0.3909,-0.04975,-0.43800,-0.01500,0.000436,0.000113,0.000436,0,0,0,user supplied child link local frame
+thighJ_L_1,thighJ_L,0.0788,-0.04975,0.03178,-0.38145,0.000107,0.000092,0.000055,0,0,0.000026,user supplied child link local frame
+thighJ_L_1,AK45-36_tpL,0.3909,0.36800,0.04000,-0.02275,0.000113,0.000436,0.000436,0,0,0,user supplied child link local frame
+thigh_L_1,thigh_L,0.5204,-0.08215,0.04038,-0.19499,0.003447,0.003662,0.000418,0.000005,0.000130,-0.000021,user supplied child link local frame
+thigh_L_1,AK45-36_kpL,0.3909,0.29800,0.04000,-0.05150,0.000113,0.000436,0.000436,0,0,0,user supplied child link local frame
+calf_L_1,calf_L,0.7036,-0.02475,0.06215,0.05449,0.011809,0.012299,0.000824,-0.000195,-0.002009,-0.000931,user supplied child link local frame
+calf_L_1,AK45-36_fpL,0.3909,0.17800,0.04000,-0.04975,0.000113,0.000436,0.000436,0,0,0,user supplied child link local frame
+footJ_L_1,footJ_L,0.0434,-0.07675,0.04000,-0.06728,0.000022,0.000031,0.000022,0,0,0,user supplied child link local frame
+footJ_L_1,AK45-10_frL,0.3048,-0.07675,-0.04350,-0.01850,0.000231,0.000086,0.000231,0,0,0,user supplied child link local frame
+foot_L_1,foot_L,0.3213,-0.07675,0.05860,-0.01361,0.000412,0.000221,0.000421,0,0,0.000016,user supplied child link local frame
+base_link,thighJR_R,0.0698,-0.05025,0.08100,0.47327,0.000072,0.000053,0.000072,0,0,-0.000013,user supplied child link local frame
+base_link,AK45-36_trR,0.3909,-0.05025,-0.49200,0.01500,0.000436,0.000113,0.000436,0,0,0,user supplied child link local frame
+thighJ_R_1,thighJ_R,0.0788,-0.05025,0.03178,0.40855,0.000107,0.000092,0.000055,0,0,0.000026,user supplied child link local frame
+thighJ_R_1,AK45-36_tpR,0.3909,0.42200,0.04000,0.02325,0.000113,0.000436,0.000436,0,0,0,user supplied child link local frame
+thigh_R_1,thigh_R,0.5204,-0.07185,0.04038,0.33501,0.003447,0.003662,0.000418,-0.000005,-0.000130,-0.000021,user supplied child link local frame
+thigh_R_1,AK45-36_kpR,0.3909,0.35200,0.04000,0.05200,0.000113,0.000436,0.000436,0,0,0,user supplied child link local frame
+calf_R_1,calf_R,0.7036,-0.07540,0.06215,0.18449,0.011809,0.012299,0.000824,0.000195,0.002009,-0.000931,user supplied child link local frame
+calf_R_1,AK45-36_fpR,0.3909,0.23200,0.04000,0.05025,0.000113,0.000436,0.000436,0,0,0,user supplied child link local frame
+footJ_R_1,footJ_R,0.0434,-0.07725,0.04000,0.06272,0.000022,0.000031,0.000022,0,0,0,user supplied child link local frame
+footJ_R_1,AK45-10_frR,0.3048,-0.07725,-0.08650,0.01850,0.000231,0.000086,0.000231,0,0,0,user supplied child link local frame
+foot_R_v1_1,foot_R,0.3213,-0.07725,0.05860,0.03639,0.000412,0.000221,0.000421,0,0,0.000016,user supplied child link local frame

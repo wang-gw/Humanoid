@@ -1,0 +1,12 @@
+body_name,cad_mass_kg,components,notes
+base_link,2.9214,"base_link + thighJR_L + AK45-36_trL + thighJR_R + AK45-36_trR","fixed/rigid collapsed into MuJoCo base body"
+thighJ_L_1,0.4697,"thighJ_L + AK45-36_tpL","fixed/rigid collapsed into MuJoCo body"
+thigh_L_1,0.9113,"thigh_L + AK45-36_kpL","fixed/rigid collapsed into MuJoCo body"
+calf_L_1,1.0945,"calf_L + AK45-36_fpL","fixed/rigid collapsed into MuJoCo body"
+footJ_L_1,0.3482,"footJ_L + AK45-10_frL","fixed/rigid collapsed into MuJoCo body"
+foot_L_1,0.3213,"foot_L","single MuJoCo body"
+thighJ_R_1,0.4697,"thighJ_R + AK45-36_tpR","fixed/rigid collapsed into MuJoCo body"
+thigh_R_1,0.9113,"thigh_R + AK45-36_kpR","fixed/rigid collapsed into MuJoCo body"
+calf_R_1,1.0945,"calf_R + AK45-36_fpR","fixed/rigid collapsed into MuJoCo body"
+footJ_R_1,0.3482,"footJ_R + AK45-10_frR","fixed/rigid collapsed into MuJoCo body"
+foot_R_v1_1,0.3213,"foot_R","single MuJoCo body"

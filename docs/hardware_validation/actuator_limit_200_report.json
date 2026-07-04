@@ -1,0 +1,136 @@
+{
+  "source": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/URDF_F_link_user_size_mass_inertia_direct_nobase_contact.xml",
+  "out": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/URDF_F_link_user_size_mass_inertia_direct_nobase_contact_act200full.xml",
+  "limit_nm": 200.0,
+  "motors": [
+    {
+      "motor": "motor_left_hip_roll",
+      "joint": "left_hip_roll",
+      "old_ctrlrange": "-100 100",
+      "old_forcerange": "-100 100",
+      "new_range": "-200 200"
+    },
+    {
+      "motor": "motor_left_hip_pitch",
+      "joint": "left_hip_pitch",
+      "old_ctrlrange": "-100 100",
+      "old_forcerange": "-100 100",
+      "new_range": "-200 200"
+    },
+    {
+      "motor": "motor_left_knee_pitch",
+      "joint": "left_knee_pitch",
+      "old_ctrlrange": "-100 100",
+      "old_forcerange": "-100 100",
+      "new_range": "-200 200"
+    },
+    {
+      "motor": "motor_left_ankle_pitch",
+      "joint": "left_ankle_pitch",
+      "old_ctrlrange": "-100 100",
+      "old_forcerange": "-100 100",
+      "new_range": "-200 200"
+    },
+    {
+      "motor": "motor_left_ankle_roll",
+      "joint": "left_ankle_roll",
+      "old_ctrlrange": "-100 100",
+      "old_forcerange": "-100 100",
+      "new_range": "-200 200"
+    },
+    {
+      "motor": "motor_right_hip_roll",
+      "joint": "right_hip_roll",
+      "old_ctrlrange": "-100 100",
+      "old_forcerange": "-100 100",
+      "new_range": "-200 200"
+    },
+    {
+      "motor": "motor_right_hip_pitch",
+      "joint": "right_hip_pitch",
+      "old_ctrlrange": "-100 100",
+      "old_forcerange": "-100 100",
+      "new_range": "-200 200"
+    },
+    {
+      "motor": "motor_right_knee_pitch",
+      "joint": "right_knee_pitch",
+      "old_ctrlrange": "-100 100",
+      "old_forcerange": "-100 100",
+      "new_range": "-200 200"
+    },
+    {
+      "motor": "motor_right_ankle_pitch",
+      "joint": "right_ankle_pitch",
+      "old_ctrlrange": "-100 100",
+      "old_forcerange": "-100 100",
+      "new_range": "-200 200"
+    },
+    {
+      "motor": "motor_right_ankle_roll",
+      "joint": "right_ankle_roll",
+      "old_ctrlrange": "-100 100",
+      "old_forcerange": "-100 100",
+      "new_range": "-200 200"
+    }
+  ],
+  "joints": [
+    {
+      "joint": "left_hip_roll",
+      "old_actuatorfrcrange": "-100 100",
+      "new_actuatorfrcrange": "-200 200"
+    },
+    {
+      "joint": "left_hip_pitch",
+      "old_actuatorfrcrange": "-100 100",
+      "new_actuatorfrcrange": "-200 200"
+    },
+    {
+      "joint": "left_knee_pitch",
+      "old_actuatorfrcrange": "-100 100",
+      "new_actuatorfrcrange": "-200 200"
+    },
+    {
+      "joint": "left_ankle_pitch",
+      "old_actuatorfrcrange": "-100 100",
+      "new_actuatorfrcrange": "-200 200"
+    },
+    {
+      "joint": "left_ankle_roll",
+      "old_actuatorfrcrange": "-100 100",
+      "new_actuatorfrcrange": "-200 200"
+    },
+    {
+      "joint": "right_hip_roll",
+      "old_actuatorfrcrange": "-100 100",
+      "new_actuatorfrcrange": "-200 200"
+    },
+    {
+      "joint": "right_hip_pitch",
+      "old_actuatorfrcrange": "-100 100",
+      "new_actuatorfrcrange": "-200 200"
+    },
+    {
+      "joint": "right_knee_pitch",
+      "old_actuatorfrcrange": "-100 100",
+      "new_actuatorfrcrange": "-200 200"
+    },
+    {
+      "joint": "right_ankle_pitch",
+      "old_actuatorfrcrange": "-100 100",
+      "new_actuatorfrcrange": "-200 200"
+    },
+    {
+      "joint": "right_ankle_roll",
+      "old_actuatorfrcrange": "-100 100",
+      "new_actuatorfrcrange": "-200 200"
+    }
+  ],
+  "compiled": {
+    "nq": 17,
+    "nv": 16,
+    "nu": 10,
+    "njnt": 11,
+    "ngeom": 26
+  }
+}

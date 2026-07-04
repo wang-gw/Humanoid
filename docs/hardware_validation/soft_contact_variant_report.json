@@ -1,0 +1,76 @@
+{
+  "input": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/URDF_F_link_user_size_mass_inertia_user_pad_toeheel_z_grounded_step_visual.xml",
+  "output": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/URDF_F_link_user_size_mass_inertia_user_pad_toeheel_z_grounded_step_visual_soft_contact.xml",
+  "solref": "0.02 1",
+  "solimp": "0.9 0.95 0.001",
+  "friction": "1.2 0.03 0.003",
+  "condim": "3",
+  "edited": [
+    {
+      "name": "floor",
+      "before": {
+        "name": "floor",
+        "type": "plane",
+        "size": "5 5 0.05",
+        "rgba": "0.45 0.45 0.45 1",
+        "friction": "0.8 0.02 0.001"
+      },
+      "after": {
+        "name": "floor",
+        "type": "plane",
+        "size": "5 5 0.05",
+        "rgba": "0.45 0.45 0.45 1",
+        "friction": "1.2 0.03 0.003",
+        "solref": "0.02 1",
+        "solimp": "0.9 0.95 0.001",
+        "condim": "3"
+      }
+    },
+    {
+      "name": "foot_L_1_sole_collision",
+      "before": {
+        "name": "foot_L_1_sole_collision",
+        "type": "box",
+        "pos": "0.02 0 -0.02425",
+        "size": "0.02 0.035 0.02425",
+        "rgba": "0.1 0.8 0.2 0.35",
+        "friction": "1.0 0.02 0.001",
+        "condim": "3"
+      },
+      "after": {
+        "name": "foot_L_1_sole_collision",
+        "type": "box",
+        "pos": "0.02 0 -0.02425",
+        "size": "0.02 0.035 0.02425",
+        "rgba": "0.1 0.8 0.2 0.35",
+        "friction": "1.2 0.03 0.003",
+        "condim": "3",
+        "solref": "0.02 1",
+        "solimp": "0.9 0.95 0.001"
+      }
+    },
+    {
+      "name": "foot_R_v1_1_sole_collision",
+      "before": {
+        "name": "foot_R_v1_1_sole_collision",
+        "type": "box",
+        "pos": "-0.02 0 -0.02425",
+        "size": "0.02 0.035 0.02425",
+        "rgba": "0.1 0.8 0.2 0.35",
+        "friction": "1.0 0.02 0.001",
+        "condim": "3"
+      },
+      "after": {
+        "name": "foot_R_v1_1_sole_collision",
+        "type": "box",
+        "pos": "-0.02 0 -0.02425",
+        "size": "0.02 0.035 0.02425",
+        "rgba": "0.1 0.8 0.2 0.35",
+        "friction": "1.2 0.03 0.003",
+        "condim": "3",
+        "solref": "0.02 1",
+        "solimp": "0.9 0.95 0.001"
+      }
+    }
+  ]
+}

@@ -1,0 +1,960 @@
+{
+  "model_path": "/home/king0519/projects/Humanoid/URDF_F_description/URDF_F_description/urdf/URDF_F.xacro",
+  "summary": {
+    "link_count": 23,
+    "joint_count": 22,
+    "revolute_joint_count": 10,
+    "fixed_joint_count": 12,
+    "total_mass_kg": 8.623983610469413
+  },
+  "findings": [
+    "10 revolute joints use CAD-generated names.",
+    "All revolute joints share the same effort limit: 100.0.",
+    "All revolute joints share the same velocity limit: 100.0.",
+    "23 links use mesh collision geometry; simplified collision should be considered.",
+    "2 left/right link mass pairs differ by more than tolerance."
+  ],
+  "links": [
+    {
+      "name": "base_link",
+      "mass_kg": 1.9999999999999996,
+      "com_xyz": [
+        -0.009999999999993764,
+        0.0029999999999999498,
+        0.491999999999998
+      ],
+      "inertia": {
+        "ixx": 0.002083,
+        "iyy": 0.007083,
+        "izz": 0.008333,
+        "ixy": 0.0,
+        "iyz": 0.0,
+        "ixz": 0.0
+      },
+      "visual_mesh_count": 1,
+      "collision_mesh_count": 1
+    },
+    {
+      "name": "thighJR_L_1",
+      "mass_kg": 0.06,
+      "com_xyz": [
+        0.06000000000000488,
+        -0.0030000000000000564,
+        -0.4857321228340379
+      ],
+      "inertia": {
+        "ixx": 2.9e-05,
+        "iyy": 4.2e-05,
+        "izz": 3.3e-05,
+        "ixy": -0.0,
+        "iyz": 0.0,
+        "ixz": 0.0
+      },
+      "visual_mesh_count": 1,
+      "collision_mesh_count": 1
+    },
+    {
+      "name": "AK45-36_trL_1",
+      "mass_kg": 0.34,
+      "com_xyz": [
+        -0.03999999999999455,
+        0.013999999999999964,
+        -0.4670000000000036
+      ],
+      "inertia": {
+        "ixx": 0.000132,
+        "iyy": 9.9e-05,
+        "izz": 0.000132,
+        "ixy": -0.0,
+        "iyz": 0.0,
+        "ixz": 0.0
+      },
+      "visual_mesh_count": 1,
+      "collision_mesh_count": 1
+    },
+    {
+      "name": "thigh_L_1",
+      "mass_kg": 0.5,
+      "com_xyz": [
+        -0.00539746230814965,
+        0.00038172214782945324,
+        -0.059989569173891755
+      ],
+      "inertia": {
+        "ixx": 0.000862,
+        "iyy": 0.001054,
+        "izz": 0.000388,
+        "ixy": 3.9e-06,
+        "iyz": -6.7e-06,
+        "ixz": -6.4e-05
+      },
+      "visual_mesh_count": 1,
+      "collision_mesh_count": 1
+    },
+    {
+      "name": "AK45-36_kpL_1",
+      "mass_kg": 0.4,
+      "com_xyz": [
+        -0.09400000000000365,
+        -5.800915303664527e-17,
+        -0.43961500000000436
+      ],
+      "inertia": {
+        "ixx": 0.000116,
+        "iyy": 0.000155,
+        "izz": 0.000155,
+        "ixy": -0.0,
+        "iyz": 0.0,
+        "ixz": 0.0
+      },
+      "visual_mesh_count": 1,
+      "collision_mesh_count": 1
+    },
+    {
+      "name": "calf_L_1",
+      "mass_kg": 0.5,
+      "com_xyz": [
+        -0.0018470097395003188,
+        -8.38633090922969e-17,
+        -0.08050979935301991
+      ],
+      "inertia": {
+        "ixx": 0.001191,
+        "iyy": 0.00129,
+        "izz": 0.000211,
+        "ixy": -0.0,
+        "iyz": 0.0,
+        "ixz": 7.1e-05
+      },
+      "visual_mesh_count": 1,
+      "collision_mesh_count": 1
+    },
+    {
+      "name": "footJ_L_1",
+      "mass_kg": 0.06,
+      "com_xyz": [
+        -1.4627188349436437e-14,
+        -1.072264026970011e-16,
+        -0.0022808396255029964
+      ],
+      "inertia": {
+        "ixx": 3.1e-05,
+        "iyy": 4.2e-05,
+        "izz": 3.1e-05,
+        "ixy": -0.0,
+        "iyz": -0.0,
+        "ixz": 0.0
+      },
+      "visual_mesh_count": 1,
+      "collision_mesh_count": 1
+    },
+    {
+      "name": "AK45-10_frL_1",
+      "mass_kg": 0.24,
+      "com_xyz": [
+        -1.457167719820518e-14,
+        -9.643358654519792e-17,
+        7.077671781985373e-16
+      ],
+      "inertia": {
+        "ixx": 7.7e-05,
+        "iyy": 7.4e-05,
+        "izz": 7.7e-05,
+        "ixy": 0.0,
+        "iyz": 0.0,
+        "ixz": -0.0
+      },
+      "visual_mesh_count": 1,
+      "collision_mesh_count": 1
+    },
+    {
+      "name": "foot_L_1",
+      "mass_kg": 0.3,
+      "com_xyz": [
+        -1.5459855617905305e-14,
+        9.755025872117476e-05,
+        -0.028610141842179894
+      ],
+      "inertia": {
+        "ixx": 0.00035,
+        "iyy": 0.000168,
+        "izz": 0.0004,
+        "ixy": 0.0,
+        "iyz": 1e-05,
+        "ixz": 0.0
+      },
+      "visual_mesh_count": 1,
+      "collision_mesh_count": 1
+    },
+    {
+      "name": "thighJ_L_1",
+      "mass_kg": 0.06,
+      "com_xyz": [
+        3.677613769070831e-15,
+        0.020776165475540002,
+        -0.056454508231575606
+      ],
+      "inertia": {
+        "ixx": 6.7e-05,
+        "iyy": 6e-05,
+        "izz": 3.9e-05,
+        "ixy": 0.0,
+        "iyz": 1.3e-05,
+        "ixz": -0.0
+      },
+      "visual_mesh_count": 1,
+      "collision_mesh_count": 1
+    },
+    {
+      "name": "AK45-36_tpL_1",
+      "mass_kg": 0.34,
+      "com_xyz": [
+        -3.642919299551295e-15,
+        -4.371503159459072e-17,
+        -3.3306690738754696e-15
+      ],
+      "inertia": {
+        "ixx": 9.9e-05,
+        "iyy": 0.000132,
+        "izz": 0.000132,
+        "ixy": -0.0,
+        "iyz": 0.0,
+        "ixz": 0.0
+      },
+      "visual_mesh_count": 1,
+      "collision_mesh_count": 1
+    },
+    {
+      "name": "AK45-36_fpL_1",
+      "mass_kg": 0.4,
+      "com_xyz": [
+        -0.037076000000005466,
+        -7.299716386909578e-17,
+        -0.30000000000000426
+      ],
+      "inertia": {
+        "ixx": 0.000116,
+        "iyy": 0.000155,
+        "izz": 0.000155,
+        "ixy": -0.0,
+        "iyz": 0.0,
+        "ixz": 0.0
+      },
+      "visual_mesh_count": 1,
+      "collision_mesh_count": 1
+    },
+    {
+      "name": "thighJR_R_1",
+      "mass_kg": 0.06,
+      "com_xyz": [
+        -0.039999999999994526,
+        -0.0030000000000000296,
+        -0.48573212283403633
+      ],
+      "inertia": {
+        "ixx": 2.9e-05,
+        "iyy": 4.2e-05,
+        "izz": 3.3e-05,
+        "ixy": -0.0,
+        "iyz": 0.0,
+        "ixz": -0.0
+      },
+      "visual_mesh_count": 1,
+      "collision_mesh_count": 1
+    },
+    {
+      "name": "AK45-36_trR_1",
+      "mass_kg": 0.34,
+      "com_xyz": [
+        0.06000000000000547,
+        0.013999999999999986,
+        -0.46700000000000214
+      ],
+      "inertia": {
+        "ixx": 0.000132,
+        "iyy": 9.9e-05,
+        "izz": 0.000132,
+        "ixy": -0.0,
+        "iyz": 0.0,
+        "ixz": 0.0
+      },
+      "visual_mesh_count": 1,
+      "collision_mesh_count": 1
+    },
+    {
+      "name": "thigh_R_1",
+      "mass_kg": 0.5203598167159027,
+      "com_xyz": [
+        0.005397462308149595,
+        0.000381722147829493,
+        -0.05998956917388981
+      ],
+      "inertia": {
+        "ixx": 0.000862,
+        "iyy": 0.001054,
+        "izz": 0.000388,
+        "ixy": -3.9e-06,
+        "iyz": -6.7e-06,
+        "ixz": 6.4e-05
+      },
+      "visual_mesh_count": 1,
+      "collision_mesh_count": 1
+    },
+    {
+      "name": "AK45-36_kpR_1",
+      "mass_kg": 0.4,
+      "com_xyz": [
+        0.11400000000000549,
+        -1.804112415013964e-17,
+        -0.44000000000000217
+      ],
+      "inertia": {
+        "ixx": 0.000116,
+        "iyy": 0.000155,
+        "izz": 0.000155,
+        "ixy": 0.0,
+        "iyz": 0.0,
+        "ixz": -0.0
+      },
+      "visual_mesh_count": 1,
+      "collision_mesh_count": 1
+    },
+    {
+      "name": "calf_R_1",
+      "mass_kg": 0.7036237937535099,
+      "com_xyz": [
+        0.0018470097394886892,
+        -9.39645718218383e-18,
+        -0.08050979935301789
+      ],
+      "inertia": {
+        "ixx": 0.001191,
+        "iyy": 0.00129,
+        "izz": 0.000211,
+        "ixy": 0.0,
+        "iyz": 0.0,
+        "ixz": -7.1e-05
+      },
+      "visual_mesh_count": 1,
+      "collision_mesh_count": 1
+    },
+    {
+      "name": "AK45-36_fpR_1",
+      "mass_kg": 0.4,
+      "com_xyz": [
+        0.05699999999999819,
+        -1.5265566588587645e-17,
+        -0.30000000000000215
+      ],
+      "inertia": {
+        "ixx": 0.000116,
+        "iyy": 0.000155,
+        "izz": 0.000155,
+        "ixy": 0.0,
+        "iyz": 0.0,
+        "ixz": 0.0
+      },
+      "visual_mesh_count": 1,
+      "collision_mesh_count": 1
+    },
+    {
+      "name": "footJ_R_1",
+      "mass_kg": 0.06,
+      "com_xyz": [
+        -1.8041124150158794e-15,
+        -1.812923782858116e-17,
+        -0.0022808396255108096
+      ],
+      "inertia": {
+        "ixx": 3.1e-05,
+        "iyy": 4.2e-05,
+        "izz": 3.1e-05,
+        "ixy": -0.0,
+        "iyz": -0.0,
+        "ixz": 0.0
+      },
+      "visual_mesh_count": 1,
+      "collision_mesh_count": 1
+    },
+    {
+      "name": "AK45-10_R_1",
+      "mass_kg": 0.24,
+      "com_xyz": [
+        -1.8041124150158794e-15,
+        -7.615744575185394e-18,
+        -7.098488463697095e-15
+      ],
+      "inertia": {
+        "ixx": 7.7e-05,
+        "iyy": 7.4e-05,
+        "izz": 7.7e-05,
+        "ixy": 0.0,
+        "iyz": -0.0,
+        "ixz": -0.0
+      },
+      "visual_mesh_count": 1,
+      "collision_mesh_count": 1
+    },
+    {
+      "name": "thighJ_R_1",
+      "mass_kg": 0.06,
+      "com_xyz": [
+        5.460909502374989e-15,
+        0.02077616547536233,
+        -0.05645450823097037
+      ],
+      "inertia": {
+        "ixx": 6.7e-05,
+        "iyy": 6e-05,
+        "izz": 3.9e-05,
+        "ixy": 0.0,
+        "iyz": 1.3e-05,
+        "ixz": 0.0
+      },
+      "visual_mesh_count": 1,
+      "collision_mesh_count": 1
+    },
+    {
+      "name": "AK45-36_tpR_1",
+      "mass_kg": 0.34,
+      "com_xyz": [
+        5.474787290182803e-15,
+        -2.5951463200588205e-17,
+        -2.1094237467877974e-15
+      ],
+      "inertia": {
+        "ixx": 9.9e-05,
+        "iyy": 0.000155,
+        "izz": 0.000155,
+        "ixy": 0.0,
+        "iyz": 0.0,
+        "ixz": 0.0
+      },
+      "visual_mesh_count": 1,
+      "collision_mesh_count": 1
+    },
+    {
+      "name": "foot_R_v1_1",
+      "mass_kg": 0.3,
+      "com_xyz": [
+        -1.8041124150158794e-15,
+        9.755025872120252e-05,
+        -0.02861014184218772
+      ],
+      "inertia": {
+        "ixx": 0.00035,
+        "iyy": 0.000168,
+        "izz": 0.0004,
+        "ixy": -0.0,
+        "iyz": 1e-05,
+        "ixz": 0.0
+      },
+      "visual_mesh_count": 1,
+      "collision_mesh_count": 1
+    }
+  ],
+  "joints": [
+    {
+      "name": "Rigid 12",
+      "joint_type": "fixed",
+      "parent": "base_link",
+      "child": "thighJR_L_1",
+      "origin_xyz": [
+        -0.02,
+        0.006,
+        0.934
+      ],
+      "origin_rpy": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis_xyz": null,
+      "lower_rad": null,
+      "upper_rad": null,
+      "effort": null,
+      "velocity": null
+    },
+    {
+      "name": "Rigid 14",
+      "joint_type": "fixed",
+      "parent": "thighJR_L_1",
+      "child": "AK45-36_trL_1",
+      "origin_xyz": [
+        0.1,
+        -0.022,
+        -0.027
+      ],
+      "origin_rpy": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis_xyz": null,
+      "lower_rad": null,
+      "upper_rad": null,
+      "effort": null,
+      "velocity": null
+    },
+    {
+      "name": "Revolute 19",
+      "joint_type": "revolute",
+      "parent": "AK45-36_tpL_1",
+      "child": "thigh_L_1",
+      "origin_xyz": [
+        0.027,
+        0.0,
+        0.0
+      ],
+      "origin_rpy": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis_xyz": [
+        1.0,
+        -0.0,
+        -0.0
+      ],
+      "lower_rad": -1.570796,
+      "upper_rad": 1.570796,
+      "effort": 100.0,
+      "velocity": 100.0
+    },
+    {
+      "name": "Rigid 20",
+      "joint_type": "fixed",
+      "parent": "thigh_L_1",
+      "child": "AK45-36_kpL_1",
+      "origin_xyz": [
+        0.09575,
+        0.0,
+        0.369615
+      ],
+      "origin_rpy": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis_xyz": null,
+      "lower_rad": null,
+      "upper_rad": null,
+      "effort": null,
+      "velocity": null
+    },
+    {
+      "name": "Revolute 21",
+      "joint_type": "revolute",
+      "parent": "thigh_L_1",
+      "child": "calf_L_1",
+      "origin_xyz": [
+        0.0,
+        0.0,
+        -0.13
+      ],
+      "origin_rpy": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis_xyz": [
+        1.0,
+        0.0,
+        -0.0
+      ],
+      "lower_rad": -1.570796,
+      "upper_rad": 1.570796,
+      "effort": 100.0,
+      "velocity": 100.0
+    },
+    {
+      "name": "Revolute 23",
+      "joint_type": "revolute",
+      "parent": "calf_L_1",
+      "child": "footJ_L_1",
+      "origin_xyz": [
+        0.0,
+        0.0,
+        -0.2
+      ],
+      "origin_rpy": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis_xyz": [
+        1.0,
+        -0.0,
+        -0.0
+      ],
+      "lower_rad": -1.570796,
+      "upper_rad": 1.570796,
+      "effort": 100.0,
+      "velocity": 100.0
+    },
+    {
+      "name": "Rigid 24",
+      "joint_type": "fixed",
+      "parent": "footJ_L_1",
+      "child": "AK45-10_frL_1",
+      "origin_xyz": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "origin_rpy": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis_xyz": null,
+      "lower_rad": null,
+      "upper_rad": null,
+      "effort": null,
+      "velocity": null
+    },
+    {
+      "name": "Revolute 25",
+      "joint_type": "revolute",
+      "parent": "AK45-10_frL_1",
+      "child": "foot_L_1",
+      "origin_xyz": [
+        0.0,
+        -0.0215,
+        0.0
+      ],
+      "origin_rpy": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis_xyz": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "lower_rad": -1.570796,
+      "upper_rad": 1.570796,
+      "effort": 100.0,
+      "velocity": 100.0
+    },
+    {
+      "name": "Revolute 26",
+      "joint_type": "revolute",
+      "parent": "AK45-36_trL_1",
+      "child": "thighJ_L_1",
+      "origin_xyz": [
+        -0.04,
+        -0.013,
+        -0.467
+      ],
+      "origin_rpy": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis_xyz": [
+        0.0,
+        -1.0,
+        -0.0
+      ],
+      "lower_rad": -1.570796,
+      "upper_rad": 1.570796,
+      "effort": 100.0,
+      "velocity": 100.0
+    },
+    {
+      "name": "Rigid 27",
+      "joint_type": "fixed",
+      "parent": "thighJ_L_1",
+      "child": "AK45-36_tpL_1",
+      "origin_xyz": [
+        0.0,
+        0.029,
+        -0.07
+      ],
+      "origin_rpy": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis_xyz": null,
+      "lower_rad": null,
+      "upper_rad": null,
+      "effort": null,
+      "velocity": null
+    },
+    {
+      "name": "Rigid 35",
+      "joint_type": "fixed",
+      "parent": "calf_L_1",
+      "child": "AK45-36_fpL_1",
+      "origin_xyz": [
+        0.037076,
+        0.0,
+        0.24
+      ],
+      "origin_rpy": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis_xyz": null,
+      "lower_rad": null,
+      "upper_rad": null,
+      "effort": null,
+      "velocity": null
+    },
+    {
+      "name": "Rigid 40",
+      "joint_type": "fixed",
+      "parent": "base_link",
+      "child": "thighJR_R_1",
+      "origin_xyz": [
+        -0.02,
+        0.006,
+        0.934
+      ],
+      "origin_rpy": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis_xyz": null,
+      "lower_rad": null,
+      "upper_rad": null,
+      "effort": null,
+      "velocity": null
+    },
+    {
+      "name": "Rigid 41",
+      "joint_type": "fixed",
+      "parent": "thighJR_R_1",
+      "child": "AK45-36_trR_1",
+      "origin_xyz": [
+        -0.1,
+        -0.022,
+        -0.027
+      ],
+      "origin_rpy": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis_xyz": null,
+      "lower_rad": null,
+      "upper_rad": null,
+      "effort": null,
+      "velocity": null
+    },
+    {
+      "name": "Revolute 44",
+      "joint_type": "revolute",
+      "parent": "AK45-36_tpR_1",
+      "child": "thigh_R_1",
+      "origin_xyz": [
+        -0.027,
+        0.0,
+        0.0
+      ],
+      "origin_rpy": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis_xyz": [
+        -1.0,
+        -0.0,
+        -0.0
+      ],
+      "lower_rad": -1.570796,
+      "upper_rad": 1.570796,
+      "effort": 100.0,
+      "velocity": 100.0
+    },
+    {
+      "name": "Rigid 45",
+      "joint_type": "fixed",
+      "parent": "thigh_R_1",
+      "child": "AK45-36_kpR_1",
+      "origin_xyz": [
+        -0.11575,
+        0.0,
+        0.37
+      ],
+      "origin_rpy": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis_xyz": null,
+      "lower_rad": null,
+      "upper_rad": null,
+      "effort": null,
+      "velocity": null
+    },
+    {
+      "name": "Revolute 46",
+      "joint_type": "revolute",
+      "parent": "thigh_R_1",
+      "child": "calf_R_1",
+      "origin_xyz": [
+        0.0,
+        0.0,
+        -0.13
+      ],
+      "origin_rpy": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis_xyz": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "lower_rad": -1.570796,
+      "upper_rad": 1.570796,
+      "effort": 100.0,
+      "velocity": 100.0
+    },
+    {
+      "name": "Rigid 47",
+      "joint_type": "fixed",
+      "parent": "calf_R_1",
+      "child": "AK45-36_fpR_1",
+      "origin_xyz": [
+        -0.057,
+        0.0,
+        0.24
+      ],
+      "origin_rpy": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis_xyz": null,
+      "lower_rad": null,
+      "upper_rad": null,
+      "effort": null,
+      "velocity": null
+    },
+    {
+      "name": "Revolute 48",
+      "joint_type": "revolute",
+      "parent": "calf_R_1",
+      "child": "footJ_R_1",
+      "origin_xyz": [
+        0.0,
+        0.0,
+        -0.2
+      ],
+      "origin_rpy": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis_xyz": [
+        -1.0,
+        -0.0,
+        -0.0
+      ],
+      "lower_rad": -1.570796,
+      "upper_rad": 1.570796,
+      "effort": 100.0,
+      "velocity": 100.0
+    },
+    {
+      "name": "Rigid 49",
+      "joint_type": "fixed",
+      "parent": "footJ_R_1",
+      "child": "AK45-10_R_1",
+      "origin_xyz": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "origin_rpy": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis_xyz": null,
+      "lower_rad": null,
+      "upper_rad": null,
+      "effort": null,
+      "velocity": null
+    },
+    {
+      "name": "Revolute 51",
+      "joint_type": "revolute",
+      "parent": "AK45-36_trR_1",
+      "child": "thighJ_R_1",
+      "origin_xyz": [
+        0.06,
+        -0.013,
+        -0.467
+      ],
+      "origin_rpy": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis_xyz": [
+        -0.0,
+        -1.0,
+        -0.0
+      ],
+      "lower_rad": -1.570796,
+      "upper_rad": 1.570796,
+      "effort": 100.0,
+      "velocity": 100.0
+    },
+    {
+      "name": "Rigid 52",
+      "joint_type": "fixed",
+      "parent": "thighJ_R_1",
+      "child": "AK45-36_tpR_1",
+      "origin_xyz": [
+        0.0,
+        0.029,
+        -0.07
+      ],
+      "origin_rpy": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis_xyz": null,
+      "lower_rad": null,
+      "upper_rad": null,
+      "effort": null,
+      "velocity": null
+    },
+    {
+      "name": "Revolute 53",
+      "joint_type": "revolute",
+      "parent": "AK45-10_R_1",
+      "child": "foot_R_v1_1",
+      "origin_xyz": [
+        0.0,
+        -0.0215,
+        0.0
+      ],
+      "origin_rpy": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis_xyz": [
+        -0.0,
+        -1.0,
+        -0.0
+      ],
+      "lower_rad": -1.570796,
+      "upper_rad": 1.570796,
+      "effort": 100.0,
+      "velocity": 100.0
+    }
+  ]
+}

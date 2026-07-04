@@ -1,0 +1,223 @@
+{
+  "input": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/URDF_F_link_user_size_mass_inertia_user_pad_toeheel_z_grounded_step_visual.xml",
+  "output": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_link/URDF_F_link_user_size_mass_inertia_user_pad_toeheel_z_grounded_step_visual_actuator_dynamics.xml",
+  "hip_armature": 0.02,
+  "hip_damping": 0.2,
+  "knee_armature": 0.02,
+  "knee_damping": 0.2,
+  "ankle_armature": 0.05,
+  "ankle_damping": 0.4,
+  "frictionloss": 0.02,
+  "edited": [
+    {
+      "name": "left_hip_roll",
+      "kind": "hip",
+      "before": {
+        "name": "left_hip_roll",
+        "pos": "0 0 0",
+        "axis": "0 -1 0",
+        "range": "-1.5708 1.5708",
+        "actuatorfrcrange": "-100 100"
+      },
+      "after": {
+        "name": "left_hip_roll",
+        "pos": "0 0 0",
+        "axis": "0 -1 0",
+        "range": "-1.5708 1.5708",
+        "actuatorfrcrange": "-100 100",
+        "armature": "0.02",
+        "damping": "0.2",
+        "frictionloss": "0.02"
+      }
+    },
+    {
+      "name": "left_hip_pitch",
+      "kind": "hip",
+      "before": {
+        "name": "left_hip_pitch",
+        "pos": "0 0 0",
+        "axis": "1 0 0",
+        "range": "-1.5708 1.5708",
+        "actuatorfrcrange": "-100 100"
+      },
+      "after": {
+        "name": "left_hip_pitch",
+        "pos": "0 0 0",
+        "axis": "1 0 0",
+        "range": "-1.5708 1.5708",
+        "actuatorfrcrange": "-100 100",
+        "armature": "0.02",
+        "damping": "0.2",
+        "frictionloss": "0.02"
+      }
+    },
+    {
+      "name": "left_knee_pitch",
+      "kind": "knee",
+      "before": {
+        "name": "left_knee_pitch",
+        "pos": "0 0 0",
+        "axis": "1 0 0",
+        "range": "-1.5708 1.5708",
+        "actuatorfrcrange": "-100 100"
+      },
+      "after": {
+        "name": "left_knee_pitch",
+        "pos": "0 0 0",
+        "axis": "1 0 0",
+        "range": "-1.5708 1.5708",
+        "actuatorfrcrange": "-100 100",
+        "armature": "0.02",
+        "damping": "0.2",
+        "frictionloss": "0.02"
+      }
+    },
+    {
+      "name": "left_ankle_pitch",
+      "kind": "ankle",
+      "before": {
+        "name": "left_ankle_pitch",
+        "pos": "0 0 0",
+        "axis": "1 0 0",
+        "range": "-1.5708 1.5708",
+        "actuatorfrcrange": "-100 100"
+      },
+      "after": {
+        "name": "left_ankle_pitch",
+        "pos": "0 0 0",
+        "axis": "1 0 0",
+        "range": "-1.5708 1.5708",
+        "actuatorfrcrange": "-100 100",
+        "armature": "0.05",
+        "damping": "0.4",
+        "frictionloss": "0.02"
+      }
+    },
+    {
+      "name": "left_ankle_roll",
+      "kind": "ankle",
+      "before": {
+        "name": "left_ankle_roll",
+        "pos": "0 0 0",
+        "axis": "0 -1 0",
+        "range": "-1.5708 1.5708",
+        "actuatorfrcrange": "-100 100"
+      },
+      "after": {
+        "name": "left_ankle_roll",
+        "pos": "0 0 0",
+        "axis": "0 -1 0",
+        "range": "-1.5708 1.5708",
+        "actuatorfrcrange": "-100 100",
+        "armature": "0.05",
+        "damping": "0.4",
+        "frictionloss": "0.02"
+      }
+    },
+    {
+      "name": "right_hip_roll",
+      "kind": "hip",
+      "before": {
+        "name": "right_hip_roll",
+        "pos": "0 0 0",
+        "axis": "0 -1 0",
+        "range": "-1.5708 1.5708",
+        "actuatorfrcrange": "-100 100"
+      },
+      "after": {
+        "name": "right_hip_roll",
+        "pos": "0 0 0",
+        "axis": "0 -1 0",
+        "range": "-1.5708 1.5708",
+        "actuatorfrcrange": "-100 100",
+        "armature": "0.02",
+        "damping": "0.2",
+        "frictionloss": "0.02"
+      }
+    },
+    {
+      "name": "right_hip_pitch",
+      "kind": "hip",
+      "before": {
+        "name": "right_hip_pitch",
+        "pos": "0 0 0",
+        "axis": "-1 0 0",
+        "range": "-1.5708 1.5708",
+        "actuatorfrcrange": "-100 100"
+      },
+      "after": {
+        "name": "right_hip_pitch",
+        "pos": "0 0 0",
+        "axis": "-1 0 0",
+        "range": "-1.5708 1.5708",
+        "actuatorfrcrange": "-100 100",
+        "armature": "0.02",
+        "damping": "0.2",
+        "frictionloss": "0.02"
+      }
+    },
+    {
+      "name": "right_knee_pitch",
+      "kind": "knee",
+      "before": {
+        "name": "right_knee_pitch",
+        "pos": "0 0 0",
+        "axis": "1 0 0",
+        "range": "-1.5708 1.5708",
+        "actuatorfrcrange": "-100 100"
+      },
+      "after": {
+        "name": "right_knee_pitch",
+        "pos": "0 0 0",
+        "axis": "1 0 0",
+        "range": "-1.5708 1.5708",
+        "actuatorfrcrange": "-100 100",
+        "armature": "0.02",
+        "damping": "0.2",
+        "frictionloss": "0.02"
+      }
+    },
+    {
+      "name": "right_ankle_pitch",
+      "kind": "ankle",
+      "before": {
+        "name": "right_ankle_pitch",
+        "pos": "0 0 0",
+        "axis": "-1 0 0",
+        "range": "-1.5708 1.5708",
+        "actuatorfrcrange": "-100 100"
+      },
+      "after": {
+        "name": "right_ankle_pitch",
+        "pos": "0 0 0",
+        "axis": "-1 0 0",
+        "range": "-1.5708 1.5708",
+        "actuatorfrcrange": "-100 100",
+        "armature": "0.05",
+        "damping": "0.4",
+        "frictionloss": "0.02"
+      }
+    },
+    {
+      "name": "right_ankle_roll",
+      "kind": "ankle",
+      "before": {
+        "name": "right_ankle_roll",
+        "pos": "0 0 0",
+        "axis": "0 -1 0",
+        "range": "-1.5708 1.5708",
+        "actuatorfrcrange": "-100 100"
+      },
+      "after": {
+        "name": "right_ankle_roll",
+        "pos": "0 0 0",
+        "axis": "0 -1 0",
+        "range": "-1.5708 1.5708",
+        "actuatorfrcrange": "-100 100",
+        "armature": "0.05",
+        "damping": "0.4",
+        "frictionloss": "0.02"
+      }
+    }
+  ]
+}

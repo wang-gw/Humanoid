@@ -1,0 +1,118 @@
+<mujoco model="URDF_F_link_virtual_design_gate_long_x130">
+  <compiler angle="radian" />
+  <asset>
+    <mesh name="base_link" content_type="model/stl" file="base_link.stl" scale="0.001 0.001 0.001" />
+    <mesh name="thighJR_L_1" content_type="model/stl" file="thighJR_L.stl" scale="0.001 0.001 0.001" />
+    <mesh name="AK45-36_trL_1" content_type="model/stl" file="AK45-36_trL.stl" scale="0.001 0.001 0.001" />
+    <mesh name="thigh_L_1" content_type="model/stl" file="thigh_L.stl" scale="0.001 0.001 0.001" />
+    <mesh name="AK45-36_kpL_1" content_type="model/stl" file="AK45-36_kpL.stl" scale="0.001 0.001 0.001" />
+    <mesh name="calf_L_1" content_type="model/stl" file="calf_L.stl" scale="0.001 0.001 0.001" />
+    <mesh name="footJ_L_1" content_type="model/stl" file="footJ_L.stl" scale="0.001 0.001 0.001" />
+    <mesh name="AK45-10_frL_1" content_type="model/stl" file="AK45-10_frL.stl" scale="0.001 0.001 0.001" />
+    <mesh name="foot_L_1" content_type="model/stl" file="foot_L.stl" scale="0.001 0.001 0.001" />
+    <mesh name="thighJ_L_1" content_type="model/stl" file="thighJ_L.stl" scale="0.001 0.001 0.001" />
+    <mesh name="AK45-36_tpL_1" content_type="model/stl" file="AK45-36_tpL.stl" scale="0.001 0.001 0.001" />
+    <mesh name="AK45-36_fpL_1" content_type="model/stl" file="AK45-36_fpL.stl" scale="0.001 0.001 0.001" />
+    <mesh name="thighJR_R_1" content_type="model/stl" file="thighJR_R.stl" scale="0.001 0.001 0.001" />
+    <mesh name="AK45-36_trR_1" content_type="model/stl" file="AK45-36_trR.stl" scale="0.001 0.001 0.001" />
+    <mesh name="thigh_R_1" content_type="model/stl" file="thigh_R.stl" scale="0.001 0.001 0.001" />
+    <mesh name="AK45-36_kpR_1" content_type="model/stl" file="AK45-36_kpR.stl" scale="0.001 0.001 0.001" />
+    <mesh name="calf_R_1" content_type="model/stl" file="calf_R.stl" scale="0.001 0.001 0.001" />
+    <mesh name="AK45-36_fpR_1" content_type="model/stl" file="AK45-36_fpR.stl" scale="0.001 0.001 0.001" />
+    <mesh name="footJ_R_1" content_type="model/stl" file="footJ_R.stl" scale="0.001 0.001 0.001" />
+    <mesh name="AK45-10_R_1" content_type="model/stl" file="AK45-10_frR.stl" scale="0.001 0.001 0.001" />
+    <mesh name="thighJ_R_1" content_type="model/stl" file="thighJ_R.stl" scale="0.001 0.001 0.001" />
+    <mesh name="AK45-36_tpR_1" content_type="model/stl" file="AK45-36_tpR.stl" scale="0.001 0.001 0.001" />
+    <mesh name="foot_R_v1_1" content_type="model/stl" file="foot_R.stl" scale="0.001 0.001 0.001" />
+  </asset>
+  <worldbody>
+    <geom name="floor" type="plane" size="5 5 0.05" rgba="0.45 0.45 0.45 1" friction="0.8 0.02 0.001" />
+    <body name="base_link">
+      <inertial pos="0.0308857 -0.215714 0.213569" quat="0.442165 -0.189731 0.289877 0.827323" mass="2.9214" diaginertia="1.1132203 0.95588417 0.16466993" />
+      <joint name="floating_base" type="free" />
+      <geom type="mesh" mesh="base_link" contype="0" conaffinity="0" pos="-0.00025 -0.037 0.492" quat="1 1.61412621e-16 1.66533454e-16 -6.123234e-17" />
+      <geom type="mesh" mesh="thighJR_L_1" contype="0" conaffinity="0" pos="0.04975 -0.059 0.465" quat="1 1.61412621e-16 1.66533454e-16 -6.123234e-17" />
+      <geom type="mesh" mesh="AK45-36_trL_1" contype="0" conaffinity="0" pos="0.04975 -0.015 0.465" quat="0.707106781 0.707106781 7.44591316e-17 -1.61054737e-16" />
+      <geom type="mesh" mesh="thighJR_R_1" contype="0" conaffinity="0" pos="-0.05025 -0.059 0.465" quat="1.66533454e-16 -3.50977844e-31 1 1.61412621e-16" />
+      <geom type="mesh" mesh="AK45-36_trR_1" contype="0" conaffinity="0" pos="-0.05025 -0.015 0.465" quat="1.17756934e-16 -1.17756934e-16 0.707106781 0.707106781" />
+      <body name="thighJ_L_1" pos="0.04 -0.029 0.44">
+        <inertial pos="0.29791548 0.038620958 -0.082927901" mass="0.4697" fullinertia="0.0086623254 0.02041059 0.011940127 -0.00022519545 -0.0098269594 -0.00016736351" />
+        <joint name="left_hip_roll" pos="0 0 0" axis="0 -1 0" range="-1.5708 1.5708" actuatorfrcrange="-100 100" armature="0.02" damping="0.2" frictionloss="0.02" />
+        <geom pos="0.00975 -0.011 -0.045" quat="1 1.61412621e-16 1.66533454e-16 -6.123234e-17" type="mesh" mesh="thighJ_L_1" contype="0" conaffinity="0" />
+        <geom pos="-0.01725 -0.011 -0.045" quat="0.707106781 1.14135959e-16 0.707106781 2.7540353e-17" type="mesh" mesh="AK45-36_tpL_1" contype="0" conaffinity="0" />
+        <body name="thigh_L_1" pos="0.027 0.029 -0.07">
+          <inertial pos="0.080914452 0.040217 -0.1334403" mass="0.9113" fullinertia="0.0081560834 0.040953102 0.033113083 3.7246321e-05 -0.012046381 -8.8284239e-06" />
+          <joint name="left_hip_pitch" pos="0 0 0" axis="1 0 0" range="-1.5708 1.5708" actuatorfrcrange="-100 100" armature="0.02" damping="0.2" frictionloss="0.02" />
+          <geom pos="0.00975 -0.04 -0.105" quat="1 -1.08420217e-17 1.66533454e-16 -6.123234e-17" type="mesh" mesh="thigh_L_1" contype="0" conaffinity="0" />
+          <geom pos="-0.0155 -0.04 -0.045" quat="0.707106781 -7.66646708e-18 0.707106781 -9.42620727e-17" type="mesh" mesh="AK45-36_kpL_1" contype="0" conaffinity="0" />
+          <body name="calf_L_1" pos="0 0 -0.13">
+            <inertial pos="0.047662037 0.054239141 0.017260748" mass="1.0945" fullinertia="0.014775804 0.025795447 0.011713221 0.00093352278 0.0033019352 -0.0015112082" />
+            <joint name="left_knee_pitch" pos="0 0 0" axis="1 0 0" range="-1.5708 1.5708" actuatorfrcrange="-100 100" armature="0.02" damping="0.2" frictionloss="0.02" />
+            <geom pos="-0.0171738645 -0.051076135 -0.175" quat="1 -1.08420217e-17 1.83186799e-16 -6.123234e-17" type="mesh" mesh="calf_L_1" contype="0" conaffinity="0" />
+            <geom pos="-0.01725 -0.04 -0.035" quat="0.707106781 7.89291385e-17 0.707106781 -7.66646708e-18" type="mesh" mesh="AK45-36_fpL_1" contype="0" conaffinity="0" />
+            <body name="footJ_L_1" pos="0 0 -0.2">
+              <inertial pos="-0.07675 -0.033092476 -0.024579989" mass="0.3482" fullinertia="0.00060827797 0.00020739814 0.00051787982 0 0 0.00015474057" />
+              <joint name="left_ankle_pitch" pos="0 0 0" axis="1 0 0" range="-1.5708 1.5708" actuatorfrcrange="-100 100" armature="0.05" damping="0.4" frictionloss="0.02" />
+              <geom pos="0.00975 -0.04 0.025" quat="1 1.97741483e-17 1.83186799e-16 -6.123234e-17" type="mesh" mesh="footJ_L_1" contype="0" conaffinity="0" />
+              <geom pos="0.00975 -0.0185 0.025" quat="0.707106781 0.707106781 8.6234825e-17 -1.72830431e-16" type="mesh" mesh="AK45-10_frL_1" contype="0" conaffinity="0" />
+              <body name="foot_L_1" pos="0 -0.0215 0">
+                <inertial pos="-0.07675 0.0586 -0.01361" mass="0.3213" fullinertia="0.000412 0.000221 0.000421 0 0 1.6e-05" />
+                <joint name="left_ankle_roll" pos="0 0 0" axis="0 -1 0" range="-1.5708 1.5708" actuatorfrcrange="-100 100" armature="0.05" damping="0.4" frictionloss="0.02" />
+                <geom pos="0.00975 -0.0385 -0.015" quat="1 1.97741483e-17 -1.77635684e-16 -6.123234e-17" type="mesh" mesh="foot_L_1" contype="0" conaffinity="0" />
+                <geom name="foot_L_1_sole_pad_rear_right" type="box" pos="-0.00068181818 -0.028378378 -0.02425" size="0.024818182 0.031621622 0.02425" rgba="0.1 0.8 0.2 0.35" friction="1.0 0.02 0.001" condim="3" />
+                <geom name="foot_L_1_sole_pad_rear_left" type="box" pos="-0.00068181818 0.028378378 -0.02425" size="0.024818182 0.031621622 0.02425" rgba="0.1 0.8 0.2 0.35" friction="1.0 0.02 0.001" condim="3" />
+                <geom name="foot_L_1_sole_pad_front_right" type="box" pos="0.040681818 -0.028378378 -0.02425" size="0.024818182 0.031621622 0.02425" rgba="0.1 0.8 0.2 0.35" friction="1.0 0.02 0.001" condim="3" />
+                <geom name="foot_L_1_sole_pad_front_left" type="box" pos="0.040681818 0.028378378 -0.02425" size="0.024818182 0.031621622 0.02425" rgba="0.1 0.8 0.2 0.35" friction="1.0 0.02 0.001" condim="3" />
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="thighJ_R_1" pos="-0.06 -0.029 0.44">
+        <inertial pos="0.3427722 0.038620958 0.087890494" mass="0.4697" fullinertia="0.0099601796 0.024889401 0.015121084 -0.00025457462 0.011932798 0.00023370271" />
+        <joint name="right_hip_roll" pos="0 0 0" axis="0 -1 0" range="-1.5708 1.5708" actuatorfrcrange="-100 100" armature="0.02" damping="0.2" frictionloss="0.02" />
+        <geom pos="0.00975 -0.011 -0.045" quat="1.66533454e-16 -3.32488916e-31 1 1.61412621e-16" type="mesh" mesh="thighJ_R_1" contype="0" conaffinity="0" />
+        <geom pos="0.03675 -0.011 -0.045" quat="0.707106781 1.14135959e-16 0.707106781 1.14135959e-16" type="mesh" mesh="AK45-36_tpR_1" contype="0" conaffinity="0" />
+        <body name="thigh_R_1" pos="-0.027 0.029 -0.07">
+          <inertial pos="0.10995946 0.040217 0.21361352" mass="0.9113" fullinertia="0.021439112 0.062079073 0.040956026 3.0953185e-05 0.026646608 -4.5006396e-05" />
+          <joint name="right_hip_pitch" pos="0 0 0" axis="-1 0 0" range="-1.5708 1.5708" actuatorfrcrange="-100 100" armature="0.02" damping="0.2" frictionloss="0.02" />
+          <geom pos="0.00975 -0.04 -0.105" quat="1.66533454e-16 -3.01674037e-31 1 1.05901469e-16" type="mesh" mesh="thigh_R_1" contype="0" conaffinity="0" />
+          <geom pos="0.035 -0.04 -0.045" quat="0.707106781 7.48836472e-17 0.707106781 7.48836472e-17" type="mesh" mesh="AK45-36_kpR_1" contype="0" conaffinity="0" />
+          <body name="calf_R_1" pos="0 0 -0.13">
+            <inertial pos="0.03438772 0.054239141 0.13654627" mass="1.0945" fullinertia="0.016573635 0.041008963 0.025128906 0.0019060131 0.012378589 -0.0016781906" />
+            <joint name="right_knee_pitch" pos="0 0 0" axis="1 0 0" range="-1.5708 1.5708" actuatorfrcrange="-100 100" armature="0.02" damping="0.2" frictionloss="0.02" />
+            <geom pos="0.0366738645 -0.051076135 -0.175" quat="1.83186799e-16 -3.0013102e-31 1 1.60194916e-16" type="mesh" mesh="calf_R_1" contype="0" conaffinity="0" />
+            <geom pos="0.03675 -0.04 -0.035" quat="0.707106781 1.13274911e-16 0.707106781 1.13274911e-16" type="mesh" mesh="AK45-36_fpR_1" contype="0" conaffinity="0" />
+            <body name="footJ_R_1" pos="0 0 -0.2">
+              <inertial pos="-0.07725 -0.070732912 0.024011626" mass="0.3482" fullinertia="0.00093522186 0.0001912871 0.00086093476 0 0 -0.00021251285" />
+              <joint name="right_ankle_pitch" pos="0 0 0" axis="-1 0 0" range="-1.5708 1.5708" actuatorfrcrange="-100 100" armature="0.05" damping="0.4" frictionloss="0.02" />
+              <geom pos="0.00975 -0.04 0.025" quat="1.83186799e-16 4.67522447e-32 1 1.29578746e-16" type="mesh" mesh="footJ_R_1" contype="0" conaffinity="0" />
+              <geom pos="0.00975 -0.0185 0.025" quat="1.29532628e-16 -1.29532628e-16 0.707106781 0.707106781" type="mesh" mesh="AK45-10_R_1" contype="0" conaffinity="0" />
+              <body name="foot_R_v1_1" pos="0 -0.0215 0">
+                <inertial pos="-0.07725 0.0586 0.03639" mass="0.3213" fullinertia="0.000412 0.000221 0.000421 0 0 1.6e-05" />
+                <joint name="right_ankle_roll" pos="0 0 0" axis="0 -1 0" range="-1.5708 1.5708" actuatorfrcrange="-100 100" armature="0.05" damping="0.4" frictionloss="0.02" />
+                <geom pos="0.00975 -0.0385 -0.015" quat="1.78416203e-16 -5.20417043e-18 1 7.40771966e-17" type="mesh" mesh="foot_R_v1_1" contype="0" conaffinity="0" />
+                <geom name="foot_R_v1_1_sole_pad_rear_right" type="box" pos="-0.040681818 -0.028378378 -0.02425" size="0.024818182 0.031621622 0.02425" rgba="0.1 0.8 0.2 0.35" friction="1.0 0.02 0.001" condim="3" />
+                <geom name="foot_R_v1_1_sole_pad_rear_left" type="box" pos="-0.040681818 0.028378378 -0.02425" size="0.024818182 0.031621622 0.02425" rgba="0.1 0.8 0.2 0.35" friction="1.0 0.02 0.001" condim="3" />
+                <geom name="foot_R_v1_1_sole_pad_front_right" type="box" pos="0.00068181818 -0.028378378 -0.02425" size="0.024818182 0.031621622 0.02425" rgba="0.1 0.8 0.2 0.35" friction="1.0 0.02 0.001" condim="3" />
+                <geom name="foot_R_v1_1_sole_pad_front_left" type="box" pos="0.00068181818 0.028378378 -0.02425" size="0.024818182 0.031621622 0.02425" rgba="0.1 0.8 0.2 0.35" friction="1.0 0.02 0.001" condim="3" />
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <motor name="motor_left_hip_roll" joint="left_hip_roll" gear="1" ctrlrange="-100 100" forcerange="-100 100" />
+    <motor name="motor_left_hip_pitch" joint="left_hip_pitch" gear="1" ctrlrange="-100 100" forcerange="-100 100" />
+    <motor name="motor_left_knee_pitch" joint="left_knee_pitch" gear="1" ctrlrange="-100 100" forcerange="-100 100" />
+    <motor name="motor_left_ankle_pitch" joint="left_ankle_pitch" gear="1" ctrlrange="-100 100" forcerange="-100 100" />
+    <motor name="motor_left_ankle_roll" joint="left_ankle_roll" gear="1" ctrlrange="-100 100" forcerange="-100 100" />
+    <motor name="motor_right_hip_roll" joint="right_hip_roll" gear="1" ctrlrange="-100 100" forcerange="-100 100" />
+    <motor name="motor_right_hip_pitch" joint="right_hip_pitch" gear="1" ctrlrange="-100 100" forcerange="-100 100" />
+    <motor name="motor_right_knee_pitch" joint="right_knee_pitch" gear="1" ctrlrange="-100 100" forcerange="-100 100" />
+    <motor name="motor_right_ankle_pitch" joint="right_ankle_pitch" gear="1" ctrlrange="-100 100" forcerange="-100 100" />
+    <motor name="motor_right_ankle_roll" joint="right_ankle_roll" gear="1" ctrlrange="-100 100" forcerange="-100 100" />
+  </actuator>
+</mujoco>

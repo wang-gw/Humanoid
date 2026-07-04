@@ -1,0 +1,38 @@
+{
+  "status": "prefilled_from_geometry_search_failed_dynamic_probe",
+  "description": "기존 geometry search pose 후보를 named joint 기준으로 옮긴 값이다. 동역학 PD standing은 실패했으므로 실제 standing pose로 확정하면 안 된다.",
+  "base": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.04275807863394514,
+    "quat_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "joint_targets_rad": {
+    "left_hip_roll": 0.7870781828963145,
+    "left_hip_pitch": -0.5534532773622461,
+    "left_knee_pitch": -0.49455371043564345,
+    "left_ankle_pitch": -0.4663911365379237,
+    "left_ankle_roll": 0.3279467524974269,
+    "right_hip_roll": -0.47265624904576725,
+    "right_hip_pitch": 0.030452098708682818,
+    "right_knee_pitch": 0.34983206542539946,
+    "right_ankle_pitch": -0.3064468465025989,
+    "right_ankle_roll": -0.08137589150320734
+  },
+  "expected_feet": {
+    "left_foot_center_xyz": null,
+    "right_foot_center_xyz": null,
+    "stance_width_m": null,
+    "toe_direction_description": "미확정"
+  },
+  "source": {
+    "method": "geometry_search_candidate_only",
+    "cad_file": null,
+    "notes": "COM support AABB 조건은 만족했지만 forward dynamics probe에서 실패함."
+  }
+}

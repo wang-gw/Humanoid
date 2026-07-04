@@ -1,0 +1,12 @@
+body_name,cad_mass_kg,mjcf_mass_kg,cad_com_x,cad_com_y,cad_com_z,mjcf_inertial_pos,cad_ixx,cad_iyy,cad_izz,cad_ixy,cad_ixz,cad_iyz,mjcf_diagonal_inertia,cad_confirmed,notes
+base_link,,2.8,,,,0.0308857 -0.215714 0.213569,,,,,,,1.06696 0.916162 0.157827,false,MJCF 값 prefill. CAD mass/COM/inertia 확인 필요.
+thighJ_L_1,,0.4,,,,-0.0595 0.00311642 0.0161818,,,,,,,0.000841738 0.000809858 0.000166084,false,MJCF 값 prefill. CAD mass/COM/inertia 확인 필요.
+thigh_L_1,,0.9,,,,0.119497 0.0427676 -0.228712,,,,,,,0.0527885 0.0523542 0.000777714,false,MJCF 값 prefill. CAD mass/COM/inertia 확인 필요.
+calf_L_1,,0.9,,,,0.0891623 0.0164782 -0.178061,,,,,,,0.0217701 0.0212734 0.000733047,false,MJCF 값 prefill. CAD mass/COM/inertia 확인 필요.
+footJ_L_1,,0.3,,,,0 0 -0.000456168,,,,,,,0.00011625 0.00010825 0.000108,false,MJCF 값 prefill. CAD mass/COM/inertia 확인 필요.
+foot_L_1,,0.3,,,,0 9.75503e-05 -0.0286101,,,,,,,0.00040043 0.00035 0.00016757,false,MJCF 값 prefill. CAD mass/COM/inertia 확인 필요.
+thighJ_R_1,,0.4,,,,-0.0595 0.00311642 0.0161818,,,,,,,0.000864583 0.000819132 0.000179965,false,MJCF 값 prefill. CAD mass/COM/inertia 확인 필요.
+thigh_R_1,,0.92036,,,,0.213404 -0.0500906 -0.225147,,,,,,,0.088708 0.0882831 0.000762492,false,MJCF 값 prefill. CAD mass/COM/inertia 확인 필요.
+calf_R_1,,1.10362,,,,0.108823 -0.0206592 -0.160062,,,,,,,0.0367718 0.0359639 0.00104413,false,MJCF 값 prefill. CAD mass/COM/inertia 확인 필요.
+footJ_R_1,,0.3,,,,0 0 -0.000456168,,,,,,,0.00011625 0.00010825 0.000108,false,MJCF 값 prefill. CAD mass/COM/inertia 확인 필요.
+foot_R_v1_1,,0.3,,,,0 9.75503e-05 -0.0286101,,,,,,,0.00040043 0.00035 0.00016757,false,MJCF 값 prefill. CAD mass/COM/inertia 확인 필요.
