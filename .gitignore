@@ -20,6 +20,9 @@ env/
 outputs/**
 !outputs/.gitkeep
 !outputs/**/.gitkeep
+!outputs/train/
+!outputs/train/urdf_f/
+!outputs/train/urdf_f/e2e_walk_v5/
 
 # Reference motion data
 reference_motions/raw/**
@@ -46,3 +49,7 @@ wandb/
 *.mp4
 *.mov
 *.avi
+
+# Curated policy exceptions (e2e_walk_v5 final policy)
+!outputs/train/urdf_f/e2e_walk_v5/ppo_policy.zip
+!outputs/train/urdf_f/e2e_walk_v5/vecnormalize.pkl

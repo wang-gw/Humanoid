@@ -50,6 +50,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--clearance-gate-pitch", type=float, default=0.12)
     parser.add_argument("--fall-penalty", type=float, default=0.0)
     parser.add_argument("--stability-excess-penalty-weight", type=float, default=0.0)
+    parser.add_argument("--pose-tracking-penalty-weight", type=float, default=0.3)
     parser.add_argument("--termination-roll-limit", type=float, default=0.55)
     parser.add_argument("--termination-pitch-limit", type=float, default=0.55)
     parser.add_argument("--termination-base-drop", type=float, default=0.12)
@@ -97,6 +98,7 @@ def main() -> int:
                 clearance_gate_pitch=args.clearance_gate_pitch,
                 fall_penalty=args.fall_penalty,
                 stability_excess_penalty_weight=args.stability_excess_penalty_weight,
+                pose_tracking_penalty_weight=args.pose_tracking_penalty_weight,
                 termination_roll_limit=args.termination_roll_limit,
                 termination_pitch_limit=args.termination_pitch_limit,
                 termination_base_drop=args.termination_base_drop,
@@ -130,6 +132,7 @@ def main() -> int:
         "clearance_gate_pitch": args.clearance_gate_pitch,
         "fall_penalty": args.fall_penalty,
         "stability_excess_penalty_weight": args.stability_excess_penalty_weight,
+        "pose_tracking_penalty_weight": args.pose_tracking_penalty_weight,
         "termination_roll_limit": args.termination_roll_limit,
         "termination_pitch_limit": args.termination_pitch_limit,
         "termination_base_drop": args.termination_base_drop,

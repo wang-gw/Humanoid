@@ -42,6 +42,7 @@ class Stage:
     termination_roll_limit: float = 0.55
     termination_pitch_limit: float = 0.55
     reset_prev_action: bool = False
+    reset_qvel: bool = False
 
 
 def overlay_text(frame: np.ndarray, rows: list[str]) -> np.ndarray:
@@ -234,39 +235,43 @@ def make_stages_simple(n_cycles: int = 1) -> list[Stage]:
             action_scale=0.12, upright_penalty_weight=36.0,
             action_penalty_weight=0.08, action_delta_penalty_weight=0.03,
             fall_penalty=20.0,
+            reset_prev_action=True, reset_qvel=True,
         ))
         # LEFT step
         stages.append(Stage(
             name=f"L{cycle}_weight_shift_right",
             task="weight_shift_right",
             steps=100,
-            policy_path=train / "weight_shift_right_sym_100k/ppo_policy.zip",
-            vecnormalize_path=train / "weight_shift_right_sym_100k/vecnormalize.pkl",
+            policy_path=train / "weight_shift_right_lcp_v9_corrected_200k/ppo_policy.zip",
+            vecnormalize_path=train / "weight_shift_right_lcp_v9_corrected_200k/vecnormalize.pkl",
             action_scale=0.15, upright_penalty_weight=24.0,
             action_penalty_weight=0.05, action_delta_penalty_weight=0.02,
+            left_contact_penalty_weight=0.30,
+            reset_prev_action=True,
         ))
         stages.append(Stage(
             name=f"L{cycle}_left_clearance",
             task="left_clearance",
-            steps=100,
-            policy_path=train / "left_clearance_from_wsr_150k/ppo_policy.zip",
-            vecnormalize_path=train / "left_clearance_from_wsr_150k/vecnormalize.pkl",
-            action_scale=0.12, upright_penalty_weight=24.0,
-            action_penalty_weight=0.08, action_delta_penalty_weight=0.03,
-            left_contact_penalty_weight=0.30, clearance_reward_weight=6.0,
-            clearance_target=0.0002, gated_clearance_reward=True,
-            clearance_gate_roll=0.10, clearance_gate_pitch=0.10,
-            fall_penalty=30.0,
+            steps=25,
+            policy_path=train / "left_clearance_from_wsr_v9_200k/ppo_policy.zip",
+            vecnormalize_path=train / "left_clearance_from_wsr_v9_200k/vecnormalize.pkl",
+            action_scale=0.15, upright_penalty_weight=20.0,
+            action_penalty_weight=0.05, action_delta_penalty_weight=0.02,
+            right_contact_penalty_weight=0.10,
+            clearance_reward_weight=4.0, clearance_target=0.004,
+            gated_clearance_reward=False,
+            reset_prev_action=True,
         ))
         stages.append(Stage(
             name=f"L{cycle}_left_return",
             task="left_return",
-            steps=170,
-            policy_path=train / "left_return_sym_30k/ppo_policy.zip",
-            vecnormalize_path=train / "left_return_sym_30k/vecnormalize.pkl",
-            action_scale=0.12, upright_penalty_weight=24.0,
+            steps=200,
+            policy_path=train / "left_return_from_lclr_v2_200k/ppo_policy.zip",
+            vecnormalize_path=train / "left_return_from_lclr_v2_200k/vecnormalize.pkl",
+            action_scale=0.12, upright_penalty_weight=36.0,
             action_penalty_weight=0.08, action_delta_penalty_weight=0.03,
             fall_penalty=20.0,
+            reset_prev_action=True,
         ))
 
     stages.append(Stage(
@@ -332,9 +337,16 @@ def main() -> int:
 
     for stage in stages:
         apply_stage_params(env, stage)
+        if stage.reset_qvel:
+            import mujoco as _mj
+            env.data.qvel[:] = 0.0
+            _mj.mj_forward(env.model, env.data)
         if stage.reset_prev_action:
             env.prev_action[:] = 0.0
-            obs = env._obs()  # recompute obs to reflect zeroed prev_action
+        if stage.reset_qvel or stage.reset_prev_action:
+            # Reset base_z reference so the obs "height change" term starts at 0
+            env.base_z = float(env.data.qpos[2])
+            obs = env._obs()
         policy_vec = policy_cache.get(str(stage.policy_path)) if stage.policy_path else None
 
         for local_step in range(stage.steps):

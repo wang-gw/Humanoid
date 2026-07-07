@@ -58,7 +58,7 @@
               <body name="foot_L_1" pos="0 -0.0215 0">
                 <inertial pos="-0.07675 0.0586 -0.01361" mass="0.3213" fullinertia="0.000412 0.000221 0.000421 0 0 1.6e-05" />
                 <joint name="left_ankle_roll" pos="0 0 0" axis="0 -1 0" range="-1.5708 1.5708" actuatorfrcrange="-100 100" armature="0.05" damping="0.4" frictionloss="0.02" />
-                <geom pos="0.00975 -0.0385 -0.015" quat="1 1.97741483e-17 -1.77635684e-16 -6.123234e-17" type="mesh" mesh="foot_L_1" contype="0" conaffinity="0" />
+                <geom pos="0.020 0 -0.05611" quat="1 1.97741483e-17 -1.77635684e-16 -6.123234e-17" type="mesh" mesh="foot_L_1" contype="0" conaffinity="0" />
                 <geom name="foot_L_1_sole_pad_rear_right" type="box" pos="0.0040909091 -0.028378378 -0.02425" size="0.019090909 0.031621622 0.02425" rgba="0.1 0.8 0.2 0.35" friction="1.0 0.02 0.001" condim="3" />
                 <geom name="foot_L_1_sole_pad_rear_left" type="box" pos="0.0040909091 0.028378378 -0.02425" size="0.019090909 0.031621622 0.02425" rgba="0.1 0.8 0.2 0.35" friction="1.0 0.02 0.001" condim="3" />
                 <geom name="foot_L_1_sole_pad_front_right" type="box" pos="0.035909091 -0.028378378 -0.02425" size="0.019090909 0.031621622 0.02425" rgba="0.1 0.8 0.2 0.35" friction="1.0 0.02 0.001" condim="3" />
@@ -91,7 +91,7 @@
               <body name="foot_R_v1_1" pos="0 -0.0215 0">
                 <inertial pos="-0.07725 0.0586 0.03639" mass="0.3213" fullinertia="0.000412 0.000221 0.000421 0 0 1.6e-05" />
                 <joint name="right_ankle_roll" pos="0 0 0" axis="0 -1 0" range="-1.5708 1.5708" actuatorfrcrange="-100 100" armature="0.05" damping="0.4" frictionloss="0.02" />
-                <geom pos="0.00975 -0.0385 -0.015" quat="1.78416203e-16 -5.20417043e-18 1 7.40771966e-17" type="mesh" mesh="foot_R_v1_1" contype="0" conaffinity="0" />
+                <geom pos="-0.020 0 -0.05611" quat="1.78416203e-16 -5.20417043e-18 1 7.40771966e-17" type="mesh" mesh="foot_R_v1_1" contype="0" conaffinity="0" />
                 <geom name="foot_R_v1_1_sole_pad_rear_right" type="box" pos="-0.035909091 -0.028378378 -0.02425" size="0.019090909 0.031621622 0.02425" rgba="0.1 0.8 0.2 0.35" friction="1.0 0.02 0.001" condim="3" />
                 <geom name="foot_R_v1_1_sole_pad_rear_left" type="box" pos="-0.035909091 0.028378378 -0.02425" size="0.019090909 0.031621622 0.02425" rgba="0.1 0.8 0.2 0.35" friction="1.0 0.02 0.001" condim="3" />
                 <geom name="foot_R_v1_1_sole_pad_front_right" type="box" pos="-0.0040909091 -0.028378378 -0.02425" size="0.019090909 0.031621622 0.02425" rgba="0.1 0.8 0.2 0.35" friction="1.0 0.02 0.001" condim="3" />

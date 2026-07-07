@@ -72,8 +72,24 @@ class UrdfFEnv(gym.Env[np.ndarray, np.ndarray]):
         gated_clearance_reward: bool = False,
         clearance_gate_roll: float = 0.12,
         clearance_gate_pitch: float = 0.12,
+        step_target_length: float = 0.0,
+        step_reward_weight: float = 1.0,
+        flat_foot_penalty_weight: float = 0.0,
+        flat_foot_deadzone_rad: float = 0.087,
+        flat_foot_scale_rad: float = 0.30,
+        flat_foot_contact_clearance: float = 0.003,
+        swing_step_reward_weight: float = 0.0,
+        swing_step_target_speed: float = 0.05,
+        weight_shift_reward_weight: float = 0.0,
+        swing_contact_penalty_weight: float = 0.0,
+        foot_split_penalty_weight: float = 0.0,
+        foot_split_deadzone: float = 0.08,
+        foot_split_scale: float = 0.12,
+        jitter_qpos_std: float = 0.0,
+        jitter_qvel_std: float = 0.0,
         fall_penalty: float = 0.0,
         stability_excess_penalty_weight: float = 0.0,
+        pose_tracking_penalty_weight: float = 0.3,
         termination_roll_limit: float = 0.55,
         termination_pitch_limit: float = 0.55,
         termination_base_drop: float = 0.12,
@@ -107,8 +123,26 @@ class UrdfFEnv(gym.Env[np.ndarray, np.ndarray]):
         self.gated_clearance_reward = bool(gated_clearance_reward)
         self.clearance_gate_roll = float(clearance_gate_roll)
         self.clearance_gate_pitch = float(clearance_gate_pitch)
+        self.step_target_length = float(step_target_length)
+        self.step_reward_weight = float(step_reward_weight)
+        self.flat_foot_penalty_weight = float(flat_foot_penalty_weight)
+        self.flat_foot_deadzone_rad = float(flat_foot_deadzone_rad)
+        self.flat_foot_scale_rad = float(flat_foot_scale_rad)
+        self.flat_foot_contact_clearance = float(flat_foot_contact_clearance)
+        self.swing_step_reward_weight = float(swing_step_reward_weight)
+        self.swing_step_target_speed = float(swing_step_target_speed)
+        self.weight_shift_reward_weight = float(weight_shift_reward_weight)
+        self.swing_contact_penalty_weight = float(swing_contact_penalty_weight)
+        self.foot_split_penalty_weight = float(foot_split_penalty_weight)
+        self.foot_split_deadzone = float(foot_split_deadzone)
+        self.foot_split_scale = float(foot_split_scale)
+        self.jitter_qpos_std = float(jitter_qpos_std)
+        self.jitter_qvel_std = float(jitter_qvel_std)
+        self._prev_left_foot_y = 0.0
+        self._prev_right_foot_y = 0.0
         self.fall_penalty = float(fall_penalty)
         self.stability_excess_penalty_weight = float(stability_excess_penalty_weight)
+        self.pose_tracking_penalty_weight = float(pose_tracking_penalty_weight)
         self.termination_roll_limit = float(termination_roll_limit)
         self.termination_pitch_limit = float(termination_pitch_limit)
         self.termination_base_drop = float(termination_base_drop)
@@ -137,6 +171,8 @@ class UrdfFEnv(gym.Env[np.ndarray, np.ndarray]):
         self.joint_range = np.asarray(self.model.jnt_range[1 : 1 + len(self.joints)], dtype=np.float64)
         self.foot_geom_to_side = self._foot_geom_ids()
         self.base_body_id = int(mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_BODY, "base_link"))
+        self._left_foot_body_id = int(mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_BODY, "foot_L_1"))
+        self._right_foot_body_id = int(mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_BODY, "foot_R_v1_1"))
 
         self.prev_action = np.zeros(int(self.model.nu), dtype=np.float32)
         self._step_count = 0
@@ -212,6 +248,16 @@ class UrdfFEnv(gym.Env[np.ndarray, np.ndarray]):
         else:
             self.data.qpos[3:7] = np.array([1.0, 0.0, 0.0, 0.0], dtype=np.float64)
         self.data.qpos[self.joint_qposadr] = self.init_q
+        # Initial-state jitter for robustness: perturb joint angles/velocities so the
+        # policy sees a distribution of starts instead of a single trajectory.
+        if self.jitter_qpos_std > 0.0:
+            self.data.qpos[self.joint_qposadr] += self.np_random.normal(
+                0.0, self.jitter_qpos_std, size=self.joint_qposadr.shape
+            )
+        if self.jitter_qvel_std > 0.0:
+            self.data.qvel[self.joint_dofadr] += self.np_random.normal(
+                0.0, self.jitter_qvel_std, size=self.joint_dofadr.shape
+            )
         self.data.ctrl[:] = 0.0
         mujoco.mj_forward(self.model, self.data)
 
@@ -295,6 +341,34 @@ class UrdfFEnv(gym.Env[np.ndarray, np.ndarray]):
             min_z = min(min_z, z)
         return 0.0 if not np.isfinite(min_z) else min_z
 
+    def _foot_sole_tilt(self, body_id: int) -> float:
+        """Angle (rad) between the foot's up-axis and world +Z. 0 = sole flat on ground."""
+        cos_up = float(self.data.xmat[body_id].reshape(3, 3)[2, 2])
+        return float(np.arccos(np.clip(cos_up, -1.0, 1.0)))
+
+    def _flat_foot_penalty(self, left_in_contact: bool, right_in_contact: bool) -> float:
+        """Penalize a foot in ground contact whose sole is not flat (targets edge-walking).
+
+        Gated on actual contact rather than clearance: a foot walking on its edge stays
+        rolled but its box-center clearance reads as 'airborne', so clearance would miss it.
+        """
+        if self.flat_foot_penalty_weight <= 0.0:
+            return 0.0
+        dead = self.flat_foot_deadzone_rad
+        scale = max(self.flat_foot_scale_rad, 1e-6)
+        pen = 0.0
+        if left_in_contact:
+            pen += np.clip((self._foot_sole_tilt(self._left_foot_body_id) - dead) / scale, 0.0, 1.0)
+        if right_in_contact:
+            pen += np.clip((self._foot_sole_tilt(self._right_foot_body_id) - dead) / scale, 0.0, 1.0)
+        return self.flat_foot_penalty_weight * float(pen)
+
+    def _left_foot_y(self) -> float:
+        return float(self.data.xpos[self._left_foot_body_id, 1])
+
+    def _right_foot_y(self) -> float:
+        return float(self.data.xpos[self._right_foot_body_id, 1])
+
     def _obs(self) -> np.ndarray:
         q = self.data.qpos[self.joint_qposadr].astype(np.float32)
         qd = self.data.qvel[self.joint_dofadr].astype(np.float32)
@@ -340,6 +414,11 @@ class UrdfFEnv(gym.Env[np.ndarray, np.ndarray]):
         posture_penalty = float(np.mean(np.square(q - self.nominal_q)))
         contact_reward = 0.0
         task_reward = 0.0
+        flat_foot_penalty = 0.0
+        swing_step_reward = 0.0
+        weight_shift_reward = 0.0
+        swing_contact_penalty = 0.0
+        foot_split_penalty = 0.0
 
         stable_for_clearance = (
             abs(roll) <= self.clearance_gate_roll
@@ -351,9 +430,12 @@ class UrdfFEnv(gym.Env[np.ndarray, np.ndarray]):
         elif self.task == "weight_shift_left":
             task_reward = -4.0 * abs(stats["left_force_ratio"] - 0.65)
             contact_reward = min(stats["left_contacts"], 1.0) + 0.5 * min(stats["right_contacts"], 1.0)
+            if self.step_target_length > 0:
+                step_fwd = self._right_foot_y() - self._left_foot_y()
+                task_reward += self.step_reward_weight * np.clip(step_fwd / self.step_target_length, -1.0, 1.0)
         elif self.task == "weight_shift_right":
             task_reward = -4.0 * abs(stats["right_force_ratio"] - 0.65)
-            contact_reward = min(stats["right_contacts"], 1.0) + 0.5 * min(stats["left_contacts"], 1.0)
+            contact_reward = np.clip(stats["right_contacts"] / 8.0, 0.0, 1.0) + 0.5 * min(stats["left_contacts"], 1.0)
         elif self.task == "right_unload":
             task_reward = 1.5 * np.clip((30.0 - stats["right_force"]) / 30.0, -1.0, 1.0)
             contact_reward = min(stats["left_contacts"], 1.0)
@@ -366,6 +448,9 @@ class UrdfFEnv(gym.Env[np.ndarray, np.ndarray]):
                 clearance / max(self.clearance_target, 1e-6), -1.0, 1.0
             )
             task_reward += np.clip((10.0 - stats["right_force"]) / 10.0, -1.0, 1.0)
+            if self.step_target_length > 0:
+                step_fwd = self._right_foot_y() - self._left_foot_y()
+                task_reward += self.step_reward_weight * np.clip(step_fwd / self.step_target_length, -1.0, 1.0)
             contact_reward = min(stats["left_contacts"], 1.0)
         elif self.task == "left_clearance":
             left_clearance = self._left_foot_clearance()
@@ -374,13 +459,24 @@ class UrdfFEnv(gym.Env[np.ndarray, np.ndarray]):
                 left_clearance / max(self.clearance_target, 1e-6), -1.0, 1.0
             )
             task_reward += np.clip((10.0 - stats["left_force"]) / 10.0, -1.0, 1.0)
+            if self.step_target_length > 0:
+                step_fwd = self._left_foot_y() - self._right_foot_y()
+                task_reward += self.step_reward_weight * np.clip(step_fwd / self.step_target_length, -1.0, 1.0)
             contact_reward = min(stats["right_contacts"], 1.0)
+        elif self.task == "balance_settle":
+            # Drive force ratio toward 0.5 while keeping both feet planted
+            task_reward = -3.0 * abs(stats["left_force_ratio"] - 0.50)
+            contact_reward = min(stats["left_contacts"], 1.0) + min(stats["right_contacts"], 1.0)
         elif self.task == "right_return":
             target_clearance = 0.0005
             low_clearance_reward = 1.0 - np.clip(abs(clearance - target_clearance) / 0.004, 0.0, 1.0)
             right_contact_reward = np.clip(stats["right_contacts"] / 3.0, 0.0, 1.0)
             right_force_reward = np.clip(stats["right_force"] / 25.0, 0.0, 1.0)
             task_reward = 1.2 * low_clearance_reward + 0.8 * right_contact_reward + 0.6 * right_force_reward
+            if self.step_target_length > 0:
+                target_y = self._left_foot_y() + self.step_target_length
+                landing_err = abs(self._right_foot_y() - target_y)
+                task_reward += self.step_reward_weight * np.clip(1.0 - landing_err / self.step_target_length, 0.0, 1.0)
             contact_reward = min(stats["left_contacts"], 1.0)
         elif self.task == "left_return":
             left_clearance = self._left_foot_clearance()
@@ -389,7 +485,71 @@ class UrdfFEnv(gym.Env[np.ndarray, np.ndarray]):
             left_contact_reward = np.clip(stats["left_contacts"] / 3.0, 0.0, 1.0)
             left_force_reward = np.clip(stats["left_force"] / 25.0, 0.0, 1.0)
             task_reward = 1.2 * low_clearance_reward + 0.8 * left_contact_reward + 0.6 * left_force_reward
+            if self.step_target_length > 0:
+                target_y = self._right_foot_y() + self.step_target_length
+                landing_err = abs(self._left_foot_y() - target_y)
+                task_reward += self.step_reward_weight * np.clip(1.0 - landing_err / self.step_target_length, 0.0, 1.0)
             contact_reward = min(stats["right_contacts"], 1.0)
+        elif self.task == "walking":
+            vel_y = float(self.data.qvel[1])
+            vel_reward = np.clip(vel_y / 0.05, -0.5, 1.0) * 3.0
+            left_clr = self._left_foot_clearance()
+            right_clr = self._right_foot_clearance()
+            left_foot_y = self._left_foot_y()
+            right_foot_y = self._right_foot_y()
+            dt = self.frame_skip * float(self.model.opt.timestep)
+            phase_fn = getattr(self, "_gait_phase", None)
+            swing_step_reward = 0.0
+            weight_shift_reward = 0.0
+            if phase_fn is not None:
+                phase = phase_fn()
+                right_swing = np.sin(phase) > 0
+                swing_clr = right_clr if right_swing else left_clr
+                stance_contacts = stats["left_contacts"] if right_swing else stats["right_contacts"]
+                gait_reward = np.clip(swing_clr / 0.004, 0.0, 1.5)
+                contact_reward = min(stance_contacts, 1.0)
+                # Symmetric step reward: the swinging foot should move forward (+Y).
+                # Applied identically to both swing phases → discourages one-sided limp.
+                if self.swing_step_reward_weight > 0.0:
+                    swing_dy = (right_foot_y - self._prev_right_foot_y) if right_swing \
+                        else (left_foot_y - self._prev_left_foot_y)
+                    swing_speed = swing_dy / max(dt, 1e-6)
+                    swing_step_reward = self.swing_step_reward_weight * float(
+                        np.clip(swing_speed / max(self.swing_step_target_speed, 1e-6), -0.5, 1.0)
+                    )
+                # Weight-shift reward: load the stance foot so the swing foot can unload+lift.
+                # Root fix for the one-legged gait (swing foot never leaves the ground).
+                if self.weight_shift_reward_weight > 0.0:
+                    stance_ratio = stats["left_force_ratio"] if right_swing else stats["right_force_ratio"]
+                    weight_shift_reward = self.weight_shift_reward_weight * float(
+                        np.clip((stance_ratio - 0.5) / 0.5, 0.0, 1.0)
+                    )
+                # Swing-contact penalty: the swing foot must leave the ground during its phase.
+                # Direct (unavoidable) pressure to lift, needed to escape the one-legged gait.
+                if self.swing_contact_penalty_weight > 0.0:
+                    swing_contacts = stats["right_contacts"] if right_swing else stats["left_contacts"]
+                    swing_contact_penalty = self.swing_contact_penalty_weight * min(swing_contacts, 1.0)
+            else:
+                gait_reward = np.clip(max(left_clr, right_clr) / 0.004, 0.0, 1.5)
+                contact_reward = min(stats["left_contacts"] + stats["right_contacts"], 2.0) * 0.3
+            both_air = (left_clr > 0.005) and (right_clr > 0.005)
+            flat_foot_penalty = self._flat_foot_penalty(
+                stats["left_contacts"] > 0, stats["right_contacts"] > 0
+            )
+            # Foot-split penalty: discourage a persistent fore-aft gap between the feet
+            # (the lunge posture that accumulates and destabilizes the bilateral gait).
+            if self.foot_split_penalty_weight > 0.0:
+                split = abs(left_foot_y - right_foot_y)
+                foot_split_penalty = self.foot_split_penalty_weight * float(
+                    np.clip((split - self.foot_split_deadzone) / max(self.foot_split_scale, 1e-6), 0.0, 1.0)
+                )
+            task_reward = (
+                vel_reward + gait_reward + swing_step_reward + weight_shift_reward
+                - (2.0 if both_air else 0.0) - flat_foot_penalty - swing_contact_penalty
+                - foot_split_penalty
+            )
+            self._prev_left_foot_y = left_foot_y
+            self._prev_right_foot_y = right_foot_y
         else:
             raise ValueError(f"Unknown task: {self.task}")
 
@@ -405,6 +565,7 @@ class UrdfFEnv(gym.Env[np.ndarray, np.ndarray]):
             - self.right_contact_penalty_weight * min(stats["right_contacts"], 4.0)
             - self.left_contact_penalty_weight * min(stats["left_contacts"], 4.0)
             - self.stability_excess_penalty_weight * stability_excess_penalty
+            - (self.pose_tracking_penalty_weight - 0.3) * posture_penalty
         )
         terminated, _ = self._terminated()
         if terminated:
@@ -422,6 +583,13 @@ class UrdfFEnv(gym.Env[np.ndarray, np.ndarray]):
             "penalty_fall": float(self.fall_penalty if terminated else 0.0),
             "penalty_stability_excess": float(stability_excess_penalty),
             "penalty_posture": float(posture_penalty),
+            "penalty_flat_foot": float(flat_foot_penalty),
+            "reward_swing_step": float(swing_step_reward),
+            "reward_weight_shift": float(weight_shift_reward),
+            "penalty_swing_contact": float(swing_contact_penalty),
+            "penalty_foot_split": float(foot_split_penalty),
+            "left_sole_tilt": float(self._foot_sole_tilt(self._left_foot_body_id)),
+            "right_sole_tilt": float(self._foot_sole_tilt(self._right_foot_body_id)),
             "clearance_reward_gated": float(1.0 if (not self.gated_clearance_reward or stable_for_clearance) else 0.0)
             if self.task in {"right_clearance", "left_clearance"}
             else 0.0,
@@ -454,6 +622,8 @@ class UrdfFEnv(gym.Env[np.ndarray, np.ndarray]):
         self._init_state()
         self.prev_action[:] = 0.0
         self._step_count = 0
+        self._prev_left_foot_y = self._left_foot_y()
+        self._prev_right_foot_y = self._right_foot_y()
         return self._obs(), self._info("")
 
     def step(self, action: np.ndarray) -> tuple[np.ndarray, float, bool, bool, dict[str, Any]]:
