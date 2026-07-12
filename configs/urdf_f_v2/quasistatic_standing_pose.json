@@ -1,0 +1,86 @@
+{
+  "model_path": "/home/king0519/projects/Humanoid/envs/robots/urdf_f_v2/URDF_F_v2_footprint_contact.xml",
+  "_status": "quasi-static balance candidate — verify with a PD/RL rollout before trusting.",
+  "search": {
+    "samples": 8000,
+    "per_iteration": 1333,
+    "elite": 80,
+    "iterations": 6,
+    "seed": 7,
+    "joint_abs_limit": 0.8,
+    "clearance": 0.005,
+    "left_foot": "foot_L_1",
+    "right_foot": "foot_R_1",
+    "history": [
+      {
+        "iteration": 0,
+        "best_cost": 0.6010717670483657,
+        "global_best_cost": 0.6010717670483657
+      },
+      {
+        "iteration": 1,
+        "best_cost": 1.2840835448852597,
+        "global_best_cost": 0.6010717670483657
+      },
+      {
+        "iteration": 2,
+        "best_cost": 0.6426858467236809,
+        "global_best_cost": 0.6010717670483657
+      },
+      {
+        "iteration": 3,
+        "best_cost": 0.17337570276010955,
+        "global_best_cost": 0.17337570276010955
+      },
+      {
+        "iteration": 4,
+        "best_cost": 0.1695964331308801,
+        "global_best_cost": 0.1695964331308801
+      },
+      {
+        "iteration": 5,
+        "best_cost": 0.05703143131747558,
+        "global_best_cost": 0.05703143131747558
+      }
+    ]
+  },
+  "base_z": 0.027787584367778558,
+  "cost": 0.05703143131747558,
+  "joint_targets": {
+    "left_hip_roll": 0.10330738618942838,
+    "left_hip_pitch": -0.03771061459260176,
+    "left_knee_pitch": 0.013849965229743813,
+    "left_ankle_pitch": -0.08613206691686326,
+    "left_ankle_roll": -0.03624660557376443,
+    "right_hip_roll": -0.026819935070751387,
+    "right_hip_pitch": -0.03697406241200948,
+    "right_knee_pitch": 0.10657468455342088,
+    "right_ankle_pitch": -0.10234348454211686,
+    "right_ankle_roll": 0.0018216031661486554
+  },
+  "com_world": [
+    0.01879488614041079,
+    -0.07113553603067446,
+    0.2886804715788387
+  ],
+  "support_aabb": {
+    "x_min": -0.12036877844171301,
+    "x_max": 0.14825715241694784,
+    "y_min": -0.1392845358313044,
+    "y_max": -0.00192303724254788
+  },
+  "support_margins": [
+    0.1391636645821238,
+    0.12946226627653706,
+    0.06814899980062994,
+    0.06921249878812658
+  ],
+  "foot_low_z": [
+    0.0050000000000000044,
+    0.00639775016317445
+  ],
+  "foot_height_diff": 0.0013977501631744459,
+  "normal_penalty": 1.81448887327798e-05,
+  "center_penalty": 0.001364229694038917,
+  "joint_norm": 0.21199277832163227
+}

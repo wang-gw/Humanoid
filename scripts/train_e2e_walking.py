@@ -27,11 +27,26 @@ from stable_baselines3.common.callbacks import BaseCallback, CheckpointCallback
 from stable_baselines3.common.vec_env import DummyVecEnv, VecNormalize
 
 from envs.gait_walking_env import GaitWalkingEnv
+from envs.urdf_f_v2_env import GaitWalkingV2Env
 from envs.urdf_f_env import UrdfFEnv
+
+# Env class used for training. `gait` = old urdf_f model (defaults below);
+# `gait_v2` = new urdf_f_v2 model, which pins its own model/pose/foot/reward.
+ENV_CLASSES = {"gait": GaitWalkingEnv, "gait_v2": GaitWalkingV2Env}
+ENV_CLASS = GaitWalkingEnv
 
 TRAIN_DIR = Path("outputs/train/urdf_f")
 MODEL_PATH = "envs/robots/urdf_f_link/URDF_F_link_virtual_stl_footprint_contact.xml"
 POSE_PATH = "configs/symmetric_standing_pose.json"
+# Foot body names the env uses for contact/clearance sensing. Defaults match the
+# old urdf_f model; the urdf_f_v2 model names its right foot "foot_R_1".
+LEFT_FOOT_BODY = "foot_L_1"
+RIGHT_FOOT_BODY = "foot_R_v1_1"
+# Nominal attitude-stabilizer signs. Defaults match the old urdf_f model; the
+# urdf_f_v2 model has flipped pitch-joint axes, so it needs roll_sign=-1.
+NOMINAL_ROLL_SIGN = 1.0
+NOMINAL_PITCH_SIGN = -1.0
+NOMINAL_KCOM = 1.0
 
 
 class SaveVecNormCallback(BaseCallback):
@@ -72,9 +87,7 @@ def make_env_fn(flat_foot_weight: float = 0.0, swing_step_weight: float = 0.0,
                 foot_split_weight: float = 0.0, jitter_qpos: float = 0.0,
                 jitter_qvel: float = 0.0, **kwargs):
     def _init():
-        return GaitWalkingEnv(
-            model_path=MODEL_PATH,
-            pose_path=POSE_PATH,
+        env_kwargs = dict(
             task="walking",
             max_episode_steps=1000,
             frame_skip=10,
@@ -94,6 +107,19 @@ def make_env_fn(flat_foot_weight: float = 0.0, swing_step_weight: float = 0.0,
             termination_pitch_limit=0.55,
             gait_period_steps=400,
         )
+        # GaitWalkingV2Env pins its own model/pose/foot defaults; only the base
+        # `gait` class takes them from this script's globals (old urdf_f model).
+        if ENV_CLASS is GaitWalkingEnv:
+            env_kwargs.update(
+                model_path=MODEL_PATH,
+                pose_path=POSE_PATH,
+                left_foot_body=LEFT_FOOT_BODY,
+                right_foot_body=RIGHT_FOOT_BODY,
+                nominal_roll_sign=NOMINAL_ROLL_SIGN,
+                nominal_pitch_sign=NOMINAL_PITCH_SIGN,
+                nominal_kcom=NOMINAL_KCOM,
+            )
+        return ENV_CLASS(**env_kwargs)
     return _init
 
 
@@ -194,14 +220,12 @@ def evaluate(run_name: str, n_cycles: int = 3):
     vec_env.norm_reward = False
     model = PPO.load(str(run_dir / "ppo_policy"), env=vec_env, device="cpu")
 
-    env = GaitWalkingEnv(
-        model_path=MODEL_PATH,
-        pose_path=POSE_PATH,
-        task="walking",
-        max_episode_steps=n_cycles * 800,
-        frame_skip=10,
-        gait_period_steps=400,
-    )
+    eval_kwargs = dict(task="walking", max_episode_steps=n_cycles * 800,
+                       frame_skip=10, gait_period_steps=400)
+    if ENV_CLASS is GaitWalkingEnv:
+        eval_kwargs.update(model_path=MODEL_PATH, pose_path=POSE_PATH,
+                           left_foot_body=LEFT_FOOT_BODY, right_foot_body=RIGHT_FOOT_BODY)
+    env = ENV_CLASS(**eval_kwargs)
     obs, _ = env.reset()
     init_ly = env._left_foot_y()
     init_ry = env._right_foot_y()
@@ -223,6 +247,24 @@ def evaluate(run_name: str, n_cycles: int = 3):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--run-name", default="e2e_walk_v1")
+    parser.add_argument("--env", choices=list(ENV_CLASSES), default="gait",
+                        help="Env/model: 'gait' = old urdf_f, 'gait_v2' = new urdf_f_v2 (pins its own model/pose/foot/reward).")
+    parser.add_argument("--model-path", default=None,
+                        help="Override robot MJCF path (e.g. urdf_f_v2 footprint contact model).")
+    parser.add_argument("--pose-path", default=None,
+                        help="Override standing pose JSON path.")
+    parser.add_argument("--train-dir", default=None,
+                        help="Override output dir (e.g. outputs/train/urdf_f_v2) to separate model runs.")
+    parser.add_argument("--left-foot-body", default=None,
+                        help="Left foot body name for contact sensing (default foot_L_1).")
+    parser.add_argument("--right-foot-body", default=None,
+                        help="Right foot body name (urdf_f_v2 uses foot_R_1; default foot_R_v1_1).")
+    parser.add_argument("--nominal-roll-sign", type=float, default=None,
+                        help="Attitude-stabilizer roll sign (urdf_f_v2 needs -1; default +1).")
+    parser.add_argument("--nominal-pitch-sign", type=float, default=None,
+                        help="Attitude-stabilizer pitch sign (default -1).")
+    parser.add_argument("--nominal-kcom", type=float, default=None,
+                        help="Attitude-stabilizer CoM feedback gain (default 1.0).")
     parser.add_argument("--total-timesteps", type=int, default=2_000_000)
     parser.add_argument("--n-envs", type=int, default=8)
     parser.add_argument("--checkpoint-freq", type=int, default=50_000)
@@ -246,6 +288,26 @@ if __name__ == "__main__":
                         help="Warm-start a fresh run from another run's policy+vecnorm (e.g. e2e_walk_v1).")
     parser.add_argument("--eval", action="store_true")
     args = parser.parse_args()
+
+    ENV_CLASS = ENV_CLASSES[args.env]
+
+    # Apply model/pose overrides onto module globals used by make_env_fn/evaluate.
+    if args.model_path:
+        MODEL_PATH = args.model_path
+    if args.pose_path:
+        POSE_PATH = args.pose_path
+    if args.train_dir:
+        TRAIN_DIR = Path(args.train_dir)
+    if args.left_foot_body:
+        LEFT_FOOT_BODY = args.left_foot_body
+    if args.right_foot_body:
+        RIGHT_FOOT_BODY = args.right_foot_body
+    if args.nominal_roll_sign is not None:
+        NOMINAL_ROLL_SIGN = args.nominal_roll_sign
+    if args.nominal_pitch_sign is not None:
+        NOMINAL_PITCH_SIGN = args.nominal_pitch_sign
+    if args.nominal_kcom is not None:
+        NOMINAL_KCOM = args.nominal_kcom
 
     if args.eval:
         evaluate(args.run_name)

@@ -1,0 +1,93 @@
+{
+  "status": "confirmed_from_kinematics",
+  "notes": [
+    "urdf_f_v2 (URDF_description) 모델용 joint mapping이다.",
+    "SolidWorks export가 관절을 'Revolute N'으로 자동 명명했으나, body 이름(hipjoint1_L, thigh_L, calf_L, footJ_L, foot_L)이 의미 기반이라 운동학 체인 + 축 방향으로 역할을 확정했다.",
+    "축 패턴은 구모델(urdf_f)과 동일: hip_roll/ankle_roll = (0 -1 0), hip_pitch/knee/ankle_pitch = (±1 0 0).",
+    "positive direction(부호)은 구모델과 좌우 X축 부호가 반대일 수 있어 학습 전 검증 권장."
+  ],
+  "action_order": [
+    "left_hip_roll",
+    "left_hip_pitch",
+    "left_knee_pitch",
+    "left_ankle_pitch",
+    "left_ankle_roll",
+    "right_hip_roll",
+    "right_hip_pitch",
+    "right_knee_pitch",
+    "right_ankle_pitch",
+    "right_ankle_roll"
+  ],
+  "joints": {
+    "Revolute 3": {
+      "new_name": "left_hip_roll",
+      "side": "left",
+      "role": "hip_roll",
+      "body": "hipjoint1_L_1",
+      "axis": "0 -1 0"
+    },
+    "Revolute 5": {
+      "new_name": "left_hip_pitch",
+      "side": "left",
+      "role": "hip_pitch",
+      "body": "thigh_L_1",
+      "axis": "-1 0 0"
+    },
+    "Revolute 7": {
+      "new_name": "left_knee_pitch",
+      "side": "left",
+      "role": "knee_pitch",
+      "body": "calf_L_1",
+      "axis": "-1 0 0"
+    },
+    "Revolute 8": {
+      "new_name": "left_ankle_pitch",
+      "side": "left",
+      "role": "ankle_pitch",
+      "body": "footJ_L_1",
+      "axis": "1 0 0"
+    },
+    "Revolute 11": {
+      "new_name": "left_ankle_roll",
+      "side": "left",
+      "role": "ankle_roll",
+      "body": "foot_L_1",
+      "axis": "0 -1 0"
+    },
+    "Revolute 14": {
+      "new_name": "right_hip_roll",
+      "side": "right",
+      "role": "hip_roll",
+      "body": "hipjoint1_R_1",
+      "axis": "0 -1 0"
+    },
+    "Revolute 16": {
+      "new_name": "right_hip_pitch",
+      "side": "right",
+      "role": "hip_pitch",
+      "body": "thigh_R_1",
+      "axis": "1 0 0"
+    },
+    "Revolute 18": {
+      "new_name": "right_knee_pitch",
+      "side": "right",
+      "role": "knee_pitch",
+      "body": "calf_R_1",
+      "axis": "1 0 0"
+    },
+    "Revolute 20": {
+      "new_name": "right_ankle_pitch",
+      "side": "right",
+      "role": "ankle_pitch",
+      "body": "footJ_R_1",
+      "axis": "1 0 0"
+    },
+    "Revolute 22": {
+      "new_name": "right_ankle_roll",
+      "side": "right",
+      "role": "ankle_roll",
+      "body": "foot_R_1",
+      "axis": "0 -1 0"
+    }
+  }
+}

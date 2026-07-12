@@ -1,0 +1,642 @@
+<?xml version="1.0" ?>
+<robot name="URDF" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find URDF_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find URDF_description)/urdf/URDF.trans" />
+<xacro:include filename="$(find URDF_description)/urdf/URDF.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.0 -0.03 0.48450000000000004" rpy="0 0 0"/>
+    <mass value="1.9999979999999995"/>
+    <inertia ixx="0.016963" iyy="0.016429" izz="0.030533" ixy="0.0" iyz="0.00168" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="hipjoint2_L_1">
+  <inertial>
+    <origin xyz="0.07499938988480921 -0.010369568761044723 -0.44821148623901264" rpy="0 0 0"/>
+    <mass value="0.09998953884548026"/>
+    <inertia ixx="0.000126" iyy="0.000143" izz="0.000142" ixy="-0.0" iyz="-1.6e-05" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.05 -0.84" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/hipjoint2_L_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.05 -0.84" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/hipjoint2_L_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="AK45-36_hiproll_L_1">
+  <inertial>
+    <origin xyz="3.649858193455202e-15 -0.025929681922883942 -0.00025395116497450854" rpy="0 0 0"/>
+    <mass value="0.33995023875860664"/>
+    <inertia ixx="0.000136" iyy="0.000127" izz="0.000138" ixy="0.0" iyz="2e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.075 -0.05 -0.3705" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/AK45-36_hiproll_L_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.075 -0.05 -0.3705" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/AK45-36_hiproll_L_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="hipjoint1_L_1">
+  <inertial>
+    <origin xyz="0.04322145895224758 -0.041064731227878085 -7.216449660063518e-16" rpy="0 0 0"/>
+    <mass value="0.09999002260131924"/>
+    <inertia ixx="0.000128" iyy="0.000429" izz="0.000476" ixy="6.1e-05" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.075 0.002 -0.3705" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/hipjoint1_L_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.075 0.002 -0.3705" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/hipjoint1_L_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="AK45-36_hippitch_L_1">
+  <inertial>
+    <origin xyz="-0.025929681922883946 -0.0002539511649743906 3.219646771412954e-15" rpy="0 0 0"/>
+    <mass value="0.33995023875860664"/>
+    <inertia ixx="0.000127" iyy="0.000138" izz="0.000136" ixy="2e-06" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.184 0.056 -0.3705" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/AK45-36_hippitch_L_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.184 0.056 -0.3705" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/AK45-36_hippitch_L_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="thigh_L_1">
+  <inertial>
+    <origin xyz="-0.06166687360385399 -0.0003734522117018954 -0.045311236159508717" rpy="0 0 0"/>
+    <mass value="0.4999556836274749"/>
+    <inertia ixx="0.00159" iyy="0.002317" izz="0.001067" ixy="-8e-06" iyz="8e-06" ixz="0.000245"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.132 0.056 -0.3705" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/thigh_L_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.132 0.056 -0.3705" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/thigh_L_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="AK45-36_kneepitch_L_1">
+  <inertial>
+    <origin xyz="0.025929681922883932 -0.0002539511649743906 -3.885780586188048e-15" rpy="0 0 0"/>
+    <mass value="0.33995023875860664"/>
+    <inertia ixx="0.000127" iyy="0.000138" izz="0.000136" ixy="-2e-06" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.02175 0.056 -0.3705" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/AK45-36_kneepitch_L_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.02175 0.056 -0.3705" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/AK45-36_kneepitch_L_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="calf_L_1">
+  <inertial>
+    <origin xyz="-0.040288465566247725 -0.00020534515301232764 -0.07496275318570464" rpy="0 0 0"/>
+    <mass value="0.5000400348749372"/>
+    <inertia ixx="0.00219" iyy="0.002663" izz="0.000761" ixy="-2e-06" iyz="2e-06" ixz="1.3e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.118 0.056 -0.2405" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/calf_L_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.118 0.056 -0.2405" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/calf_L_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="footJ_L_1">
+  <inertial>
+    <origin xyz="-0.03640247476299978 0.005293678265899798 -0.0007471238611274078" rpy="0 0 0"/>
+    <mass value="0.06000029231179884"/>
+    <inertia ixx="3.2e-05" iyy="5.2e-05" izz="4.5e-05" ixy="2e-06" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.118 0.056 -0.0405" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/footJ_L_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.118 0.056 -0.0405" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/footJ_L_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="AK45-36_footpitch_L_1">
+  <inertial>
+    <origin xyz="0.025929681922883967 -0.00025395116497438364 -3.885780586188048e-15" rpy="0 0 0"/>
+    <mass value="0.33995023875860664"/>
+    <inertia ixx="0.000127" iyy="0.000138" izz="0.000136" ixy="-2e-06" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.054 0.056 -0.1805" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/AK45-36_footpitch_L_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.054 0.056 -0.1805" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/AK45-36_footpitch_L_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="AK45-10_footroll_L_1">
+  <inertial>
+    <origin xyz="-2.7755575615628914e-17 -0.021367617027735472 -0.0001990697057014726" rpy="0 0 0"/>
+    <mass value="0.25999992313813247"/>
+    <inertia ixx="8.3e-05" iyy="9e-05" izz="8.4e-05" ixy="-0.0" iyz="1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.075 0.035 -0.0405" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/AK45-10_footroll_L_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.075 0.035 -0.0405" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/AK45-10_footroll_L_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="foot_L_1">
+  <inertial>
+    <origin xyz="-9.2148511043888e-15 0.008829275913800477 -0.025461863045541683" rpy="0 0 0"/>
+    <mass value="0.2998726166531382"/>
+    <inertia ixx="0.000424" iyy="0.000173" izz="0.000431" ixy="-0.0" iyz="-3.2e-05" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.075 0.078 -0.0405" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/foot_L_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.075 0.078 -0.0405" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/foot_L_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="hipjoint2_R_1">
+  <inertial>
+    <origin xyz="-0.07500061011519077 -0.010369568761044716 -0.44821148623901264" rpy="0 0 0"/>
+    <mass value="0.09998953884548026"/>
+    <inertia ixx="0.000126" iyy="0.000143" izz="0.000142" ixy="-0.0" iyz="-1.6e-05" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.05 -0.84" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/hipjoint2_R_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.05 -0.84" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/hipjoint2_R_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="AK45-36_hiproll_R_1">
+  <inertial>
+    <origin xyz="3.635980405647388e-15 -0.025929681922883977 -0.0002539511649743975" rpy="0 0 0"/>
+    <mass value="0.33995023875860664"/>
+    <inertia ixx="0.000136" iyy="0.000127" izz="0.000138" ixy="0.0" iyz="2e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.075 -0.05 -0.3705" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/AK45-36_hiproll_R_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.075 -0.05 -0.3705" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/AK45-36_hiproll_R_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="hipjoint1_R_1">
+  <inertial>
+    <origin xyz="-0.04322145895224483 -0.04106473122787697 -3.885780586188048e-16" rpy="0 0 0"/>
+    <mass value="0.09999002260130978"/>
+    <inertia ixx="0.000128" iyy="0.000429" izz="0.000476" ixy="-6.1e-05" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.075 0.002 -0.3705" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/hipjoint1_R_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.075 0.002 -0.3705" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/hipjoint1_R_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="AK45-36_hippitch_R_1">
+  <inertial>
+    <origin xyz="0.025929681922883946 -0.00025395116497441833 -3.7192471324942744e-15" rpy="0 0 0"/>
+    <mass value="0.33995023875860664"/>
+    <inertia ixx="0.000127" iyy="0.000138" izz="0.000136" ixy="-2e-06" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.184 0.056 -0.3705" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/AK45-36_hippitch_R_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.184 0.056 -0.3705" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/AK45-36_hippitch_R_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="thigh_R_1">
+  <inertial>
+    <origin xyz="0.06166687360385377 -0.0003734522117019648 -0.045311236159512325" rpy="0 0 0"/>
+    <mass value="0.49995921031578194"/>
+    <inertia ixx="0.00159" iyy="0.002317" izz="0.001067" ixy="8e-06" iyz="8e-06" ixz="-0.000245"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.132 0.056 -0.3705" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/thigh_R_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.132 0.056 -0.3705" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/thigh_R_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="AK45-36_kneepitch_R_1">
+  <inertial>
+    <origin xyz="-0.025929681922883897 -0.00025395116497441833 3.552713678800501e-15" rpy="0 0 0"/>
+    <mass value="0.33995023875860664"/>
+    <inertia ixx="0.000127" iyy="0.000138" izz="0.000136" ixy="2e-06" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.02175 0.056 -0.3705" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/AK45-36_kneepitch_R_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.02175 0.056 -0.3705" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/AK45-36_kneepitch_R_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="calf_R_1">
+  <inertial>
+    <origin xyz="0.04028846556625301 -0.0002053451530124456 -0.07496275318570209" rpy="0 0 0"/>
+    <mass value="0.5000400348750299"/>
+    <inertia ixx="0.00219" iyy="0.002663" izz="0.000761" ixy="2e-06" iyz="2e-06" ixz="-1.3e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.118 0.056 -0.2405" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/calf_R_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.118 0.056 -0.2405" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/calf_R_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="AK45-36_footpitch_R_1">
+  <inertial>
+    <origin xyz="-0.025929681922884022 -0.0002539511649745155 3.552713678800501e-15" rpy="0 0 0"/>
+    <mass value="0.33995023875860664"/>
+    <inertia ixx="0.000127" iyy="0.000138" izz="0.000136" ixy="2e-06" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.054 0.056 -0.1805" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/AK45-36_footpitch_R_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.054 0.056 -0.1805" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/AK45-36_footpitch_R_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="footJ_R_1">
+  <inertial>
+    <origin xyz="0.03640247476299972 0.005293678265899611 -0.0007471238611273454" rpy="0 0 0"/>
+    <mass value="0.06000029231179887"/>
+    <inertia ixx="3.2e-05" iyy="5.2e-05" izz="4.5e-05" ixy="-2e-06" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.118 0.056 -0.0405" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/footJ_R_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.118 0.056 -0.0405" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/footJ_R_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="AK45-10_footroll_R_1">
+  <inertial>
+    <origin xyz="-6.938893903907228e-17 -0.02136761702773563 -0.00019906970570141708" rpy="0 0 0"/>
+    <mass value="0.25999992313813247"/>
+    <inertia ixx="8.3e-05" iyy="9e-05" izz="8.4e-05" ixy="-0.0" iyz="1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.075 0.035 -0.0405" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/AK45-10_footroll_R_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.075 0.035 -0.0405" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/AK45-10_footroll_R_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="foot_R_1">
+  <inertial>
+    <origin xyz="-9.298117831235686e-15 0.008829275913800338 -0.025461863045541645" rpy="0 0 0"/>
+    <mass value="0.2998726166531382"/>
+    <inertia ixx="0.000424" iyy="0.000173" izz="0.000431" ixy="-0.0" iyz="-3.2e-05" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.075 0.078 -0.0405" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/foot_R_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.075 0.078 -0.0405" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_description)/meshes/foot_R_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rigid 1" type="fixed">
+  <origin xyz="0.0 0.05 0.84" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="hipjoint2_L_1"/>
+</joint>
+
+<joint name="Rigid 2" type="fixed">
+  <origin xyz="0.075 0.0 -0.4695" rpy="0 0 0"/>
+  <parent link="hipjoint2_L_1"/>
+  <child link="AK45-36_hiproll_L_1"/>
+</joint>
+
+<joint name="Revolute 3" type="revolute">
+  <origin xyz="0.0 -0.052 0.0" rpy="0 0 0"/>
+  <parent link="AK45-36_hiproll_L_1"/>
+  <child link="hipjoint1_L_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+  <limit upper="0.523599" lower="-0.523599" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Rigid 4" type="fixed">
+  <origin xyz="0.109 -0.054 0.0" rpy="0 0 0"/>
+  <parent link="hipjoint1_L_1"/>
+  <child link="AK45-36_hippitch_L_1"/>
+</joint>
+
+<joint name="Revolute 5" type="revolute">
+  <origin xyz="-0.052 0.0 0.0" rpy="0 0 0"/>
+  <parent link="AK45-36_hippitch_L_1"/>
+  <child link="thigh_L_1"/>
+  <axis xyz="-1.0 0.0 -0.0"/>
+  <limit upper="1.570796" lower="-0.523599" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Rigid 6" type="fixed">
+  <origin xyz="-0.11025 0.0 0.0" rpy="0 0 0"/>
+  <parent link="thigh_L_1"/>
+  <child link="AK45-36_kneepitch_L_1"/>
+</joint>
+
+<joint name="Revolute 7" type="revolute">
+  <origin xyz="-0.014 0.0 -0.13" rpy="0 0 0"/>
+  <parent link="thigh_L_1"/>
+  <child link="calf_L_1"/>
+  <axis xyz="-1.0 0.0 -0.0"/>
+  <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Revolute 8" type="revolute">
+  <origin xyz="0.0 0.0 -0.2" rpy="0 0 0"/>
+  <parent link="calf_L_1"/>
+  <child link="footJ_L_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Rigid 9" type="fixed">
+  <origin xyz="-0.064 0.0 -0.06" rpy="0 0 0"/>
+  <parent link="calf_L_1"/>
+  <child link="AK45-36_footpitch_L_1"/>
+</joint>
+
+<joint name="Rigid 10" type="fixed">
+  <origin xyz="-0.043 0.021 0.0" rpy="0 0 0"/>
+  <parent link="footJ_L_1"/>
+  <child link="AK45-10_footroll_L_1"/>
+</joint>
+
+<joint name="Revolute 11" type="revolute">
+  <origin xyz="0.0 -0.043 0.0" rpy="0 0 0"/>
+  <parent link="AK45-10_footroll_L_1"/>
+  <child link="foot_L_1"/>
+  <axis xyz="-0.0 -1.0 0.0"/>
+  <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Rigid 12" type="fixed">
+  <origin xyz="0.0 0.05 0.84" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="hipjoint2_R_1"/>
+</joint>
+
+<joint name="Rigid 13" type="fixed">
+  <origin xyz="-0.075 0.0 -0.4695" rpy="0 0 0"/>
+  <parent link="hipjoint2_R_1"/>
+  <child link="AK45-36_hiproll_R_1"/>
+</joint>
+
+<joint name="Revolute 14" type="revolute">
+  <origin xyz="0.0 -0.052 0.0" rpy="0 0 0"/>
+  <parent link="AK45-36_hiproll_R_1"/>
+  <child link="hipjoint1_R_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+  <limit upper="0.523599" lower="-0.523599" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Rigid 15" type="fixed">
+  <origin xyz="-0.109 -0.054 0.0" rpy="0 0 0"/>
+  <parent link="hipjoint1_R_1"/>
+  <child link="AK45-36_hippitch_R_1"/>
+</joint>
+
+<joint name="Revolute 16" type="revolute">
+  <origin xyz="0.052 0.0 0.0" rpy="0 0 0"/>
+  <parent link="AK45-36_hippitch_R_1"/>
+  <child link="thigh_R_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit upper="0.523599" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Rigid 17" type="fixed">
+  <origin xyz="0.11025 0.0 0.0" rpy="0 0 0"/>
+  <parent link="thigh_R_1"/>
+  <child link="AK45-36_kneepitch_R_1"/>
+</joint>
+
+<joint name="Revolute 18" type="revolute">
+  <origin xyz="0.014 0.0 -0.13" rpy="0 0 0"/>
+  <parent link="thigh_R_1"/>
+  <child link="calf_R_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Rigid 19" type="fixed">
+  <origin xyz="0.064 0.0 -0.06" rpy="0 0 0"/>
+  <parent link="calf_R_1"/>
+  <child link="AK45-36_footpitch_R_1"/>
+</joint>
+
+<joint name="Revolute 20" type="revolute">
+  <origin xyz="0.0 0.0 -0.2" rpy="0 0 0"/>
+  <parent link="calf_R_1"/>
+  <child link="footJ_R_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Rigid 21" type="fixed">
+  <origin xyz="0.043 0.021 0.0" rpy="0 0 0"/>
+  <parent link="footJ_R_1"/>
+  <child link="AK45-10_footroll_R_1"/>
+</joint>
+
+<joint name="Revolute 22" type="revolute">
+  <origin xyz="0.0 -0.043 0.0" rpy="0 0 0"/>
+  <parent link="AK45-10_footroll_R_1"/>
+  <child link="foot_R_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+  <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+
+</robot>
