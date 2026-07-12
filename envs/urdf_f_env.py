@@ -101,6 +101,8 @@ class UrdfFEnv(gym.Env[np.ndarray, np.ndarray]):
         render_mode: str | None = None,
         width: int = 640,
         height: int = 480,
+        left_foot_body: str = "foot_L_1",
+        right_foot_body: str = "foot_R_v1_1",
     ) -> None:
         super().__init__()
         self.model_path = Path(model_path).resolve()
@@ -154,6 +156,8 @@ class UrdfFEnv(gym.Env[np.ndarray, np.ndarray]):
         self.render_mode = render_mode
         self.width = int(width)
         self.height = int(height)
+        self.left_foot_body = str(left_foot_body)
+        self.right_foot_body = str(right_foot_body)
 
         self.model = mujoco.MjModel.from_xml_path(str(self.model_path))
         self.data = mujoco.MjData(self.model)
@@ -171,8 +175,8 @@ class UrdfFEnv(gym.Env[np.ndarray, np.ndarray]):
         self.joint_range = np.asarray(self.model.jnt_range[1 : 1 + len(self.joints)], dtype=np.float64)
         self.foot_geom_to_side = self._foot_geom_ids()
         self.base_body_id = int(mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_BODY, "base_link"))
-        self._left_foot_body_id = int(mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_BODY, "foot_L_1"))
-        self._right_foot_body_id = int(mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_BODY, "foot_R_v1_1"))
+        self._left_foot_body_id = int(mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_BODY, self.left_foot_body))
+        self._right_foot_body_id = int(mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_BODY, self.right_foot_body))
 
         self.prev_action = np.zeros(int(self.model.nu), dtype=np.float32)
         self._step_count = 0
@@ -233,9 +237,9 @@ class UrdfFEnv(gym.Env[np.ndarray, np.ndarray]):
         out: dict[int, str] = {}
         for geom_id in range(int(self.model.ngeom)):
             name = mujoco.mj_id2name(self.model, mujoco.mjtObj.mjOBJ_GEOM, geom_id) or ""
-            if name.startswith("foot_L_1_sole_pad_"):
+            if name.startswith(f"{self.left_foot_body}_sole_pad_"):
                 out[geom_id] = "left"
-            if name.startswith("foot_R_v1_1_sole_pad_"):
+            if name.startswith(f"{self.right_foot_body}_sole_pad_"):
                 out[geom_id] = "right"
         return out
 

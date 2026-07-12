@@ -31,6 +31,12 @@
 - 판단 결과
 - 다음 조치
 
+## 신모델 (urdf_f_v2)
+
+새 CAD(`URDF_description/`) 기반 신모델의 변환·학습 기록은 별도 폴더에 동일 형식으로
+분리 정리했다: **`urdf_f_v2/README.md`** (변환 → 매핑 → armature 수정 → 안정 스탠딩 →
+보행 학습 → 코드 격리).
+
 ## 최근 상태
 
 - 새 STEP/STL 파일 확인: `24_step_and_link_stl_check.md`

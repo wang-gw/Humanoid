@@ -23,6 +23,9 @@ outputs/**
 !outputs/train/
 !outputs/train/urdf_f/
 !outputs/train/urdf_f/e2e_walk_v5/
+# urdf_f_v2 process records (video exception is at end, after the *.mp4 rule)
+!outputs/urdf_f_v2/
+!outputs/urdf_f_v2/**
 
 # Reference motion data
 reference_motions/raw/**
@@ -53,3 +56,6 @@ wandb/
 # Curated policy exceptions (e2e_walk_v5 final policy)
 !outputs/train/urdf_f/e2e_walk_v5/ppo_policy.zip
 !outputs/train/urdf_f/e2e_walk_v5/vecnormalize.pkl
+
+# urdf_f_v2 curated media (must come after the *.mp4 rule to win)
+!outputs/urdf_f_v2/e2e_walk_v2model_standing.mp4
