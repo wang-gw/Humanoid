@@ -45,7 +45,7 @@ class SingleStepV5Env(KHR3HVEnv):
         self.settle_steps = 50
         episode_steps = self.lift_steps + self.advance_steps + self.landing_steps + self.settle_steps
         config = replace(
-            KHRConfig(),
+            self.base_config(),
             enhanced_collisions=True,
             max_episode_steps=episode_steps,
             torque_penalty_scale=0.002,

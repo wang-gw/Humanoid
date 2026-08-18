@@ -52,7 +52,7 @@ class FourStepV7Env(KHR3HVEnv):
         self.step_cycle_steps = 250
         self.minimum_forward_m = 0.070
         config = replace(
-            KHRConfig(),
+            self.base_config(),
             enhanced_collisions=True,
             max_episode_steps=self.num_steps * self.step_cycle_steps,
             torque_penalty_scale=0.002,

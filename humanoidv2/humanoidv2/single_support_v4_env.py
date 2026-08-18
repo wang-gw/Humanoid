@@ -29,7 +29,7 @@ class SingleSupportV4Env(KHR3HVEnv):
             raise ValueError("task_profile must be 'original' or 'symmetric'")
         self.task_profile = task_profile
         config = replace(
-            KHRConfig(),
+            self.base_config(),
             enhanced_collisions=True,
             max_episode_steps=200,
             torque_penalty_scale=0.002,

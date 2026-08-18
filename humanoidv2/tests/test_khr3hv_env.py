@@ -1,10 +1,13 @@
+from dataclasses import replace
 from pathlib import Path
 
 import mujoco
 import numpy as np
+import pytest
 
 from humanoidv2 import (
     KHR3HVEnv,
+    KHRConfig,
     KHR3HVV2Env,
     KHR3HVV21Env,
     KHR3HVV22Env,
@@ -859,3 +862,47 @@ def test_world_fixed_render_camera_configuration_does_not_track_base():
     assert env.render_camera_azimuth == 160.0
     assert env.render_camera_elevation == -10.0
     env.close()
+
+
+def test_actuator_limits_default_to_the_ak45_hardware_values():
+    env = KHR3HVEnv()
+    expected_torque = np.array([24.0, 24.0, 24.0, 24.0, 7.0] * 2)
+    expected_speed = np.array([40.0, 40.0, 40.0, 40.0, 150.0] * 2) * 2.0 * np.pi / 60.0
+    assert np.array_equal(env.torque_limit, expected_torque)
+    assert np.array_equal(env.max_speed, expected_speed)
+    assert np.allclose(env.action_scale, 0.5 * expected_speed * env.config.control_dt)
+    env.close()
+
+
+def test_actuator_limits_are_configurable_and_reach_the_task_environments():
+    faster = replace(
+        KHRConfig(),
+        max_speed_rpm=(60.0,) * 4 + (200.0,) + (60.0,) * 4 + (200.0,),
+        torque_limit_n_m=(30.0,) * 4 + (9.0,) + (30.0,) * 4 + (9.0,),
+    )
+    env = KHR3HVEnv(config=faster)
+    assert env.torque_limit[0] == 30.0 and env.torque_limit[4] == 9.0
+    assert np.isclose(env.max_speed[0], 60.0 * 2.0 * np.pi / 60.0)
+    env.close()
+
+    class FasterV22Env(FirstStepStanceHipRollV22Env):
+        @classmethod
+        def base_config(cls):
+            return faster
+
+    task_env = FasterV22Env()
+    assert np.array_equal(task_env.torque_limit, np.array([30.0] * 4 + [9.0] + [30.0] * 4 + [9.0]))
+    # Task settings the family sets on top of the base config must survive.
+    assert task_env.config.enhanced_collisions
+    assert task_env.config.torque_penalty_scale == 0.002
+    task_env.close()
+
+
+def test_actuator_limits_reject_wrong_length_and_non_positive_entries():
+    for broken in (
+        replace(KHRConfig(), torque_limit_n_m=(24.0,) * 9),
+        replace(KHRConfig(), torque_limit_n_m=(24.0,) * 9 + (0.0,)),
+        replace(KHRConfig(), max_speed_rpm=(40.0,) * 9 + (-150.0,)),
+    ):
+        with pytest.raises(ValueError):
+            KHR3HVEnv(config=broken)

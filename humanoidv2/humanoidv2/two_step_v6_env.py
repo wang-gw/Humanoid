@@ -45,7 +45,7 @@ class TwoStepV6Env(KHR3HVEnv):
         self.settle_steps = 50
         self.half_cycle_steps = 250
         config = replace(
-            KHRConfig(),
+            self.base_config(),
             enhanced_collisions=True,
             max_episode_steps=2 * self.half_cycle_steps,
             torque_penalty_scale=0.002,

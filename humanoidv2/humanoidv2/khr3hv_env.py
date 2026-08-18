@@ -60,6 +60,13 @@ class KHRConfig:
     lateral_sign: float = 1.0
     swap_forward_legs: bool = False
     contact_schedule_reward_weight: float = 0.0
+    # Actuator limits per joint, in JOINT_NAMES order. The defaults are the
+    # hardware this project was built around: AK45-36 (40 rpm, 24 N·m peak) on
+    # the hips, knees and ankle pitch, AK45-10 (150 rpm, 7 N·m peak) on the
+    # ankle roll. Changing these changes every trained policy's behaviour, so
+    # keep the defaults when reproducing V1-V22 results.
+    max_speed_rpm: tuple[float, ...] = (40.0, 40.0, 40.0, 40.0, 150.0) * 2
+    torque_limit_n_m: tuple[float, ...] = (24.0, 24.0, 24.0, 24.0, 7.0) * 2
 
 
 class KHR3HVEnv(gym.Env[np.ndarray, np.ndarray]):
@@ -124,11 +131,12 @@ class KHR3HVEnv(gym.Env[np.ndarray, np.ndarray]):
         self.standing_height = float(standing_height)
         self.fall_height = 0.535 * self.standing_height
 
-        # AK45-36: 40 rpm, 24 Nm peak. AK45-10 ankle roll: 150 rpm, 7 Nm peak.
-        slow = 40.0 * 2.0 * np.pi / 60.0
-        fast = 150.0 * 2.0 * np.pi / 60.0
-        self.max_speed = np.array([slow, slow, slow, slow, fast] * 2, dtype=np.float64)
-        self.torque_limit = np.array([24.0, 24.0, 24.0, 24.0, 7.0] * 2, dtype=np.float64)
+        # Actuator limits come from the config; see KHRConfig for the defaults.
+        # max_speed only sets how far one control step may move a joint target,
+        # it is not enforced on the simulated joint speed. torque_limit is a
+        # hard clip applied to every control sample.
+        self.max_speed = self._actuator_limit("max_speed_rpm") * 2.0 * np.pi / 60.0
+        self.torque_limit = self._actuator_limit("torque_limit_n_m")
         self.action_scale = 0.5 * self.max_speed * self.config.control_dt
 
         self.action_space = spaces.Box(-1.0, 1.0, shape=(10,), dtype=np.float32)
@@ -144,6 +152,24 @@ class KHR3HVEnv(gym.Env[np.ndarray, np.ndarray]):
         self.render_camera_distance = 1.25
         self.render_camera_azimuth = 135.0
         self.render_camera_elevation = -12.0
+
+    @classmethod
+    def base_config(cls) -> KHRConfig:
+        """Config the task environments build on.
+
+        The V4-V22 environments compose their own config from this one, so
+        overriding it in a subclass is the single place to change actuator
+        limits for a whole task family without touching the task settings.
+        """
+        return KHRConfig()
+
+    def _actuator_limit(self, field: str) -> np.ndarray:
+        values = np.array(getattr(self.config, field), dtype=np.float64)
+        if values.shape != (len(JOINT_NAMES),):
+            raise ValueError(f"{field} must have {len(JOINT_NAMES)} entries")
+        if not np.all(values > 0.0):
+            raise ValueError(f"{field} entries must be positive")
+        return values
 
     def _load_model(self) -> mujoco.MjModel:
         if not self.config.enhanced_collisions:
