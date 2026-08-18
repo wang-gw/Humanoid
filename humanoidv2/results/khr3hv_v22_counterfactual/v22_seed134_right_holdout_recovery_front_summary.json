@@ -1,0 +1,33 @@
+{
+  "video": "/home/king0519/projects/Humanoidv2/results/khr3hv_v22_counterfactual/v22_seed134_right_holdout_recovery_front.mp4",
+  "first": {
+    "title": "V20 holdout | fail",
+    "side": "right",
+    "seed": 134,
+    "combined": true,
+    "amplitude": 0.0,
+    "steps": 512,
+    "terminated": false,
+    "success": false,
+    "forward_displacement_m": 0.25369730513942146,
+    "maximum_landing_force_n": 79.57727989120332,
+    "minimum_unload_fraction": 0.4,
+    "minimum_both_contact_fraction": 0.8,
+    "minimum_step_length_m": 0.035638519003714675
+  },
+  "second": {
+    "title": "V22 holdout | pass",
+    "side": "right",
+    "seed": 134,
+    "combined": true,
+    "amplitude": 0.008,
+    "steps": 512,
+    "terminated": false,
+    "success": true,
+    "forward_displacement_m": 0.2577479216003383,
+    "maximum_landing_force_n": 48.87393620265244,
+    "minimum_unload_fraction": 1.0,
+    "minimum_both_contact_fraction": 1.0,
+    "minimum_step_length_m": 0.031883437666633485
+  }
+}

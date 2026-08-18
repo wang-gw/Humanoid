@@ -1,0 +1,104 @@
+{
+  "base_policy": "/home/king0519/projects/Humanoidv2/results/khr3hv_v17_forward_margin/ppo_forward_margin_v17_final.zip",
+  "source_v19_corrector": "/home/king0519/projects/Humanoidv2/results/khr3hv_v19_landing_residual_joint/ppo_landing_residual_v19_final.zip",
+  "observation_size": 90,
+  "new_input_weights_initialized_to_zero": true,
+  "elapsed_seconds": 867.75847697258,
+  "actual_timesteps": 163840,
+  "stage_records": [
+    {
+      "stage": 0,
+      "requested_timesteps": 32000,
+      "cumulative_timesteps": 32768,
+      "episodes_seen": 64,
+      "recent_reward": 103.28858710000002,
+      "recent_length": 512.0,
+      "model": "ppo_contact_aware_v20_stage0.zip"
+    },
+    {
+      "stage": 1,
+      "requested_timesteps": 48000,
+      "cumulative_timesteps": 81920,
+      "episodes_seen": 160,
+      "recent_reward": 73.29954835,
+      "recent_length": 512.0,
+      "model": "ppo_contact_aware_v20_stage1.zip"
+    },
+    {
+      "stage": 2,
+      "requested_timesteps": 80000,
+      "cumulative_timesteps": 163840,
+      "episodes_seen": 324,
+      "recent_reward": -14.0072634,
+      "recent_length": 464.0,
+      "model": "ppo_contact_aware_v20_stage2.zip"
+    }
+  ],
+  "candidate_scores": [
+    {
+      "model": "ppo_contact_aware_v20_initial.zip",
+      "nominal_successes": 2,
+      "combined_successes": 22,
+      "combined_runs": 40,
+      "both_sides_successful_samples": 9,
+      "worst_landing_force_n": 78.41120829148907,
+      "minimum_forward_displacement_m": 0.24506572128971674,
+      "selection_key": [
+        2.0,
+        22.0,
+        9.0,
+        -78.41120829148907,
+        0.24506572128971674
+      ]
+    },
+    {
+      "model": "ppo_contact_aware_v20_stage0.zip",
+      "nominal_successes": 2,
+      "combined_successes": 18,
+      "combined_runs": 40,
+      "both_sides_successful_samples": 6,
+      "worst_landing_force_n": 77.63123105082538,
+      "minimum_forward_displacement_m": 0.24873648209646973,
+      "selection_key": [
+        2.0,
+        18.0,
+        6.0,
+        -77.63123105082538,
+        0.24873648209646973
+      ]
+    },
+    {
+      "model": "ppo_contact_aware_v20_stage1.zip",
+      "nominal_successes": 2,
+      "combined_successes": 24,
+      "combined_runs": 40,
+      "both_sides_successful_samples": 9,
+      "worst_landing_force_n": 76.10083167101533,
+      "minimum_forward_displacement_m": 0.2506096647407264,
+      "selection_key": [
+        2.0,
+        24.0,
+        9.0,
+        -76.10083167101533,
+        0.2506096647407264
+      ]
+    },
+    {
+      "model": "ppo_contact_aware_v20_stage2.zip",
+      "nominal_successes": 2,
+      "combined_successes": 26,
+      "combined_runs": 40,
+      "both_sides_successful_samples": 8,
+      "worst_landing_force_n": 74.15657366546392,
+      "minimum_forward_displacement_m": 0.2516520471319845,
+      "selection_key": [
+        2.0,
+        26.0,
+        8.0,
+        -74.15657366546392,
+        0.2516520471319845
+      ]
+    }
+  ],
+  "selected_model": "ppo_contact_aware_v20_stage2.zip"
+}

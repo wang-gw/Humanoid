@@ -1,0 +1,33 @@
+{
+  "video": "/home/king0519/projects/Humanoidv2/results/khr3hv_v22_counterfactual/v22_seed106_right_v20_vs_v22_front.mp4",
+  "first": {
+    "title": "V20 baseline | fail",
+    "side": "right",
+    "seed": 106,
+    "combined": true,
+    "amplitude": 0.0,
+    "steps": 512,
+    "terminated": false,
+    "success": false,
+    "forward_displacement_m": 0.2610762769617402,
+    "maximum_landing_force_n": 78.6335454024519,
+    "minimum_unload_fraction": 0.1,
+    "minimum_both_contact_fraction": 1.0,
+    "minimum_step_length_m": 0.016327728410114803
+  },
+  "second": {
+    "title": "V22 stance correction | pass",
+    "side": "right",
+    "seed": 106,
+    "combined": true,
+    "amplitude": 0.008,
+    "steps": 512,
+    "terminated": false,
+    "success": true,
+    "forward_displacement_m": 0.26548412544130984,
+    "maximum_landing_force_n": 49.75968225498351,
+    "minimum_unload_fraction": 0.9,
+    "minimum_both_contact_fraction": 1.0,
+    "minimum_step_length_m": 0.02338100738355807
+  }
+}

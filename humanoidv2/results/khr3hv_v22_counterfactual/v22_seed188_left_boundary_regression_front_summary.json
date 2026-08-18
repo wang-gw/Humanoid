@@ -1,0 +1,33 @@
+{
+  "video": "/home/king0519/projects/Humanoidv2/results/khr3hv_v22_counterfactual/v22_seed188_left_boundary_regression_front.mp4",
+  "first": {
+    "title": "V20 audit | pass",
+    "side": "left",
+    "seed": 188,
+    "combined": true,
+    "amplitude": 0.0,
+    "steps": 512,
+    "terminated": false,
+    "success": true,
+    "forward_displacement_m": 0.25021943524606566,
+    "maximum_landing_force_n": 47.87629049810002,
+    "minimum_unload_fraction": 1.0,
+    "minimum_both_contact_fraction": 1.0,
+    "minimum_step_length_m": 0.03334934438136418
+  },
+  "second": {
+    "title": "V22 audit | 50.05 N fail",
+    "side": "left",
+    "seed": 188,
+    "combined": true,
+    "amplitude": 0.008,
+    "steps": 512,
+    "terminated": false,
+    "success": false,
+    "forward_displacement_m": 0.2546029567539758,
+    "maximum_landing_force_n": 50.04708876795742,
+    "minimum_unload_fraction": 1.0,
+    "minimum_both_contact_fraction": 1.0,
+    "minimum_step_length_m": 0.03190070762284897
+  }
+}

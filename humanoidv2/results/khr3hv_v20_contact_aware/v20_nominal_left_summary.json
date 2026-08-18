@@ -1,0 +1,19 @@
+{
+  "first_side": "left",
+  "seed": 17,
+  "steps": 512,
+  "duration_seconds": 20.48,
+  "terminated": false,
+  "truncated": true,
+  "success": true,
+  "failed_criteria": [],
+  "maximum_landing_force_n": 46.90086335849209,
+  "base_forward_displacement_m": 0.2655705769125638,
+  "minimum_step_length_m": 0.03353912223605661,
+  "minimum_advance_under_5n_fraction": 1.0,
+  "minimum_both_contact_fraction": 1.0,
+  "maximum_applied_correction_rad": 0.013070878386497498,
+  "maximum_actuator_torque_n_m": 9.07505316309796,
+  "maximum_saturation_fraction": 0.0,
+  "video": "/home/king0519/projects/Humanoidv2/results/khr3hv_v20_contact_aware/v20_nominal_left.mp4"
+}
