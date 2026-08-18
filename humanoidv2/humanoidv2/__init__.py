@@ -1,6 +1,6 @@
 """Humanoidv2 reinforcement-learning environments."""
 
-from .khr3hv_env import JOINT_NAMES, KHR3HVEnv, KHRConfig
+from .khr3hv_env import HARDWARE_MAX_SPEED_RPM, JOINT_NAMES, KHR3HVEnv, KHRConfig
 from .khr3hv_v2_env import KHR3HVV2Env, KHR3HVV21Env, KHR3HVV22Env
 from .khr3hv_v3_env import KHR3HVV3Env, KHR3HVV31Env, KHR3HVV32Env, KHR3HVV33Env, KHR3HVV34Env
 from .single_support_v4_env import SingleSupportV4Env
@@ -27,6 +27,7 @@ from .counterfactual_probe_v22_env import (
 )
 
 __all__ = [
+    "HARDWARE_MAX_SPEED_RPM",
     "JOINT_NAMES",
     "KHR3HVEnv",
     "KHRConfig",

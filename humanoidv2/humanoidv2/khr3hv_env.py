@@ -31,6 +31,14 @@ JOINT_NAMES = (
 )
 
 
+# Actuator speeds of the physical robot, in JOINT_NAMES order (2026-08-18
+# hardware feedback). Hip roll is a different unit from the other joints:
+# 82 rpm / 34 N*m against 40 rpm / 24 N*m, so the "AK45-36 everywhere but the
+# ankle roll" reading taken from the CAD mesh names does not hold for it.
+# KHRConfig.max_speed_rpm deliberately does not default to this; see there.
+HARDWARE_MAX_SPEED_RPM = (82.0, 40.0, 40.0, 40.0, 150.0) * 2
+
+
 @dataclass(frozen=True)
 class KHRConfig:
     sim_dt: float = 0.002
@@ -60,13 +68,20 @@ class KHRConfig:
     lateral_sign: float = 1.0
     swap_forward_legs: bool = False
     contact_schedule_reward_weight: float = 0.0
-    # Actuator limits per joint, in JOINT_NAMES order. The defaults are the
-    # hardware this project was built around: AK45-36 (40 rpm, 24 N·m peak) on
-    # the hips, knees and ankle pitch, AK45-10 (150 rpm, 7 N·m peak) on the
-    # ankle roll. Changing these changes every trained policy's behaviour, so
-    # keep the defaults when reproducing V1-V22 results.
+    # Actuator limits per joint, in JOINT_NAMES order.
+    #
+    # max_speed_rpm is NOT a limit on simulated joint speed. It only scales the
+    # residual action, so it is part of the interface every trained policy was
+    # fitted to: raising it makes an unchanged policy output move a joint
+    # target further. It therefore stays at the values V1-V22 were trained
+    # with, and HARDWARE_MAX_SPEED_RPM records what the robot actually has.
+    # Start new training from the hardware values, not from these.
     max_speed_rpm: tuple[float, ...] = (40.0, 40.0, 40.0, 40.0, 150.0) * 2
-    torque_limit_n_m: tuple[float, ...] = (24.0, 24.0, 24.0, 24.0, 7.0) * 2
+    # torque_limit_n_m is a hard clip on every control sample, so it can track
+    # the hardware directly: the V1-V22 rollouts peak at 9.4 N*m and never
+    # reach a clip, which is why hip roll could be corrected to its measured
+    # 34 N*m without changing any archived result.
+    torque_limit_n_m: tuple[float, ...] = (34.0, 24.0, 24.0, 24.0, 7.0) * 2
 
 
 class KHR3HVEnv(gym.Env[np.ndarray, np.ndarray]):

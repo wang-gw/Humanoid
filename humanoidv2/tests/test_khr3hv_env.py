@@ -6,6 +6,7 @@ import numpy as np
 import pytest
 
 from humanoidv2 import (
+    HARDWARE_MAX_SPEED_RPM,
     JOINT_NAMES,
     KHR3HVEnv,
     KHRConfig,
@@ -865,13 +866,17 @@ def test_world_fixed_render_camera_configuration_does_not_track_base():
     env.close()
 
 
-def test_actuator_limits_default_to_the_ak45_hardware_values():
+def test_actuator_limits_default_to_the_measured_hardware_values():
     env = KHR3HVEnv()
-    expected_torque = np.array([24.0, 24.0, 24.0, 24.0, 7.0] * 2)
+    expected_torque = np.array([34.0, 24.0, 24.0, 24.0, 7.0] * 2)
     expected_speed = np.array([40.0, 40.0, 40.0, 40.0, 150.0] * 2) * 2.0 * np.pi / 60.0
     assert np.array_equal(env.torque_limit, expected_torque)
     assert np.array_equal(env.max_speed, expected_speed)
     assert np.allclose(env.action_scale, 0.5 * expected_speed * env.config.control_dt)
+    # The residual scaling is the trained interface, so it stays behind the
+    # faster hip roll the hardware actually has.
+    assert env.config.max_speed_rpm != HARDWARE_MAX_SPEED_RPM
+    assert HARDWARE_MAX_SPEED_RPM[0] == 82.0
     env.close()
 
 

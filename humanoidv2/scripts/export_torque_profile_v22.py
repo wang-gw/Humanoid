@@ -30,16 +30,17 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from humanoidv2 import FirstStepStanceHipRollV22Env  # noqa: E402
-from humanoidv2.khr3hv_env import JOINT_NAMES  # noqa: E402
+from humanoidv2.khr3hv_env import HARDWARE_MAX_SPEED_RPM, JOINT_NAMES  # noqa: E402
 from scripts.diagnose_counterfactual_v22 import BASE, CORRECTOR  # noqa: E402
 from scripts.train_landing_residual_v19 import combined_domain  # noqa: E402
 
 
 OUTPUT = ROOT / "results/torque_profile"
 
-# Actuator per joint, taken from the model comment in humanoidv2/khr3hv_env.py.
+# Descriptive motor naming only; it comes from the CAD mesh names and is not
+# used in any computation. The numeric limits are read from the environment
+# config so this report cannot drift from what the simulation actually ran.
 MOTORS = ("AK45-36",) * 4 + ("AK45-10",) + ("AK45-36",) * 4 + ("AK45-10",)
-RATED_SPEED_RPM = (40.0,) * 4 + (150.0,) + (40.0,) * 4 + (150.0,)
 
 
 class TorqueRecorder:
@@ -126,6 +127,7 @@ def rollout(side: str, seed: int, domain_seed: int | None) -> dict[str, object]:
         "terminated": bool(terminated),
         "truncated": bool(truncated),
         "torque_limit": env.torque_limit.copy(),
+        "rated_speed_rpm": np.asarray(env.config.max_speed_rpm, dtype=np.float64),
     }
 
 
@@ -158,6 +160,7 @@ def write_csv(path: Path, rows: list[dict[str, object]]) -> None:
 def summarize(result: dict[str, object]) -> dict[str, object]:
     rows = result["rows"]
     limit = np.asarray(result["torque_limit"])
+    rated_speed = np.asarray(result["rated_speed_rpm"])
     torque = np.array([row["torque"] for row in rows])
     speed = np.array([row["speed"] for row in rows])
     power = torque * speed
@@ -191,7 +194,16 @@ def summarize(result: dict[str, object]) -> dict[str, object]:
                 "peak_abs_speed_rpm": float(
                     np.abs(speed[:, index]).max() * 60.0 / (2.0 * np.pi)
                 ),
-                "rated_speed_rpm": RATED_SPEED_RPM[index],
+                # What the simulation scaled the residual with, and what the
+                # robot can actually do; hip roll differs between the two.
+                "residual_scaling_rpm": float(rated_speed[index]),
+                "hardware_rated_speed_rpm": HARDWARE_MAX_SPEED_RPM[index],
+                "speed_utilization_percent": float(
+                    100.0
+                    * np.abs(speed[:, index]).max()
+                    * 60.0
+                    / (2.0 * np.pi * HARDWARE_MAX_SPEED_RPM[index])
+                ),
                 "peak_mechanical_power_w": float(np.abs(power[:, index]).max()),
                 "peak_torque_rate_n_m_per_s": float(np.abs(rate[:, index]).max()),
                 # Gait content sits below a few Hz; anything above 5 Hz is
