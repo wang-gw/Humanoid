@@ -6,6 +6,7 @@ import numpy as np
 import pytest
 
 from humanoidv2 import (
+    JOINT_NAMES,
     KHR3HVEnv,
     KHRConfig,
     KHR3HVV2Env,
@@ -906,3 +907,35 @@ def test_actuator_limits_reject_wrong_length_and_non_positive_entries():
     ):
         with pytest.raises(ValueError):
             KHR3HVEnv(config=broken)
+
+
+def test_configured_torque_limits_are_written_into_the_loaded_model():
+    env = KHR3HVEnv()
+    expected = np.column_stack((-env.torque_limit, env.torque_limit))
+    for actuator_id in range(env.model.nu):
+        joint_id = int(env.model.actuator(actuator_id).trnid[0])
+        index = JOINT_NAMES.index(env.model.joint(joint_id).name)
+        assert np.array_equal(env.model.actuator_forcerange[actuator_id], expected[index])
+        assert np.array_equal(env.model.actuator_ctrlrange[actuator_id], expected[index])
+        assert np.array_equal(env.model.jnt_actfrcrange[joint_id], expected[index])
+    env.close()
+
+
+def test_model_limits_follow_the_config_for_task_environments():
+    stronger = replace(
+        KHRConfig(), torque_limit_n_m=(120.0,) * 4 + (20.0,) + (120.0,) * 4 + (20.0,)
+    )
+
+    class StrongerV22Env(FirstStepStanceHipRollV22Env):
+        @classmethod
+        def base_config(cls):
+            return stronger
+
+    env = StrongerV22Env()
+    hip_roll = env.model.joint("left_hip_roll").id
+    ankle_roll = env.model.joint("left_ankle_roll").id
+    # Above the 100 N*m the MJCF ships, so this only holds if the model is
+    # rewritten rather than left at its file values.
+    assert np.array_equal(env.model.jnt_actfrcrange[hip_roll], [-120.0, 120.0])
+    assert np.array_equal(env.model.jnt_actfrcrange[ankle_roll], [-20.0, 20.0])
+    env.close()

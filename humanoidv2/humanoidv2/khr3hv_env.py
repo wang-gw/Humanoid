@@ -171,9 +171,32 @@ class KHR3HVEnv(gym.Env[np.ndarray, np.ndarray]):
             raise ValueError(f"{field} entries must be positive")
         return values
 
+    def _write_actuator_limits(self, model: mujoco.MjModel) -> mujoco.MjModel:
+        """Put the configured torque limits into the model itself.
+
+        The control loop already clips every sample, but the MJCF ships generic
+        +-100 N*m ranges that never bind and therefore misreport the hardware.
+        Writing the real limits here keeps the model honest for anything that
+        drives it outside this environment, and makes a configured limit above
+        100 N*m actually take effect.
+        """
+        torque_limit = self._actuator_limit("torque_limit_n_m")
+        for actuator_id in range(model.nu):
+            if int(model.actuator_trntype[actuator_id]) != int(mujoco.mjtTrn.mjTRN_JOINT):
+                continue
+            joint_id = int(model.actuator_trnid[actuator_id, 0])
+            limit = torque_limit[JOINT_NAMES.index(model.joint(joint_id).name)]
+            gear = float(model.actuator_gear[actuator_id, 0])
+            model.actuator_ctrlrange[actuator_id] = [-limit / gear, limit / gear]
+            model.actuator_forcerange[actuator_id] = [-limit, limit]
+            model.jnt_actfrcrange[joint_id] = [-limit, limit]
+        return model
+
     def _load_model(self) -> mujoco.MjModel:
         if not self.config.enhanced_collisions:
-            return mujoco.MjModel.from_xml_path(str(self.model_path))
+            return self._write_actuator_limits(
+                mujoco.MjModel.from_xml_path(str(self.model_path))
+            )
         spec = mujoco.MjSpec.from_file(str(self.model_path))
         # Collision proxies use bit 2 and only the floor accepts bit 2. This
         # prevents overlapping coarse proxies from exerting internal forces.
@@ -215,7 +238,7 @@ class KHR3HVEnv(gym.Env[np.ndarray, np.ndarray]):
                 conaffinity=0,
                 rgba=collision_rgba,
             )
-        return spec.compile()
+        return self._write_actuator_limits(spec.compile())
 
     def _disable_mesh_contacts(self) -> None:
         """Use CAD meshes for visuals and the eight sole boxes for contact.
