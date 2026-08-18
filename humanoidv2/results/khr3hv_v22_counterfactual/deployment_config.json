@@ -1,0 +1,27 @@
+{
+  "version": "V22",
+  "base_policy": "../khr3hv_v17_forward_margin/ppo_forward_margin_v17_final.zip",
+  "corrector_policy": "../khr3hv_v20_contact_aware/ppo_contact_aware_v20_final.zip",
+  "environment": "FirstStepStanceHipRollV22Env",
+  "first_step_only": true,
+  "phase": "lift",
+  "stance_hip_roll_lift_offset_rad": 0.008,
+  "envelope": "smoothstep rise/fall over 25% of phase",
+  "side_mapping": {
+    "left_first_swing": {
+      "joint": "right_hip_roll",
+      "signed_offset_rad": 0.008
+    },
+    "right_first_swing": {
+      "joint": "left_hip_roll",
+      "signed_offset_rad": -0.008
+    }
+  },
+  "unchanged": {
+    "stride_m": 0.042,
+    "step_cycle_seconds": 2.56,
+    "minimum_forward_m": 0.2,
+    "impact_limit_n": 50.0,
+    "early_gate_blend": 0.75
+  }
+}

@@ -1,0 +1,899 @@
+{
+  "controllers": {
+    "base": "/home/king0519/projects/Humanoidv2/results/khr3hv_v17_forward_margin/ppo_forward_margin_v17_final.zip",
+    "corrector": "/home/king0519/projects/Humanoidv2/results/khr3hv_v20_contact_aware/ppo_contact_aware_v20_final.zip"
+  },
+  "runs": 10,
+  "failing_footsteps": 10,
+  "rows": [
+    {
+      "seed": 103,
+      "first_side": "right",
+      "terminated": false,
+      "truncated": true,
+      "success": false,
+      "base_forward_displacement_m": 0.25372320921619146,
+      "maximum_landing_force_n": 50.9859056360941,
+      "failing_steps": [
+        1
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "side": "right",
+          "peak_landing_force_n": 50.9859056360941,
+          "advance_under_5n_fraction": 0.8,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.03669464915108683,
+          "failures": [
+            "impact",
+            "swing_unload"
+          ]
+        },
+        {
+          "step": 2,
+          "side": "left",
+          "peak_landing_force_n": 43.38841275801884,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.03673524272439825,
+          "failures": []
+        },
+        {
+          "step": 3,
+          "side": "right",
+          "peak_landing_force_n": 42.880706300632724,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.03746614666221787,
+          "failures": []
+        },
+        {
+          "step": 4,
+          "side": "left",
+          "peak_landing_force_n": 42.99803532075554,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.0381445203543791,
+          "failures": []
+        },
+        {
+          "step": 5,
+          "side": "right",
+          "peak_landing_force_n": 43.381758954415865,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.036740582077813916,
+          "failures": []
+        },
+        {
+          "step": 6,
+          "side": "left",
+          "peak_landing_force_n": 43.403932990608055,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.038674446109562055,
+          "failures": []
+        },
+        {
+          "step": 7,
+          "side": "right",
+          "peak_landing_force_n": 42.597284195191456,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.03577051161031769,
+          "failures": []
+        },
+        {
+          "step": 8,
+          "side": "left",
+          "peak_landing_force_n": 42.399566320900654,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.03991931934290038,
+          "failures": []
+        }
+      ]
+    },
+    {
+      "seed": 104,
+      "first_side": "right",
+      "terminated": false,
+      "truncated": true,
+      "success": false,
+      "base_forward_displacement_m": 0.2781718199320606,
+      "maximum_landing_force_n": 55.82082630967736,
+      "failing_steps": [
+        1
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "side": "right",
+          "peak_landing_force_n": 55.82082630967736,
+          "advance_under_5n_fraction": 0.9,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.02904885160573424,
+          "failures": [
+            "impact"
+          ]
+        },
+        {
+          "step": 2,
+          "side": "left",
+          "peak_landing_force_n": 42.32700025413998,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.04619015792596845,
+          "failures": []
+        },
+        {
+          "step": 3,
+          "side": "right",
+          "peak_landing_force_n": 43.876555564056844,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.034689720151034636,
+          "failures": []
+        },
+        {
+          "step": 4,
+          "side": "left",
+          "peak_landing_force_n": 41.66244846922494,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.047013835700216,
+          "failures": []
+        },
+        {
+          "step": 5,
+          "side": "right",
+          "peak_landing_force_n": 43.715664851278476,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.034595413706122374,
+          "failures": []
+        },
+        {
+          "step": 6,
+          "side": "left",
+          "peak_landing_force_n": 41.651980025852424,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.04718300034220413,
+          "failures": []
+        },
+        {
+          "step": 7,
+          "side": "right",
+          "peak_landing_force_n": 43.819654475267534,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.034590015898301796,
+          "failures": []
+        },
+        {
+          "step": 8,
+          "side": "left",
+          "peak_landing_force_n": 41.673641162327634,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.04719787560576261,
+          "failures": []
+        }
+      ]
+    },
+    {
+      "seed": 106,
+      "first_side": "left",
+      "terminated": false,
+      "truncated": true,
+      "success": false,
+      "base_forward_displacement_m": 0.2655584470255939,
+      "maximum_landing_force_n": 70.27811936375883,
+      "failing_steps": [
+        1
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "side": "left",
+          "peak_landing_force_n": 70.27811936375883,
+          "advance_under_5n_fraction": 0.4,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.032910191338185735,
+          "failures": [
+            "impact",
+            "swing_unload"
+          ]
+        },
+        {
+          "step": 2,
+          "side": "right",
+          "peak_landing_force_n": 40.50966670641706,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.049870047899535364,
+          "failures": []
+        },
+        {
+          "step": 3,
+          "side": "left",
+          "peak_landing_force_n": 42.347009127410566,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.028903991429526182,
+          "failures": []
+        },
+        {
+          "step": 4,
+          "side": "right",
+          "peak_landing_force_n": 43.79794144365175,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.04966218260551933,
+          "failures": []
+        },
+        {
+          "step": 5,
+          "side": "left",
+          "peak_landing_force_n": 41.879827373967814,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.02837321693392314,
+          "failures": []
+        },
+        {
+          "step": 6,
+          "side": "right",
+          "peak_landing_force_n": 43.489705802380044,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.05012951335661131,
+          "failures": []
+        },
+        {
+          "step": 7,
+          "side": "left",
+          "peak_landing_force_n": 40.97085332184618,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.02795086846689171,
+          "failures": []
+        },
+        {
+          "step": 8,
+          "side": "right",
+          "peak_landing_force_n": 43.649296370240236,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.050433767586259115,
+          "failures": []
+        }
+      ]
+    },
+    {
+      "seed": 106,
+      "first_side": "right",
+      "terminated": false,
+      "truncated": true,
+      "success": false,
+      "base_forward_displacement_m": 0.2610762769617402,
+      "maximum_landing_force_n": 78.6335454024519,
+      "failing_steps": [
+        1
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "side": "right",
+          "peak_landing_force_n": 78.6335454024519,
+          "advance_under_5n_fraction": 0.1,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.016327728410114803,
+          "failures": [
+            "impact",
+            "swing_unload",
+            "step_length"
+          ]
+        },
+        {
+          "step": 2,
+          "side": "left",
+          "peak_landing_force_n": 47.39268797359175,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.05645284439871495,
+          "failures": []
+        },
+        {
+          "step": 3,
+          "side": "right",
+          "peak_landing_force_n": 40.81640234664911,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.023139007694329916,
+          "failures": []
+        },
+        {
+          "step": 4,
+          "side": "left",
+          "peak_landing_force_n": 41.10516978753436,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.05519137226247972,
+          "failures": []
+        },
+        {
+          "step": 5,
+          "side": "right",
+          "peak_landing_force_n": 42.85206010393199,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.024295263596784106,
+          "failures": []
+        },
+        {
+          "step": 6,
+          "side": "left",
+          "peak_landing_force_n": 41.03683435191889,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.05390633897419378,
+          "failures": []
+        },
+        {
+          "step": 7,
+          "side": "right",
+          "peak_landing_force_n": 42.502934112121224,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.025539565345237825,
+          "failures": []
+        },
+        {
+          "step": 8,
+          "side": "left",
+          "peak_landing_force_n": 40.99245286698999,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.05271750608406023,
+          "failures": []
+        }
+      ]
+    },
+    {
+      "seed": 108,
+      "first_side": "right",
+      "terminated": false,
+      "truncated": true,
+      "success": false,
+      "base_forward_displacement_m": 0.26622646989353066,
+      "maximum_landing_force_n": 73.70254990896362,
+      "failing_steps": [
+        1
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "side": "right",
+          "peak_landing_force_n": 73.70254990896362,
+          "advance_under_5n_fraction": 0.7,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.036405267026276195,
+          "failures": [
+            "impact",
+            "swing_unload"
+          ]
+        },
+        {
+          "step": 2,
+          "side": "left",
+          "peak_landing_force_n": 47.4077109673401,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.03859821179451553,
+          "failures": []
+        },
+        {
+          "step": 3,
+          "side": "right",
+          "peak_landing_force_n": 48.05894291620727,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.03716700124855868,
+          "failures": []
+        },
+        {
+          "step": 4,
+          "side": "left",
+          "peak_landing_force_n": 47.26947972777012,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.040129606686793245,
+          "failures": []
+        },
+        {
+          "step": 5,
+          "side": "right",
+          "peak_landing_force_n": 48.0110285089163,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.036307776490943716,
+          "failures": []
+        },
+        {
+          "step": 6,
+          "side": "left",
+          "peak_landing_force_n": 47.15436260690764,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.04114403905269054,
+          "failures": []
+        },
+        {
+          "step": 7,
+          "side": "right",
+          "peak_landing_force_n": 48.05565193616674,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.03517865056567199,
+          "failures": []
+        },
+        {
+          "step": 8,
+          "side": "left",
+          "peak_landing_force_n": 47.18654916516055,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.042281543643668484,
+          "failures": []
+        }
+      ]
+    },
+    {
+      "seed": 110,
+      "first_side": "left",
+      "terminated": false,
+      "truncated": true,
+      "success": false,
+      "base_forward_displacement_m": 0.26663033083628335,
+      "maximum_landing_force_n": 69.10267140090112,
+      "failing_steps": [
+        1
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "side": "left",
+          "peak_landing_force_n": 69.10267140090112,
+          "advance_under_5n_fraction": 0.7,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.03438643692528237,
+          "failures": [
+            "impact",
+            "swing_unload"
+          ]
+        },
+        {
+          "step": 2,
+          "side": "right",
+          "peak_landing_force_n": 41.30353796760807,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.045205841416551346,
+          "failures": []
+        },
+        {
+          "step": 3,
+          "side": "left",
+          "peak_landing_force_n": 42.84219474070481,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.033894655506669646,
+          "failures": []
+        },
+        {
+          "step": 4,
+          "side": "right",
+          "peak_landing_force_n": 44.197513629407915,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.04497819864475286,
+          "failures": []
+        },
+        {
+          "step": 5,
+          "side": "left",
+          "peak_landing_force_n": 42.79488231811514,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.03400324476774261,
+          "failures": []
+        },
+        {
+          "step": 6,
+          "side": "right",
+          "peak_landing_force_n": 44.23245345213351,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.04510679613709906,
+          "failures": []
+        },
+        {
+          "step": 7,
+          "side": "left",
+          "peak_landing_force_n": 42.89782267143961,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.03397462228961834,
+          "failures": []
+        },
+        {
+          "step": 8,
+          "side": "right",
+          "peak_landing_force_n": 44.14236543086481,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.04498557689896404,
+          "failures": []
+        }
+      ]
+    },
+    {
+      "seed": 115,
+      "first_side": "left",
+      "terminated": false,
+      "truncated": true,
+      "success": false,
+      "base_forward_displacement_m": 0.2601652888733749,
+      "maximum_landing_force_n": 69.96074119680594,
+      "failing_steps": [
+        1
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "side": "left",
+          "peak_landing_force_n": 69.96074119680594,
+          "advance_under_5n_fraction": 0.5,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.02857462276039678,
+          "failures": [
+            "impact",
+            "swing_unload"
+          ]
+        },
+        {
+          "step": 2,
+          "side": "right",
+          "peak_landing_force_n": 41.48718526439066,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.05246031177727262,
+          "failures": []
+        },
+        {
+          "step": 3,
+          "side": "left",
+          "peak_landing_force_n": 41.85730330335559,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.025617971326916206,
+          "failures": []
+        },
+        {
+          "step": 4,
+          "side": "right",
+          "peak_landing_force_n": 44.67600079614874,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.05102700922937081,
+          "failures": []
+        },
+        {
+          "step": 5,
+          "side": "left",
+          "peak_landing_force_n": 41.65883890445073,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.02584169963369709,
+          "failures": []
+        },
+        {
+          "step": 6,
+          "side": "right",
+          "peak_landing_force_n": 44.650902756462514,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.05080419542095849,
+          "failures": []
+        },
+        {
+          "step": 7,
+          "side": "left",
+          "peak_landing_force_n": 41.72047198802382,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.026178659665827497,
+          "failures": []
+        },
+        {
+          "step": 8,
+          "side": "right",
+          "peak_landing_force_n": 44.64025965491735,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.0503311463081727,
+          "failures": []
+        }
+      ]
+    },
+    {
+      "seed": 115,
+      "first_side": "right",
+      "terminated": false,
+      "truncated": true,
+      "success": false,
+      "base_forward_displacement_m": 0.26692970903881924,
+      "maximum_landing_force_n": 65.91329960899043,
+      "failing_steps": [
+        1
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "side": "right",
+          "peak_landing_force_n": 65.91329960899043,
+          "advance_under_5n_fraction": 0.6,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.035780779949711364,
+          "failures": [
+            "impact",
+            "swing_unload"
+          ]
+        },
+        {
+          "step": 2,
+          "side": "left",
+          "peak_landing_force_n": 40.40331232290541,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.04242478983632633,
+          "failures": []
+        },
+        {
+          "step": 3,
+          "side": "right",
+          "peak_landing_force_n": 43.012759042937276,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.03708861267286015,
+          "failures": []
+        },
+        {
+          "step": 4,
+          "side": "left",
+          "peak_landing_force_n": 41.41797884884664,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.040911370385381646,
+          "failures": []
+        },
+        {
+          "step": 5,
+          "side": "right",
+          "peak_landing_force_n": 44.08720018251262,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.037185021252997885,
+          "failures": []
+        },
+        {
+          "step": 6,
+          "side": "left",
+          "peak_landing_force_n": 41.306357153068205,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.04055419786529346,
+          "failures": []
+        },
+        {
+          "step": 7,
+          "side": "right",
+          "peak_landing_force_n": 43.85882588143395,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.037533871890503,
+          "failures": []
+        },
+        {
+          "step": 8,
+          "side": "left",
+          "peak_landing_force_n": 41.240210095325416,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.04009957197330499,
+          "failures": []
+        }
+      ]
+    },
+    {
+      "seed": 117,
+      "first_side": "left",
+      "terminated": false,
+      "truncated": true,
+      "success": false,
+      "base_forward_displacement_m": 0.26403762890721705,
+      "maximum_landing_force_n": 60.04142481862149,
+      "failing_steps": [
+        1
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "side": "left",
+          "peak_landing_force_n": 60.04142481862149,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.030836821488548827,
+          "failures": [
+            "impact"
+          ]
+        },
+        {
+          "step": 2,
+          "side": "right",
+          "peak_landing_force_n": 42.476974834037094,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.04637527554379292,
+          "failures": []
+        },
+        {
+          "step": 3,
+          "side": "left",
+          "peak_landing_force_n": 43.00640730056007,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.032798857288141386,
+          "failures": []
+        },
+        {
+          "step": 4,
+          "side": "right",
+          "peak_landing_force_n": 43.810928384501935,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.044981973203418235,
+          "failures": []
+        },
+        {
+          "step": 5,
+          "side": "left",
+          "peak_landing_force_n": 43.04034182498158,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.03351527443228977,
+          "failures": []
+        },
+        {
+          "step": 6,
+          "side": "right",
+          "peak_landing_force_n": 43.80885502246453,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.04429469490950777,
+          "failures": []
+        },
+        {
+          "step": 7,
+          "side": "left",
+          "peak_landing_force_n": 42.975603726735876,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.0342460544795703,
+          "failures": []
+        },
+        {
+          "step": 8,
+          "side": "right",
+          "peak_landing_force_n": 43.77240716897684,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.043513294795597346,
+          "failures": []
+        }
+      ]
+    },
+    {
+      "seed": 120,
+      "first_side": "right",
+      "terminated": false,
+      "truncated": true,
+      "success": false,
+      "base_forward_displacement_m": 0.2688535117452101,
+      "maximum_landing_force_n": 61.64831009733378,
+      "failing_steps": [
+        1
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "side": "right",
+          "peak_landing_force_n": 61.64831009733378,
+          "advance_under_5n_fraction": 0.7,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.03468665143552084,
+          "failures": [
+            "impact",
+            "swing_unload"
+          ]
+        },
+        {
+          "step": 2,
+          "side": "left",
+          "peak_landing_force_n": 42.90599249216344,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.040799285486622955,
+          "failures": []
+        },
+        {
+          "step": 3,
+          "side": "right",
+          "peak_landing_force_n": 42.68869669687062,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.03618039634282155,
+          "failures": []
+        },
+        {
+          "step": 4,
+          "side": "left",
+          "peak_landing_force_n": 42.538194811753094,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.04181417999377732,
+          "failures": []
+        },
+        {
+          "step": 5,
+          "side": "right",
+          "peak_landing_force_n": 42.878836046096154,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.03568655353289796,
+          "failures": []
+        },
+        {
+          "step": 6,
+          "side": "left",
+          "peak_landing_force_n": 42.51169411465442,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.04238585773663761,
+          "failures": []
+        },
+        {
+          "step": 7,
+          "side": "right",
+          "peak_landing_force_n": 42.794773053012754,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.035141634865785254,
+          "failures": []
+        },
+        {
+          "step": 8,
+          "side": "left",
+          "peak_landing_force_n": 42.36060370912378,
+          "advance_under_5n_fraction": 1.0,
+          "both_contact_fraction": 1.0,
+          "step_length_m": 0.043049697252782515,
+          "failures": []
+        }
+      ]
+    }
+  ]
+}

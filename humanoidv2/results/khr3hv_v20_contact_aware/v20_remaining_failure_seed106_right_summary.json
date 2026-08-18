@@ -1,0 +1,30 @@
+{
+  "first_side": "right",
+  "seed": 106,
+  "friction_scale": 1.1929631421853342,
+  "mass_scale": 0.9816160061157463,
+  "leg_mass_asymmetry": -0.007544266203381283,
+  "initial_joint_noise_rad": 0.0035,
+  "initial_joint_velocity_noise_rad_s": 0.01,
+  "motor_gain_scale": 0.9964265463127465,
+  "control_delay_steps": 0,
+  "steps": 512,
+  "duration_seconds": 20.48,
+  "terminated": false,
+  "truncated": true,
+  "success": false,
+  "failed_criteria": [
+    "impact",
+    "swing_unload",
+    "step_length"
+  ],
+  "maximum_landing_force_n": 78.6335454024519,
+  "base_forward_displacement_m": 0.2610762769617402,
+  "minimum_step_length_m": 0.016327728410114803,
+  "minimum_advance_under_5n_fraction": 0.1,
+  "minimum_both_contact_fraction": 1.0,
+  "maximum_applied_correction_rad": 0.013595265150070191,
+  "maximum_actuator_torque_n_m": 9.183309334378315,
+  "maximum_saturation_fraction": 0.0,
+  "video": "/home/king0519/projects/Humanoidv2/results/khr3hv_v20_contact_aware/v20_remaining_failure_seed106_right.mp4"
+}

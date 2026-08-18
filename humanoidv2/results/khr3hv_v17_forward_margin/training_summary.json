@@ -1,0 +1,15 @@
+{
+  "source_model": "/home/king0519/projects/Humanoidv2/results/khr3hv_v16_dynamic_forward_stage3/ppo_dynamic_forward_v16_final.zip",
+  "stride_m": 0.042,
+  "minimum_forward_m": 0.2,
+  "body_target_per_step_m": 0.0275,
+  "body_target_episode_m": 0.22,
+  "actual_transfer_timesteps": 57344,
+  "elapsed_seconds": 79.29305791854858,
+  "episodes": 112,
+  "last_20_reward": 346.52714835000006,
+  "last_20_length": 512.0,
+  "selected_model": "ppo_forward_margin_v17_initial.zip",
+  "selected_transfer_steps": 0,
+  "selection_rule": "both-order strict success, worst forward margin over 200 mm, worst landing impact, then worst reward"
+}

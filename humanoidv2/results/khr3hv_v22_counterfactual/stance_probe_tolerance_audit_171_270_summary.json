@@ -1,0 +1,76 @@
+{
+  "controller": "V20 frozen corrector + deterministic first-step stance hip-roll lift offset",
+  "amplitudes_rad": [
+    0.0075,
+    0.0085
+  ],
+  "combined_seed_range": [
+    171,
+    270
+  ],
+  "scores": [
+    {
+      "amplitude_rad": 0.0075,
+      "nominal_successes": 2,
+      "combined_successes": 189,
+      "combined_runs": 200,
+      "both_sides_successful_samples": 91,
+      "falls": 0,
+      "failure_counts": {
+        "impact": 11,
+        "swing_unload": 2
+      },
+      "worst_landing_force_n": 67.06337790076628,
+      "minimum_forward_displacement_m": 0.2479611512075204,
+      "selection_key": [
+        2,
+        189,
+        91,
+        -67.06337790076628,
+        0.2479611512075204
+      ]
+    },
+    {
+      "amplitude_rad": 0.0085,
+      "nominal_successes": 2,
+      "combined_successes": 192,
+      "combined_runs": 200,
+      "both_sides_successful_samples": 93,
+      "falls": 0,
+      "failure_counts": {
+        "impact": 8,
+        "swing_unload": 1
+      },
+      "worst_landing_force_n": 67.32503789632699,
+      "minimum_forward_displacement_m": 0.24752111995497167,
+      "selection_key": [
+        2,
+        192,
+        93,
+        -67.32503789632699,
+        0.24752111995497167
+      ]
+    }
+  ],
+  "selected": {
+    "amplitude_rad": 0.0085,
+    "nominal_successes": 2,
+    "combined_successes": 192,
+    "combined_runs": 200,
+    "both_sides_successful_samples": 93,
+    "falls": 0,
+    "failure_counts": {
+      "impact": 8,
+      "swing_unload": 1
+    },
+    "worst_landing_force_n": 67.32503789632699,
+    "minimum_forward_displacement_m": 0.24752111995497167,
+    "selection_key": [
+      2,
+      192,
+      93,
+      -67.32503789632699,
+      0.24752111995497167
+    ]
+  }
+}

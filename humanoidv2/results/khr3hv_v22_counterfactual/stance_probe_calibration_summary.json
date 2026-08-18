@@ -1,0 +1,197 @@
+{
+  "controller": "V20 frozen corrector + deterministic first-step stance hip-roll lift offset",
+  "amplitudes_rad": [
+    0.0,
+    0.004,
+    0.005,
+    0.006,
+    0.007,
+    0.008,
+    0.01,
+    0.012
+  ],
+  "scores": [
+    {
+      "amplitude_rad": 0.0,
+      "nominal_successes": 2,
+      "combined_successes": 30,
+      "combined_runs": 40,
+      "both_sides_successful_samples": 12,
+      "falls": 0,
+      "failure_counts": {
+        "impact": 10,
+        "step_length": 1,
+        "swing_unload": 8
+      },
+      "worst_landing_force_n": 78.6335454024519,
+      "minimum_forward_displacement_m": 0.24653731905562234,
+      "selection_key": [
+        2,
+        30,
+        12,
+        -78.6335454024519,
+        0.24653731905562234
+      ]
+    },
+    {
+      "amplitude_rad": 0.004,
+      "nominal_successes": 2,
+      "combined_successes": 37,
+      "combined_runs": 40,
+      "both_sides_successful_samples": 18,
+      "falls": 0,
+      "failure_counts": {
+        "impact": 3,
+        "swing_unload": 3
+      },
+      "worst_landing_force_n": 70.95423080240235,
+      "minimum_forward_displacement_m": 0.24833890191274807,
+      "selection_key": [
+        2,
+        37,
+        18,
+        -70.95423080240235,
+        0.24833890191274807
+      ]
+    },
+    {
+      "amplitude_rad": 0.005,
+      "nominal_successes": 2,
+      "combined_successes": 38,
+      "combined_runs": 40,
+      "both_sides_successful_samples": 18,
+      "falls": 0,
+      "failure_counts": {
+        "impact": 2,
+        "swing_unload": 1
+      },
+      "worst_landing_force_n": 75.74450601211518,
+      "minimum_forward_displacement_m": 0.247819484134151,
+      "selection_key": [
+        2,
+        38,
+        18,
+        -75.74450601211518,
+        0.247819484134151
+      ]
+    },
+    {
+      "amplitude_rad": 0.006,
+      "nominal_successes": 2,
+      "combined_successes": 38,
+      "combined_runs": 40,
+      "both_sides_successful_samples": 18,
+      "falls": 0,
+      "failure_counts": {
+        "impact": 2,
+        "swing_unload": 1
+      },
+      "worst_landing_force_n": 66.45711204251184,
+      "minimum_forward_displacement_m": 0.24815895591445747,
+      "selection_key": [
+        2,
+        38,
+        18,
+        -66.45711204251184,
+        0.24815895591445747
+      ]
+    },
+    {
+      "amplitude_rad": 0.007,
+      "nominal_successes": 2,
+      "combined_successes": 39,
+      "combined_runs": 40,
+      "both_sides_successful_samples": 19,
+      "falls": 0,
+      "failure_counts": {
+        "impact": 1,
+        "swing_unload": 1
+      },
+      "worst_landing_force_n": 60.675677858505374,
+      "minimum_forward_displacement_m": 0.24780846396285056,
+      "selection_key": [
+        2,
+        39,
+        19,
+        -60.675677858505374,
+        0.24780846396285056
+      ]
+    },
+    {
+      "amplitude_rad": 0.008,
+      "nominal_successes": 2,
+      "combined_successes": 40,
+      "combined_runs": 40,
+      "both_sides_successful_samples": 20,
+      "falls": 0,
+      "failure_counts": {},
+      "worst_landing_force_n": 49.97231019421646,
+      "minimum_forward_displacement_m": 0.2471180118071834,
+      "selection_key": [
+        2,
+        40,
+        20,
+        -49.97231019421646,
+        0.2471180118071834
+      ]
+    },
+    {
+      "amplitude_rad": 0.01,
+      "nominal_successes": 2,
+      "combined_successes": 39,
+      "combined_runs": 40,
+      "both_sides_successful_samples": 19,
+      "falls": 0,
+      "failure_counts": {
+        "impact": 1
+      },
+      "worst_landing_force_n": 50.53790165123385,
+      "minimum_forward_displacement_m": 0.2461773868787331,
+      "selection_key": [
+        2,
+        39,
+        19,
+        -50.53790165123385,
+        0.2461773868787331
+      ]
+    },
+    {
+      "amplitude_rad": 0.012,
+      "nominal_successes": 2,
+      "combined_successes": 38,
+      "combined_runs": 40,
+      "both_sides_successful_samples": 18,
+      "falls": 0,
+      "failure_counts": {
+        "impact": 2
+      },
+      "worst_landing_force_n": 50.664763891205155,
+      "minimum_forward_displacement_m": 0.24572610703980272,
+      "selection_key": [
+        2,
+        38,
+        18,
+        -50.664763891205155,
+        0.24572610703980272
+      ]
+    }
+  ],
+  "selected": {
+    "amplitude_rad": 0.008,
+    "nominal_successes": 2,
+    "combined_successes": 40,
+    "combined_runs": 40,
+    "both_sides_successful_samples": 20,
+    "falls": 0,
+    "failure_counts": {},
+    "worst_landing_force_n": 49.97231019421646,
+    "minimum_forward_displacement_m": 0.2471180118071834,
+    "selection_key": [
+      2,
+      40,
+      20,
+      -49.97231019421646,
+      0.2471180118071834
+    ]
+  }
+}

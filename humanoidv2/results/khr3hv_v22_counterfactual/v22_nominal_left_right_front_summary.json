@@ -1,0 +1,33 @@
+{
+  "video": "/home/king0519/projects/Humanoidv2/results/khr3hv_v22_counterfactual/v22_nominal_left_right_front.mp4",
+  "first": {
+    "title": "V22 0.008 rad | left first",
+    "side": "left",
+    "seed": 17,
+    "combined": false,
+    "amplitude": 0.008,
+    "steps": 512,
+    "terminated": false,
+    "success": true,
+    "forward_displacement_m": 0.2736539876282901,
+    "maximum_landing_force_n": 44.528029987168374,
+    "minimum_unload_fraction": 1.0,
+    "minimum_both_contact_fraction": 1.0,
+    "minimum_step_length_m": 0.03717867643801126
+  },
+  "second": {
+    "title": "V22 0.008 rad | right first",
+    "side": "right",
+    "seed": 17,
+    "combined": false,
+    "amplitude": 0.008,
+    "steps": 512,
+    "terminated": false,
+    "success": true,
+    "forward_displacement_m": 0.27610108859117216,
+    "maximum_landing_force_n": 42.70276429913195,
+    "minimum_unload_fraction": 1.0,
+    "minimum_both_contact_fraction": 1.0,
+    "minimum_step_length_m": 0.03601738723302805
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "base_policy": "/home/king0519/projects/Humanoidv2/results/khr3hv_v17_forward_margin/ppo_forward_margin_v17_final.zip",
+  "v20_corrector": "/home/king0519/projects/Humanoidv2/results/khr3hv_v20_contact_aware/ppo_contact_aware_v20_final.zip",
+  "early_gate_blend": 0.75,
+  "stride_m": 0.042,
+  "step_cycle_seconds": 2.56,
+  "minimum_forward_m": 0.2,
+  "impact_limit_n": 50.0,
+  "controllers": {
+    "v17": {
+      "runs": 40,
+      "successes": 12,
+      "success_rate": 0.3,
+      "falls": 0,
+      "failure_counts": {
+        "double_support": 3,
+        "impact": 28,
+        "swing_unload": 10
+      },
+      "worst_landing_force_n": 82.641056287455,
+      "minimum_forward_displacement_m": 0.23615690366810643,
+      "maximum_applied_correction_rad": 0.0
+    },
+    "v19": {
+      "runs": 40,
+      "successes": 25,
+      "success_rate": 0.625,
+      "falls": 0,
+      "failure_counts": {
+        "double_support": 3,
+        "impact": 12,
+        "swing_unload": 11
+      },
+      "worst_landing_force_n": 83.59872432080999,
+      "minimum_forward_displacement_m": 0.24722372096004883,
+      "maximum_applied_correction_rad": 0.01129850447177887
+    },
+    "v20": {
+      "runs": 40,
+      "successes": 30,
+      "success_rate": 0.75,
+      "falls": 0,
+      "failure_counts": {
+        "impact": 10,
+        "step_length": 1,
+        "swing_unload": 8
+      },
+      "worst_landing_force_n": 78.6335454024519,
+      "minimum_forward_displacement_m": 0.24653731905562234,
+      "maximum_applied_correction_rad": 0.013595265150070191
+    }
+  },
+  "both_sides_successful_samples": {
+    "v17": 4,
+    "v19": 10,
+    "v20": 12
+  },
+  "nominal": [
+    {
+      "first_side": "left",
+      "seed": 17,
+      "steps": 512,
+      "duration_seconds": 20.48,
+      "terminated": false,
+      "truncated": true,
+      "success": true,
+      "failed_criteria": [],
+      "maximum_landing_force_n": 46.90086335849209,
+      "base_forward_displacement_m": 0.2655705769125638,
+      "minimum_step_length_m": 0.03353912223605661,
+      "minimum_advance_under_5n_fraction": 1.0,
+      "minimum_both_contact_fraction": 1.0,
+      "maximum_applied_correction_rad": 0.013070878386497498,
+      "maximum_actuator_torque_n_m": 9.07505316309796,
+      "maximum_saturation_fraction": 0.0,
+      "case": "nominal"
+    },
+    {
+      "first_side": "right",
+      "seed": 17,
+      "steps": 512,
+      "duration_seconds": 20.48,
+      "terminated": false,
+      "truncated": true,
+      "success": true,
+      "failed_criteria": [],
+      "maximum_landing_force_n": 45.87179942865184,
+      "base_forward_displacement_m": 0.26809647289346517,
+      "minimum_step_length_m": 0.031094111030908908,
+      "minimum_advance_under_5n_fraction": 1.0,
+      "minimum_both_contact_fraction": 1.0,
+      "maximum_applied_correction_rad": 0.012933492660522461,
+      "maximum_actuator_torque_n_m": 9.042108627876834,
+      "maximum_saturation_fraction": 0.0,
+      "case": "nominal"
+    }
+  ]
+}

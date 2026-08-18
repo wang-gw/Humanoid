@@ -1,0 +1,39 @@
+{
+  "forward_axis": "-Y",
+  "order": "left->right->left->right->left->right->left->right",
+  "mode": "trained",
+  "model": "/home/king0519/projects/Humanoidv2/results/khr3hv_v17_forward_margin/ppo_forward_margin_v17_final.zip",
+  "stride_m": 0.042,
+  "body_target_m": 0.22,
+  "minimum_forward_m": 0.2,
+  "steps": 512,
+  "duration_seconds": 20.48,
+  "step_cycle_seconds": 2.56,
+  "total_reward": 352.82289955412267,
+  "terminated": false,
+  "truncated": true,
+  "gait_success": true,
+  "impact_limit_satisfied": true,
+  "is_success": true,
+  "world_y_displacement_m": -0.23906654638811228,
+  "base_forward_displacement_m": 0.23906654638811228,
+  "forward_margin_over_200mm_m": 0.03906654638811227,
+  "average_forward_velocity_m_s": 0.011673171210357046,
+  "maximum_landing_force_n": 48.53480127362607,
+  "minimum_step_length_m": 0.03134572869222968,
+  "minimum_advance_under_5n_fraction": 1.0,
+  "maximum_actuator_torque_n_m": 9.165428783604526,
+  "maximum_control_interval_saturation_fraction": 0.0,
+  "video": "/home/king0519/projects/Humanoidv2/results/khr3hv_v17_forward_margin/forward_margin_v17_left_first_trained_world_fixed.mp4",
+  "camera": {
+    "mode": "world_fixed",
+    "azimuth": 160.0,
+    "elevation": -10.0,
+    "distance": 1.8,
+    "lookat": [
+      0.0,
+      -0.12,
+      0.18
+    ]
+  }
+}

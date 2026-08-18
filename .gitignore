@@ -59,3 +59,7 @@ wandb/
 
 # urdf_f_v2 curated media (must come after the *.mp4 rule to win)
 !outputs/urdf_f_v2/e2e_walk_v2model_standing.mp4
+
+# humanoidv2 clean-room curated artifacts (after the *.zip / *.mp4 rules)
+!humanoidv2/results/**/*.zip
+!humanoidv2/results/**/*.mp4

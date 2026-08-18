@@ -1,0 +1,59 @@
+{
+  "deployment_early_gate_blend": 0.75,
+  "domain": "uniform V18 full range",
+  "selection_priority": [
+    "nominal successes",
+    "combined successes",
+    "both-sides successful samples",
+    "worst landing force",
+    "minimum forward displacement"
+  ],
+  "candidates": [
+    {
+      "model": "ppo_contact_aware_v20_stage2.zip",
+      "added_stabilization_timesteps": 0,
+      "combined_successes": 26,
+      "combined_runs": 40,
+      "both_sides_successful_samples": 9,
+      "worst_landing_force_n": 74.67385081352553,
+      "minimum_forward_displacement_m": 0.2506396267956036
+    },
+    {
+      "model": "ppo_contact_aware_v20_stable_40000_steps.zip",
+      "added_stabilization_timesteps": 40000,
+      "combined_successes": 27,
+      "combined_runs": 40,
+      "both_sides_successful_samples": 10,
+      "worst_landing_force_n": 77.02098618663653,
+      "minimum_forward_displacement_m": 0.24782229474954826
+    },
+    {
+      "model": "ppo_contact_aware_v20_stable_80000_steps.zip",
+      "added_stabilization_timesteps": 80000,
+      "combined_successes": 30,
+      "combined_runs": 40,
+      "both_sides_successful_samples": 12,
+      "worst_landing_force_n": 78.6335454024519,
+      "minimum_forward_displacement_m": 0.24653731905562234,
+      "selected": true
+    },
+    {
+      "model": "ppo_contact_aware_v20_stable_120000_steps.zip",
+      "added_stabilization_timesteps": 120000,
+      "combined_successes": 28,
+      "combined_runs": 40,
+      "both_sides_successful_samples": 10,
+      "worst_landing_force_n": 72.92401040228225,
+      "minimum_forward_displacement_m": 0.24406395088541427
+    },
+    {
+      "model": "ppo_contact_aware_v20_stable_160000_steps.zip",
+      "added_stabilization_timesteps": 160000,
+      "combined_successes": 26,
+      "combined_runs": 40,
+      "both_sides_successful_samples": 10,
+      "worst_landing_force_n": 73.5976213326342,
+      "minimum_forward_displacement_m": 0.24294930833576928
+    }
+  ]
+}
