@@ -1,0 +1,28 @@
+{
+  "zero_action": {
+    "steps": 800,
+    "duration_s": 8.0,
+    "terminated": false,
+    "truncated": true,
+    "success": false,
+    "forward_distance_m": -0.03285104144190323,
+    "final_forward_velocity_m_s": -4.797969746552586e-08,
+    "final_periodic_cost": 0.4952760372411002,
+    "max_abs_torque_nm": 1.5296562308476318,
+    "total_reward": 641.7765783649339,
+    "video": "outputs/periodic_gaits_research/evaluation_v1/zero_action.mp4"
+  },
+  "trained_policy": {
+    "steps": 800,
+    "duration_s": 8.0,
+    "terminated": false,
+    "truncated": true,
+    "success": true,
+    "forward_distance_m": 0.47174378983367177,
+    "final_forward_velocity_m_s": 0.03164218833452968,
+    "final_periodic_cost": 0.4984961815464748,
+    "max_abs_torque_nm": 6.783044924163581,
+    "total_reward": 660.4593267824829,
+    "video": "periodic_gaits_research/results/v1_baseline/trained_policy.mp4"
+  }
+}

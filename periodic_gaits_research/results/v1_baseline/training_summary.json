@@ -1,0 +1,7 @@
+{
+  "timesteps": 1001472,
+  "n_envs": 4,
+  "seed": 7,
+  "elapsed_seconds": 247.28572392463684,
+  "episodes": 2059
+}

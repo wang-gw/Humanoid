@@ -63,3 +63,7 @@ wandb/
 # humanoidv2 clean-room curated artifacts (after the *.zip / *.mp4 rules)
 !humanoidv2/results/**/*.zip
 !humanoidv2/results/**/*.mp4
+
+# Curated periodic-gait collaboration bundle. New runs remain under outputs/.
+!periodic_gaits_research/results/**/*.zip
+!periodic_gaits_research/results/**/*.mp4

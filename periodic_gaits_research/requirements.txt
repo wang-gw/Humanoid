@@ -1,0 +1,8 @@
+numpy==2.4.6
+mujoco==3.9.0
+gymnasium==1.2.3
+stable-baselines3==2.8.0
+torch==2.12.0
+imageio==2.37.3
+pillow==12.2.0
+pytest==9.1.1

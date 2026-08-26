@@ -18,7 +18,12 @@ policies/            robot별 controller / policy 관련 코드
 reference_motions/   motion tracking에 사용할 reference motion 데이터
 rewards/             imitation learning / reinforcement learning objective 코드
 scripts/             학습, 평가, 렌더링 실행 스크립트
+periodic_gaits_research/  checkpoint에서 재개 가능한 periodic gait 연구 번들
 ```
+
+현재 안정적인 periodic gait 기준 정책과 재현/이어학습 방법은
+[`periodic_gaits_research/README.md`](periodic_gaits_research/README.md)에
+정리되어 있습니다.
 
 ## 각 폴더 역할
 
