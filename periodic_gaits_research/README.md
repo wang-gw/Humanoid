@@ -146,6 +146,42 @@ tau = clip(80 * (q_filtered - q) - 0.32 * qdot, torque_limit)
 circular logistic window로 부드러운 swing weight `I_swing ∈ [0,1]`를
 근사했습니다. stance weight는 `I_stance = 1 - I_swing`입니다.
 
+### gait별 구성과 현재 구현 범위
+
+현재 checkpoint가 실제로 학습한 gait는 **walking 하나뿐**입니다. 아래 표에서
+walking은 구현·학습·평가 완료 상태이고, 나머지는 같은 periodic reward 구조로
+확장할 때 사용할 설계 방향이지 현재 checkpoint가 수행할 수 있는 기능이 아닙니다.
+
+| Gait | 좌우 phase offset | swing/stance 구성 | 현재 상태 |
+|---|---:|---|---|
+| Walking | 0.5 cycle | 좌우 교대, swing 0.4 / stance 0.6 | 구현·학습·평가 완료 |
+| Running | 보통 0.5 cycle | swing 비율을 높여 양발 flight 구간 생성 | 미구현 |
+| Hopping | 0.0 cycle | 양발 동시 swing·동시 착지 | 미구현 |
+| Standing | swing 비활성 | 양발 stance, velocity command 0 | 별도 policy 미구현 |
+| 비대칭 gait | 좌우 개별 설정 | 좌우 ratio/offset을 독립적으로 조건화 | observation 확장 필요 |
+
+현재 walking 설정은 다음과 같습니다.
+
+```text
+frequency = 0.8 Hz
+left phase offset = 0.0
+right phase offset = 0.5
+swing ratio = 0.4
+stance ratio = 0.6
+forward velocity command = 0.08 m/s
+```
+
+정책 observation에는 left/right clock, swing/stance ratio, gait frequency가 이미
+포함되어 있어 조건부 multi-gait policy로 확장할 기본 인터페이스는 있습니다.
+하지만 현재 학습에서는 이 값들을 episode마다 sampling하지 않고 위 walking
+값으로 고정했습니다. 따라서 포함된 V1/V2 checkpoint를 multi-gait policy라고
+부르면 안 됩니다.
+
+다음 단계에서 multi-gait를 구현하려면 episode reset 시 gait command를 sampling하고,
+gait별 frequency·좌우 offset·swing ratio를 observation과 periodic reward에 동시에
+반영해야 합니다. Running은 flight 구간과 충격, hopping은 동시 접촉, standing은
+zero-velocity 안정성까지 별도로 검증해야 합니다.
+
 ### V1 reward
 
 V1은 다음 cost의 가중합을 1에서 빼는 구조입니다.
