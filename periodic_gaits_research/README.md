@@ -28,6 +28,7 @@ periodic_gaits_research/
 ├── finetune_v2.py              # 포함된 V1에서 이어 학습
 ├── evaluate.py                 # 포함된 V1 평가
 ├── evaluate_v2.py              # 포함된 V1/V2 비교
+├── diagnose_v1.py              # reward·관절별 상세 rollout 진단
 └── requirements.txt
 ```
 
@@ -78,8 +79,31 @@ V1을 처음부터 재학습하려면 기록된 설정을 사용합니다:
 python periodic_gaits_research/train.py \
   --timesteps 1000000 \
   --n-envs 4 \
-  --seed 7
+  --seed 7 \
+  --log-interval 25000 \
+  --checkpoint-interval 100000
 ```
+
+학습 폴더에는 최종 정책과 함께 다음 자료가 생성됩니다.
+
+```text
+training_diagnostics.csv    # 구간별 reward component/action/성공률
+training_summary.json       # 실행 설정과 시간
+checkpoints/*.zip           # 기본 100k step 간격 정책
+```
+
+학습된 정책의 상세 진단은 다음처럼 실행합니다.
+
+```bash
+MUJOCO_GL=glfw python periodic_gaits_research/diagnose_v1.py \
+  --model outputs/periodic_gaits_research/v1/ppo_periodic_walk_v1.zip \
+  --output outputs/periodic_gaits_research/v1/diagnostics
+```
+
+`diagnostics_summary.json`에는 seed별 성공·낙상·전진거리, reward component의
+평균/표준편차/최솟값/최댓값, 관절별 action 포화율, position 범위, tracking error,
+velocity, unclipped torque 최댓값과 torque clipping 비율이 저장됩니다. 대표 seed의
+모든 100 Hz step은 CSV로, rollout은 MP4로 저장됩니다.
 
 PPO 학습은 완전히 bitwise deterministic하다고 보장하지 않습니다. 운영체제,
 CPU, PyTorch에 따라 최종 수치가 조금 달라질 수 있으므로 포함된 checkpoint와

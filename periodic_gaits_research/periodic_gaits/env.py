@@ -345,6 +345,7 @@ class PeriodicGaitEnv(gym.Env[np.ndarray, np.ndarray]):
             "upright_cost": upright_cost,
             "action_diff_cost": action_diff_cost,
             "torque_cost": torque_cost,
+            "angular_cost": angular_cost,
             "left_force_n": left_force,
             "right_force_n": right_force,
             "left_swing_weight": float(swing[0]),
