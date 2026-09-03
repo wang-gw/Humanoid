@@ -18,7 +18,7 @@ PROJECT_DIR = Path(__file__).resolve().parent
 REPO_ROOT = PROJECT_DIR.parent
 sys.path.insert(0, str(PROJECT_DIR))
 
-from periodic_gaits import JOINT_NAMES, PeriodicGaitEnv  # noqa: E402
+from periodic_gaits import JOINT_NAMES, PeriodicGaitConfig, PeriodicGaitEnv  # noqa: E402
 
 
 REWARD_KEYS = (
@@ -26,11 +26,19 @@ REWARD_KEYS = (
     "torque_cost", "angular_cost", "forward_velocity_m_s", "left_force_n",
     "right_force_n", "left_foot_speed_m_s", "right_foot_speed_m_s",
     "torso_height_m",
+    "lateral_position_m", "lateral_tilt_rad", "sagittal_tilt_rad",
+    "lateral_tilt_rate_rad_s", "sagittal_tilt_rate_rad_s",
 )
 
 
-def rollout(model: PPO, seed: int, trace_path: Path | None, video_path: Path | None) -> tuple[dict, dict]:
-    env = PeriodicGaitEnv(render_mode="rgb_array" if video_path else None)
+def rollout(
+    model: PPO,
+    config: PeriodicGaitConfig,
+    seed: int,
+    trace_path: Path | None,
+    video_path: Path | None,
+) -> tuple[dict, dict]:
+    env = PeriodicGaitEnv(config=config, render_mode="rgb_array" if video_path else None)
     observation, _ = env.reset(seed=seed)
     series: dict[str, list[float]] = defaultdict(list)
     joint_series = {
@@ -133,6 +141,8 @@ def rollout(model: PPO, seed: int, trace_path: Path | None, video_path: Path | N
                 "std": float(np.std(values)),
                 "min": float(np.min(values)),
                 "max": float(np.max(values)),
+                "rms": float(np.sqrt(np.mean(np.square(values)))),
+                "peak_to_peak": float(np.ptp(values)),
             }
             for key, values in series.items()
         },
@@ -148,19 +158,22 @@ def main() -> None:
     parser.add_argument("--output", type=Path, default=REPO_ROOT / "outputs/periodic_gaits_research/diagnostics_v1")
     parser.add_argument("--seeds", type=int, nargs="+", default=list(range(30, 40)))
     parser.add_argument("--representative-seed", type=int, default=17)
+    parser.add_argument("--gait-frequency", type=float, default=0.8)
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
     model = PPO.load(args.model, device="cpu")
+    config = PeriodicGaitConfig(gait_frequency_hz=args.gait_frequency)
 
     episodes = []
     all_joint_rows: dict[str, list[dict]] = {name: [] for name in JOINT_NAMES}
     for seed in args.seeds:
-        episode, joints = rollout(model, seed, None, None)
+        episode, joints = rollout(model, config, seed, None, None)
         episodes.append(episode)
         for name in JOINT_NAMES:
             all_joint_rows[name].append(joints[name])
     representative, _ = rollout(
         model,
+        config,
         args.representative_seed,
         args.output / f"rollout_seed_{args.representative_seed}.csv",
         args.output / f"rollout_seed_{args.representative_seed}.mp4",
@@ -176,12 +189,25 @@ def main() -> None:
     summary = {
         "model": str(args.model.resolve()),
         "seeds": args.seeds,
+        "config": config.__dict__,
         "aggregate": {
             "runs": len(episodes),
             "successes": sum(bool(row["success"]) for row in episodes),
             "falls": sum(bool(row["terminated"]) for row in episodes),
             "mean_forward_distance_m": float(np.mean([row["forward_distance_m"] for row in episodes])),
             "mean_total_reward": float(np.mean([row["total_reward"] for row in episodes])),
+            "mean_lateral_tilt_rms_rad": float(np.mean([
+                row["reward_metrics"]["lateral_tilt_rad"]["rms"] for row in episodes
+            ])),
+            "mean_lateral_sway_peak_to_peak_m": float(np.mean([
+                row["reward_metrics"]["lateral_position_m"]["peak_to_peak"] for row in episodes
+            ])),
+            "mean_lateral_tilt_rate_rms_rad_s": float(np.mean([
+                row["reward_metrics"]["lateral_tilt_rate_rad_s"]["rms"] for row in episodes
+            ])),
+            "mean_sagittal_tilt_rms_rad": float(np.mean([
+                row["reward_metrics"]["sagittal_tilt_rad"]["rms"] for row in episodes
+            ])),
             "joints": aggregate_joints,
         },
         "representative": representative,

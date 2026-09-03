@@ -26,6 +26,8 @@ def test_actor_observation_is_finite_and_step_is_100hz():
     assert np.isfinite(reward)
     assert "left_force_n" in info  # reward/metrics only, never actor observation
     assert "angular_cost" in info
+    assert np.isfinite(info["lateral_tilt_rad"])
+    assert np.isfinite(info["lateral_position_m"])
     assert "gait_pattern_satisfied" in info
     assert not truncated
     env.close()

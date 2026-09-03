@@ -133,6 +133,7 @@ class PeriodicGaitEnv(gym.Env[np.ndarray, np.ndarray]):
         self.phase = 0.0
         self.step_count = 0
         self.initial_forward = 0.0
+        self.initial_lateral = 0.0
         self.standing_height = 0.0
         self.previous_foot_positions = np.zeros((2, 3), dtype=np.float64)
         self.phase_metrics: dict[str, list[float]] = {}
@@ -395,6 +396,7 @@ class PeriodicGaitEnv(gym.Env[np.ndarray, np.ndarray]):
         self.previous_action.fill(0.0)
         self.filtered_target = self.neutral_q.copy()
         self.initial_forward = -float(self.data.qpos[1])
+        self.initial_lateral = float(self.data.qpos[0])
         self.standing_height = float(self.data.xipos[self.base_id, 2])
         self.previous_foot_positions[:] = [
             self._sole_position(self.left_foot_id),
@@ -452,6 +454,10 @@ class PeriodicGaitEnv(gym.Env[np.ndarray, np.ndarray]):
             reward -= 5.0
         truncated = bool(self.step_count >= self.max_episode_steps)
         forward_distance = -float(self.data.qpos[1]) - self.initial_forward
+        lateral_position = float(self.data.qpos[0]) - self.initial_lateral
+        lateral_tilt = float(np.arctan2(projected_gravity[0], -projected_gravity[2]))
+        sagittal_tilt = float(np.arctan2(projected_gravity[1], -projected_gravity[2]))
+        body_gyro = self._body_gyro()
         phase_means = {
             key: float(np.mean(values)) if values else 0.0
             for key, values in self.phase_metrics.items()
@@ -466,6 +472,11 @@ class PeriodicGaitEnv(gym.Env[np.ndarray, np.ndarray]):
             "phase": self.phase,
             "torso_height_m": height,
             "forward_distance_m": forward_distance,
+            "lateral_position_m": lateral_position,
+            "lateral_tilt_rad": lateral_tilt,
+            "sagittal_tilt_rad": sagittal_tilt,
+            "lateral_tilt_rate_rad_s": float(body_gyro[1]),
+            "sagittal_tilt_rate_rad_s": float(body_gyro[0]),
             "max_abs_torque_nm": self.episode_peak_torque,
             "gait_pattern_satisfied": gait_pattern,
             "is_success": bool(

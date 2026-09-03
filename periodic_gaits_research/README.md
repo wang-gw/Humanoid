@@ -14,6 +14,29 @@ checkpoint부터 그대로 재개할 수 있도록 만든 재현 번들입니다
 새 연구는 `v1_baseline`에서 시작하는 것을 권장합니다. V2는 결과 비교와 실패
 분석을 위해 보존했으며 배포 후보가 아닙니다.
 
+### V1 gait-frequency sweep
+
+V1 reward, `forward=0.08m/s`, `swing_ratio=0.4`, 좌우 offset `0.5`, PPO 설정을
+고정하고 frequency만 `0.6/0.8/1.0/1.2/1.4Hz`로 바꿔 각각 seed 7에서 약 1M
+step을 처음부터 학습했습니다. 각 최종 정책은 동일한 deterministic seed 30개로
+평가했습니다.
+
+| Frequency | 성공 | 낙상 | 성공 episode lateral tilt RMS | lateral sway p-p | 성공 episode 평균 속도 |
+|---:|---:|---:|---:|---:|---:|
+| 0.6Hz | 0/30 | 30 | - | - | - |
+| 0.8Hz | 29/30 | 1 | 0.139rad | 0.368m | 0.064m/s |
+| 1.0Hz | 0/30 | 29 | - | - | - |
+| 1.2Hz | 5/30 | 20 | 0.159rad | 0.258m | 0.034m/s |
+| 1.4Hz | 27/30 | 3 | **0.066rad** | **0.095m** | **0.081m/s** |
+
+`1.4Hz`는 0.8Hz보다 성공률이 6.7%p 낮지만 lateral tilt RMS가 약 53%, lateral
+sway가 약 74% 작고 목표 속도 0.08m/s에 더 가깝습니다. 따라서 기존 0.8Hz는
+최고 완주율 baseline으로 유지하고, 1.4Hz는 뒤뚱거림 감소 후보로 보존합니다.
+실제 로봇 적용 후보로 승격하기 전에는 여러 training seed와 domain randomization
+평가가 필요합니다.
+
+비교 CSV/JSON/그래프와 1.4Hz 후보 정책·영상은 `results/frequency_sweep/`에 있습니다.
+
 ## 폴더 구조
 
 ```text

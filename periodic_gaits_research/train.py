@@ -20,7 +20,7 @@ from stable_baselines3.common.monitor import Monitor
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from periodic_gaits import PeriodicGaitEnv  # noqa: E402
+from periodic_gaits import PeriodicGaitConfig, PeriodicGaitEnv  # noqa: E402
 
 
 DIAGNOSTIC_KEYS = (
@@ -35,6 +35,11 @@ DIAGNOSTIC_KEYS = (
     "left_foot_speed_m_s",
     "right_foot_speed_m_s",
     "torso_height_m",
+    "lateral_position_m",
+    "lateral_tilt_rad",
+    "sagittal_tilt_rad",
+    "lateral_tilt_rate_rad_s",
+    "sagittal_tilt_rate_rad_s",
 )
 
 
@@ -123,13 +128,17 @@ def main() -> None:
     parser.add_argument("--timesteps", type=int, default=200_000)
     parser.add_argument("--n-envs", type=int, default=4)
     parser.add_argument("--seed", type=int, default=7)
+    parser.add_argument("--gait-frequency", type=float, default=0.8)
     parser.add_argument("--log-interval", type=int, default=25_000)
     parser.add_argument("--checkpoint-interval", type=int, default=100_000)
     parser.add_argument("--output", type=Path, default=REPO_ROOT / "outputs/periodic_gaits_research/v1")
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
 
-    env = make_vec_env(lambda: Monitor(PeriodicGaitEnv()), n_envs=args.n_envs, seed=args.seed)
+    config = PeriodicGaitConfig(gait_frequency_hz=args.gait_frequency)
+    env = make_vec_env(
+        lambda: Monitor(PeriodicGaitEnv(config=config)), n_envs=args.n_envs, seed=args.seed
+    )
     model = PPO(
         "MlpPolicy",
         env,
@@ -154,6 +163,7 @@ def main() -> None:
         "timesteps": model.num_timesteps,
         "n_envs": args.n_envs,
         "seed": args.seed,
+        "config": config.__dict__,
         "elapsed_seconds": time.time() - started,
         "episodes": len(callback.episodes),
         "diagnostics": str(callback.csv_path.resolve()),
