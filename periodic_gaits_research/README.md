@@ -105,6 +105,16 @@ MUJOCO_GL=glfw python periodic_gaits_research/diagnose_v1.py \
 velocity, unclipped torque 최댓값과 torque clipping 비율이 저장됩니다. 대표 seed의
 모든 100 Hz step은 CSV로, rollout은 MP4로 저장됩니다.
 
+대표 rollout의 시간축 torque 그래프는 다음 명령으로 다시 만들 수 있습니다.
+
+```bash
+python periodic_gaits_research/plot_v1_torque.py \
+  outputs/periodic_gaits_research/v1/diagnostics/rollout_seed_17.csv
+```
+
+그래프의 파란 실선은 실제 적용 torque, 주황 점선은 clipping 전 PD torque,
+빨간 점선은 관절별 ±torque limit입니다.
+
 PPO 학습은 완전히 bitwise deterministic하다고 보장하지 않습니다. 운영체제,
 CPU, PyTorch에 따라 최종 수치가 조금 달라질 수 있으므로 포함된 checkpoint와
 평가 JSON을 연구 기준점으로 사용합니다.
